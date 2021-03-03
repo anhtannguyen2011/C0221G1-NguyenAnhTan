@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Đăng Ký Học Viên</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html,body{
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+        body{
+            background-color: aliceblue;
+        }
+        .form_dankyhocvien{
+            max-width: 700px;
+            /*padding: 15px;*/
+            margin: 0px 30px;
+            background-color: aqua;
+        }
+        .form_sttdk{
+            background-color: red;
+            padding-left: 20px;
+            border-bottom-left-radius: 2px;
+            font-size: 25px;
+        }
+        .form_row{
+            padding: 8px 20px;
+            display: flex;
+
+        }
+        .form_label{
+            min-width: 90px;
+        }
+        .form_input{
+            width: 400px;
+        }
+        .form_button{
+            margin:20px 200px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form_dankyhocvien">
+        <div class="form_sttdk">
+            Đăng Ký Học Viên
+        </div>
+        <form action="" class="form" method="get">
+        <div class="form_row">
+            <label class="form_label">Họ Và Tên</label>
+            <input type="text" class="form_input">
+        </div>
+        <div class="form_row">
+            <label class="form_label">Ngày Sinh</label>
+            <input type="text" class="form_input">
+        </div>
+        <div class="form_row">
+            <label class="form_label">Giới Tính</label>
+            <input type="radio" name="gioitinh" id="nam">Nam
+            <input type="radio" name="gioitinh" id="nu">Nữ
+        </div>
+         <div class="form_row">
+             <label class="form_label">Địa Chỉ</label>
+             <textarea style="width: 250px" placeholder="Đây là vùng nhập dữ liệu"></textarea>
+         </div>
+            <div class="form_row">
+                <label class="form_label">Lớp</label>
+                <select name="lop" id="lop">
+                    <option value="">--Chọn Lớp--</option>
+                    <option value="">Lớp 1</option>
+                    <option value="">Lớp 2</option>
+                    <option value="">Lớp 3</option>
+                </select>
+            </div>
+            <div class="form_row">
+                <label class="form_label">Email</label>
+                <input type="email" class="form_input">
+            </div>
+            <div class="form_row">
+                <label class="form_label">Điện thoại</label>
+                <input class="form_input" type="text">
+            </div>
+            <div class="form_button">
+                <input type="submit" value="Đăng Ký">
+                <input type="reset" value="Nhập Lại">
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

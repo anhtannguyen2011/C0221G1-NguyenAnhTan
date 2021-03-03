@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Form Đơn Giản</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        html,body{
+
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background-color: #ccc;
+        }
+        .form_container{
+            max-width: 700px;
+            /*padding: 15px;*/
+            margin: 0px 30px;
+            background-color: aqua;
+
+
+        }
+        .form_row{
+            padding: 8px 20px;
+            display: flex;
+
+        }
+        .form_label{
+            min-width: 90px;
+        }
+        .form_input{
+            max-width: 300px;
+        }
+        .form_soyeulilich{
+            font-size: 20px;
+            width:700px;
+            height: 30px;
+
+            background-color: red;
+            text-align: center;
+            margin: auto;
+        }
+        .form_checkbox{
+            padding: 8px 20px;
+            display: flex;
+            justify-content: space-between;
+            height: 100px;
+
+        }
+        .form_label_checkbox{
+            min-width: 90px;
+            /*flex: 1;*/
+        }
+        .form_button{
+            margin: 0px 250px;
+            display: flex;
+            justify-content: space-around;
+
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="form_container">
+        <div class="form_soyeulilich">
+            Sơ Yếu Lí Lịch
+        </div>
+
+        <form action="" class="form">
+            <div class="form_row">
+                <label class="form_label" for="name">Họ Và Tên:</label>
+                <input type="text" class="form_input" id="name" style="width: 200px">
+            </div>
+            <div class="form_row">
+                <label for="email" class="form_label">Email:</label>
+                <input type="text" class="form_input" id="email" style="width: 250px">
+            </div>
+
+            <div class="form_checkbox" >
+                <label class="form_label_checkbox" for="sothich">Sở Thích :</label>
+<!--                <input type="checkbox" class="form_test" id="sothich">The thao-->
+<!--                <input type="checkbox" class="form_test" id="sothich">Âm Nhạc-->
+
+<!--                    <input type="checkbox" class="form_test" id="sothich">Đọc Sách-->
+<!--                    <input type="checkbox" class="form_test" id="sothich"> Lướt Web-->
+<!--                    <input type="checkbox" class="form_test" id="sothich">Du Lịch-->
+<!--                    <input type="checkbox" class="form_test" id="sothich">Chơi Game-->
+                    <table style="width: 680px; ">
+                        <tr>
+                            <td> <input type="checkbox" class="form_test" id="sothich">The thao</td>
+                            <td><input type="checkbox" class="form_test" id="sothich">Âm Nhạc</td>
+                            <td><input type="checkbox" class="form_test" id="sothich">Đọc Sách</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" class="form_test" id="sothich"> Lướt Web</td>
+                            <td><input type="checkbox" class="form_test" id="sothich">Du Lịch</td>
+                            <td><input type="checkbox" class="form_test" id="sothich">Chơi Game</td>
+                        </tr>
+                    </table>
+            </div>
+            <div class="form_button">
+                <input type="submit" value="Gửi Thông Tin">
+                <input type="reset" value="Nhập Lại">
+
+            </div>
+        </form>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự Kiện OnClick</title>
+
+</head>
+<body>
+<!--    <p onclick="do_something()">Click ME</p>-->
+<!--    <p id="click">Tạm Biệt</p>-->
+<!--<div id="idHtml"></div>-->
+<button value="value" id="idHtml" onclick="showMassage();"> Click</button>
+
+<script>
+    // function do_something() {
+    //     alert("Xin Chào");
+    // }
+    // var thuc_hien = document.getElementById("click");
+    // thuc_hien.addEventListener("click",demo);
+    // function demo() {
+    //     alert("Tạm Biệt");
+    // }
+    // function showMassage() {
+    //     alert("Xin chào");
+    // }
+    function showMassage() {
+        document.getElementById('idHtml').innerHTML = 'Xin Chào' ;
+    }
+    // function showMassage() {
+    //     document.writeln('Xin Chào')
+    // }
+</script>
+</body>
+</html>

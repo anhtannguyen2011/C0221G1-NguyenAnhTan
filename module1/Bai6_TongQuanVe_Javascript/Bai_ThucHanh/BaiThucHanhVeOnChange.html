@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sự Kiện Onchange</title>
+</head>
+<body>
+    <select onchange="do_something()" id="mySelect" multiple>
+        <option value="audi">audi</option>
+        <option value="bmw">bmv</option>
+        <option value="mercedes">mercedes</option>
+    </select>
+<script>
+    function do_something() {
+        var selectedValue = document.getElementById("mySelect").value;
+        alert(selectedValue);
+    }
+    // var selectedElement = document.getElementById("mySelect");
+    // selectedElement.addEventListener("change",changeFuntion);
+    // function changeFuntion() {
+    //     var selectValue = document.getElementById("mySelect").value;
+    //     alert(selectValue)
+    // }
+</script>
+</body>
+</html>

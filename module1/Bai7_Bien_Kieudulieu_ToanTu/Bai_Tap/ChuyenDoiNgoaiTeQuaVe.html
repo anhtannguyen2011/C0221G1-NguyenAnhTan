@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen Ngoai Te Qua Ve</title>
+</head>
+<body>
+                <label >
+                    Amount
+                </label>
+                <input type="text" id="amount">
+                <label >From Amount</label>
+                <select  id="amount_from">
+                    <option  value="VND">VND</option>
+                    <option  value="USD">USD</option>
+                </select>
+                <label >To Amount</label>
+                <select  id="amount_to">
+                    <option value="VND1">VND</option>
+                    <option  value="USD1">USD</option>
+                </select>
+                <button onclick="my_Funtion()">Covert</button>
+
+
+                <script>
+                    function my_Funtion() {
+                            var amout_Nhap=document.getElementById("amount").value;
+                            var amout_From=document.getElementById("amount_from").value;
+                            var amount_To=document.getElementById("amount_to").value;
+
+                            var result=0;
+
+                            if(amout_From==("VND") && amount_To==("USD1")){
+                                result=parseInt(amout_Nhap)/23000;
+                                alert(result);
+                            }else if(amout_From==("USD") && amount_To==("VND1")){
+                                result=parseInt(amout_Nhap)*23000;
+                                alert(result)
+                            }else if(amout_From==("VND") && amount_To==("USD1")){
+                                alert(amout_Nhap);
+                            }else {
+                                alert(amout_Nhap);
+                            }
+                    }
+                </script>
+
+</body>
+</html>

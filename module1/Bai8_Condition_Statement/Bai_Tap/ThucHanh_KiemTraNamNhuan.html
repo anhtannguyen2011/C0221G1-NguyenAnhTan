@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Năm Nhuận</title>
+</head>
+<body>
+        <script>
+            let soNam=parseInt(prompt('Nhập Số Năm:', ''));
+
+            if(soNam % 400 == 0 || soNam % 4 == 0 && soNam % 100 != 0 ){
+                alert(soNam+" Là Năm Nhuần");
+            }else {
+                alert(soNam+ "Không Phải Năm Nhuần");
+            }
+        </script>
+</body>
+</html>

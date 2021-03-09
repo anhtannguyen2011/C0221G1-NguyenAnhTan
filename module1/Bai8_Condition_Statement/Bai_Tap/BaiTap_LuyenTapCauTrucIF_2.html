@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cấu Trúc Điều Kiện If 2</title>
+</head>
+<body>
+        <div>
+                <h3>Chuyển từ độ C sang F</h3>
+                <label>Nhập Độ C :</label><input type="text" id="doC">
+                <input type="button" value="Kiểm Tra" onclick="baiTap1()"><br>
+                <p id="result1"></p>
+        </div> <div>
+            <h3>Chuyển từ m sang feet</h3>
+            <label>Nhập m :</label><input type="text" id="nhapM">
+            <input type="button" value="Kiểm Tra" onclick="baiTap2()"><br>
+            <p id="result2"></p>
+        </div>
+        <div>
+            <h3>Tính Diện Tích Hình Vuông</h3>
+            <label>Nhập cạnh a :</label><input type="text" id="nhapA">
+            <input type="button" value="Kiểm Tra" onclick="baiTap3()"><br>
+            <p id="result3"></p>
+        </div>
+        <div>
+            <h3>Tính Diện Tích Hình Chữ Nhật</h3>
+            <label>Nhập cạnh a :</label><input type="text" id="nhapCanhA">
+            <label>Nhập cạnh b :</label><input type="text" id="nhapCanhB">
+            <input type="button" value="Kiểm Tra" onclick="baiTap4()"><br>
+            <p id="result4"></p>
+        </div>
+        <div>
+            <h3>Tính Diện Tích Tam Giác Vuông</h3>
+            <label>Nhập cạnh a :</label><input type="text" id="nhapCanhtamgiaca">
+            <label>Nhập cạnh b :</label><input type="text" id="nhapCanhtamgiacb">
+            <input type="button" value="Kiểm Tra" onclick="baiTap5()"><br>
+            <p id="result5"></p>
+        </div>
+        <div>
+            <h3>Giải Phương Trình Bậc 1</h3>
+            <label>Nhập Số a :</label><input type="text" id="nhapSoa">
+            <label>Nhập Sô b :</label><input type="text" id="nhapSob">
+            <input type="button" value="Kiểm Tra" onclick="baiTap6()"><br>
+            <p id="result6"></p>
+        </div>
+        <div>
+            <h3>Giải Phương Trình Bậc 2</h3>
+            <label>Nhập Số a :</label><input type="text" id="nhapSoApt2">
+            <label>Nhập Sô b :</label><input type="text" id="nhapSoBpt2">
+            <label>Nhập Sô c :</label><input type="text" id="nhapSoCpt2">
+            <input type="button" value="Kiểm Tra" onclick="baiTap7()"><br>
+            <p id="result7"></p>
+        </div>
+        <div>
+            <h3>Xem 3 cạnh của tam giác</h3>
+            <label>Nhập Cạnh a :</label><input type="text" id="kiemtraA">
+            <label>Nhập Cạnh b :</label><input type="text" id="kiemtraB">
+            <label>Nhập Cạnh c :</label><input type="text" id="kiemtraC">
+            <input type="button" value="Kiểm Tra" onclick="baiTap8()"><br>
+            <p id="result8"></p>
+        </div>
+        <div>
+            <h3>Chương trình tính giá điện</h3>
+            <label>Nhập Số Điện :</label><input type="text" id="nhapSoDien">
+            <input type="button" value="Kiểm Tra" onclick="baiTap9()"><br>
+            <p id="result9"></p>
+        </div> <div>
+            <h3>Thuế Thu Nhập Cá Nhân</h3>
+            <label>Nhập Số Tiền :</label><input type="text" id="nhapTien">
+            <input type="button" value="Kiểm Tra" onclick="baiTap10()"><br>
+            <p id="result10"></p>
+        </div>
+        <div>
+            <h3>Tính Lãi Gởi Ngân Hàng</h3>
+            <label>Nhập Số Tiền :</label><input type="text" id="nhapSotien">
+            <label>Số Tháng Cho Vay</label><input type="text" id="nhapSoThang">
+            <label>Lãi Xuât Hàng Tháng</label><input type="text" id="nhapLaiXuat">
+            <input type="button" value="Kiểm Tra" onclick="baiTap11()">
+            <p id="result11"></p>
+        </div>
+        <div>
+            <h3>Kiểm Tra Số Tuổi Của 1 Người</h3>
+            <label>Nhập Số Tuổi :</label><input type="text" id="soTuoi">
+            <input type="button" value="Kiểm Tra" onclick="baiTap12()"><br>
+            <p id="result12"></p>
+        </div>
+
+        <script>
+    function baiTap1() {
+        let nhapDoC = parseInt(document.getElementById('doC').value);
+
+       let f =((nhapDoC * 9 / 5) + 32).toFixed(1) ;
+
+        if (isNaN(nhapDoC)){
+            alert("Bạn Nhập Không Phải Là Số :")
+        }else {
+            document.getElementById('result1').innerHTML = "Nhiệt Độ F Là :" +f;
+
+        }
+    }
+    function baiTap2() {
+            let nhapSoM = parseInt(document.getElementById('nhapM').value);
+            let ft = nhapSoM * 3.2808;
+
+            if(isNaN(nhapSoM)){
+                alert("làm ơn điền số vào")
+            }else {
+                document.getElementById('result2').innerText = "Só Ft là :" +ft.toFixed(2);
+            }
+    }
+    function baiTap3() {
+        let canhA = parseInt(document.getElementById('nhapA').value);
+
+        let dientich = canhA * canhA ;
+
+        if(isNaN(canhA)){
+            alert("Nhập Số Please :")
+        }else {
+            document.getElementById('result3').innerHTML = "Diện Tích Hình Vuông Là :" +dientich.toFixed(2);
+        }
+    }
+    function baiTap4() {
+        let canhA = parseInt(document.getElementById('nhapCanhA').value);
+        let canhB = parseInt(document.getElementById('nhapCanhB').value);
+
+        let dientich = canhA * canhB ;
+
+        if(isNaN(canhA) || isNaN(canhB)){
+            alert("Bạn Nhập Không Phải là số :")
+        }else {
+            document.getElementById('result4').innerHTML = "Diện Tích Hình Chữ Nhật Là :" +dientich.toFixed(2);
+        }
+    }
+    function baiTap5() {
+        let canhA = parseInt(document.getElementById('nhapCanhtamgiaca').value);
+        let canhB = parseInt(document.getElementById('nhapCanhtamgiacb').value);
+
+        let dienTichTamGiac = 1/2 * canhA * canhB;
+
+        if(isNaN(canhA) || isNaN(canhB)){
+            alert("Bạn Cần Nhập Số Vào :")
+        }else {
+            document.getElementById('result5').innerHTML = "Diện Tích Tam Giác Là :" +dienTichTamGiac.toFixed(2);
+        }
+    }
+    function baiTap6() {
+        let nhapSoA = parseInt(document.getElementById('nhapSoa').value);
+        let nhapSoB = parseInt(document.getElementById('nhapSob').value);
+
+        let x=(-nhapSoB)/nhapSoA;
+
+        let result = document.getElementById('result6');
+        if(nhapSoA == 0 && nhapSoB ==0){
+            result.innerHTML = "Phương Trình Vô Số Nghiệm";
+        }else if(nhapSoA ==0 && nhapSoB != 0){
+            result.innerHTML = "Phương Trình vô nghiệm";
+        }else {
+            result.innerHTML ="Phương Trình Có Nghiệm Duy Nhất :" +x.toFixed(2) ;
+        }
+    }
+    function baiTap7() {
+        let nhapsoa1 = parseInt(document.getElementById('nhapSoApt2').value);
+        let nhapsob1 = parseInt(document.getElementById('nhapSoBpt2').value);
+        let nhapsoc1 = parseInt(document.getElementById('nhapSoCpt2').value);
+        let result = document.getElementById('result7');
+        let delta = (nhapsob1 * nhapsob1) - (4 * nhapsoa1 * nhapsoc1);
+        let x1,x2;
+        if (parseInt(delta )< 0){
+            result.innerHTML = "Phương Trình Vô Nghiệm";
+        }else if(parseInt(delta) == 0){
+            result.innerHTML = "Phương Trình Có Nghiệm Kép x1, x2 =" +((-nhapsob1)/2*nhapsoa1);
+        }else {
+            result.innerHTML = "Phương Trình Có 2 Nghiệm: x1 =" +(x1=(-nhapsob1 + Math.sqrt(delta))/2 *nhapsoa1) +" Nghiệm x2=" +(x2=(-nhapsob1 - Math.sqrt(delta))/2 *nhapsoa1)
+        }
+    }
+    function baiTap8() {
+        let a = document.getElementById("kiemtraA").value;
+        let b = document.getElementById("kiemtraB").value;
+        let c = document.getElementById("kiemtraC").value;
+        let result = document.getElementById("result8");
+        if (isNaN(a)||isNaN(b)||isNaN(c)) {
+            result.innerHTML = "Dữ liệu không hợp lệ"
+        } else if ( (a>0 && b>0 && c>0) && ((a + b > c) || (a + c > b) || (b + c > a)) ) {
+            result.innerHTML = "Dữ liệu là các cạnh của một hình tam giác"
+        } else {
+            result.innerHTML = "Dữ liệu nhập vào không phải là các cạnh của một tam giác"
+        }
+
+    }
+    function baiTap9() {
+        let soKlW = parseInt(document.getElementById('nhapSoDien').value);
+        let result = document.getElementById('result9');
+        let soTien;
+        if(soKlW <= 50){
+            result.innerHTML = "Số Tiền Điện :" +(sotien = soKlW * 1549);
+        }else if(soKlW > 50 && soKlW <= 100){
+            result.innerHTML = "Số Tiền Điện :" +(sotien = soKlW * 1600);
+        }else if(soKlW > 100 && soKlW <= 200 ){
+            result.innerHTML = "Số Tiền Điện :" +(sotien = soKlW * 1858);
+        }else if(soKlW > 200 && soKlW <= 300){
+            result.innerHTML = "Số Tiền Điện :" +(sotien = soKlW * 2340);
+        }else{
+            result.innerHTML = "Số Tiền Điện :" +(sotien = soKlW * 2700);
+        }
+    }
+    function baiTap10() {
+        let soTien = parseInt(document.getElementById('nhapTien').value);
+
+        let result = document.getElementById('result10');
+        let phanTramThue ;
+        if(soTien < 10000000){
+            result.innerHTML = "Bạn Chưa Đủ Tiền Để Đóng Thu Nhập Cá Nhân";
+        }else {
+            result.innerHTML = "Bạn Cần Đóng Thuế Thu nhập là 10% :" +(phanTramThue =soTien /10);
+        }
+    }
+    function baiTap11() {
+        let nhapSotien = parseInt(document.getElementById('nhapSotien').value);
+        let nhapSothang = parseInt(document.getElementById('nhapSoThang').value);
+        let laiXuat = parseInt(document.getElementById('nhapLaiXuat').value);
+        let result = document.getElementById('result11');
+        let tienLai ;
+
+        if(nhapSotien > 10000000){
+            result.innerHTML = " Tiền Lãi Hàng Tháng Của Bạn Là" +(tienLai = nhapSotien * laiXuat * nhapSothang);
+        }else {
+            result.innerHTML = " Tiền Lãi Hàng Tháng Của Bạn Là" +(tienLai = nhapSotien * laiXuat  / nhapSothang);
+        }
+    }
+    function baiTap12() {
+        let nhapSoTuoi = parseInt(document.getElementById('soTuoi').value);
+
+        let result = document.getElementById('result12')
+
+        if(isNaN(nhapSoTuoi)){
+            alert("Làm Ơn Nhập Số Vào !!");
+            return;
+        }
+
+        if(nhapSoTuoi > 0 && nhapSoTuoi <=120){
+            result.innerHTML = nhapSoTuoi + " Đó Lầ Tuổi Của 1 Người" ;
+        }else {
+            result.innerHTML = nhapSoTuoi + " ĐÓ không phải của 1 con người";
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập cấu trúc If</title>
+</head>
+<body>
+        <div class="form_row">
+            <h3>Kiểm Tra a có chia hết cho b hay không</h3>
+            <label>Nhập Số a :</label><input type="text" id="nhap_Soa">
+            <label>Nhập Số b :</label><input type="text" id="nhap_Sob">
+            <button onclick="baiTap1()">Kiểm Tra</button>
+            <p id="Result1"></p>
+        </div>
+        <div class="form_row">
+            <h3>Tuổi học sinh có đủ học lớp 10</h3>
+            <label>Nhập Số Tuổi :</label><input type="text" id="nhap_SoTuoi">
+            <button onclick="baiTap2()">Kiểm Tra</button>
+            <p id="Result2"></p>
+        </div>
+        <div class="form_row">
+            <h3>Cho người dùng biết số đó có nhỏ hơn 0 hay không</h3>
+            <label>Nhập Số Nguyên :</label><input type="text" id="nhap_SoNguyen">
+
+            <button onclick="baiTap3()">Kiểm Tra</button>
+            <p id="Result3"></p>
+        </div>
+        <div class="form_row">
+            <h3>Tìm giá trị lớn nhất của 3 số</h3>
+            <label>Nhập Số a :</label><input type="text" id="nhap_SoA1">
+            <label>Nhập Số b :</label><input type="text" id="nhap_SoB2">
+            <label>Nhập Số c :</label><input type="text" id="nhap_SoC">
+            <button onclick="baiTap4()">Kiểm Tra</button>
+            <p id="Result4"></p>
+        </div>
+        <div class="form_row">
+            <h3>Xếp hạng học lực của học sinh</h3>
+            <label>Điểm Bài Kiểm Tra :</label><input type="text" id="baikiemtra">
+            <label>Điểm Thi Giữa Kì :</label><input type="text" id="giuaki">
+            <label>Điểm Thi Cuối Kì :</label><input type="text" id="cuoiki">
+            <button onclick="baiTap5()">Kiểm Tra</button>
+            <p id="Result5"></p>
+        </div>
+        <div class="form_row">
+            <h3>Tính hoa hồng</h3>
+            <label>Nhập Doanh Số Bán Hàng :</label><input type="text" id="nhap_DoanhSo">
+
+            <button onclick="baiTap6()">Kiểm Tra</button>
+            <p id="Result6"></p>
+        </div>
+        <div class="form_row">
+            <h3>Tính cước điện thoại</h3>
+            <label>Nhập Số Phút Điện Thoại:</label><input type="text" id="nhap_Sophut">
+
+            <button onclick="baiTap7()">Kiểm Tra</button>
+            <p id="Result7"></p>
+        </div>
+
+        <script>
+             function baiTap1() {
+                let soA = (document.getElementById("nhap_Soa").value);
+                let soB = (document.getElementById("nhap_Sob").value);
+                if(soA == "" || soB == "" ){
+                    alert("Bạn Cần Nhập Dữ Liệu Vào :");
+                    return;
+                }
+
+                if (isNaN(soA) == true || isNaN(soB) == true){
+                    alert('Bạn Cần Nhập Số:');
+                    return;
+                }
+                if(soA % soB == 0){
+                   document.getElementById('Result1').innerHTML = "a chia hết cho b";
+                }else {
+                    document.getElementById('Result1').innerHTML = "a không chia hết cho b";
+                }
+
+             }
+
+             function baiTap2() {
+                let nhap_SoTuoi = parseInt(document.getElementById('nhap_SoTuoi').value);
+
+                if (!isNaN(nhap_SoTuoi)){
+                    if (nhap_SoTuoi >= 16){
+                        document.getElementById('Result2').innerHTML = 'Bạn Đã Đủ điều kiện học lớp 10';
+                    }else {
+                        document.getElementById('Result2').innerHTML = 'Bạn chưa Đủ điều kiện học lớp 10';
+                    }
+
+
+                }else {
+                    alert('Làm ơn nhập số tuổi bằng số vào;');
+                }
+             }
+
+             function baiTap3() {
+                    let soNguyen = parseInt(document.getElementById('nhap_SoNguyen').value);
+
+                    if(isNaN(soNguyen)){
+                        alert("Nhập Số Please");
+                        return;
+                    }
+                    if(soNguyen >= 0){
+                        document.getElementById('Result3').innerHTML = "Số Bạn Nhập Là Số Nguyên Dương";
+                    }else {
+                        document.getElementById('Result3').innerHTML = "Số Bạn Nhập Là Không Phải là Số Nguyên Dương";
+                    }
+             }
+
+             function baiTap4() {
+                 let nhapsoA = parseInt(document.getElementById('nhap_SoA1').value);
+                 let nhapsoB = parseInt(document.getElementById('nhap_SoB2').value);
+                 let nhapsoC = parseInt(document.getElementById('nhap_SoC').value);
+
+                 if(nhapsoA > nhapsoB){
+                     if (nhapsoA > nhapsoC){
+                         document.getElementById('Result4').innerHTML = 'A là số lớn Nhất';
+                     }else {
+                         document.getElementById('Result4').innerHTML = 'C là số lớn Nhất';
+                     }
+                 }else {
+                     if (nhapsoB > nhapsoC){
+                         document.getElementById('Result4').innerHTML = 'B là số lớn Nhất';
+                     }else {
+                         document.getElementById('Result4').innerHTML = 'C là số lớn Nhất';
+                     }
+                 }
+             }
+
+             function baiTap5() {
+                    let diemKiemtra = parseInt(document.getElementById('baikiemtra').value);
+                    let diemGiuaky = parseInt(document.getElementById('giuaki').value);
+                    let diemCuoiki = parseInt(document.getElementById('cuoiki').value);
+
+                    let result5 = document.getElementById('Result5');
+
+                    result1 = ((diemKiemtra + (diemGiuaky * 2) +(diemCuoiki *3)) / 6).toFixed(2) ;
+                    if(result1 >= 8.0){
+                        result5.innerHTML = "Học Sinh Giỏi";
+
+                    }else if(result1 < 8 && result1 >= 6.5 ){
+                        result5.innerHTML = result1 +':Học Sinh Khá ' ;
+                    }else if(result1 < 6.5 && result1 >= 5.0){
+                        result5.innerHTML =result1+ ' :Học Sinh Trung Bình ' ;
+                    }else {
+                        result5.innerHTML =result1+ ':Học Sinh Kém ' ;
+                    }
+             }
+
+             function baiTap6() {
+                let doanhSo = parseInt(document.getElementById('nhap_DoanhSo').value);
+                let result6 = document.getElementById('Result6');
+
+                if(doanhSo >= 300000 && doanhSo <500000) {
+                    result6.innerHTML = "Bạn Nhân Được 3 % tiền hoa hồng: " +(doanhSo * 3 / 100);
+                    return;
+                }else if (doanhSo >= 500000 && doanhSo <1000000) {
+                    result6.innerHTML = " Bạn Nhận Được 5 % tiền hoa hồng : " +(doanhSo *5 / 100);
+                     return;
+                }else if (doanhSo >= 1000000){
+                    result6.innerHTML = "Bạn Nhận Được 10 % tiền hoa hồng : " +(doanhSo / 10);
+                    return;
+                }else{
+                    result6.innerHTML="Bạn Không Nhận Được tiền hoa hồng";
+                    return;
+                }
+             }
+
+             function baiTap7() {
+                    let soPhut = parseInt(document.getElementById('nhap_Sophut').value);
+                    let result7=document.getElementById('Result7');
+
+                    tiencuoc = soPhut * 2000;
+
+                    if(soPhut <= 1000){
+                        result7.innerHTML = "Số Tiền Bạn Cần Thanh Toán Là :"  +tiencuoc+ "VNĐ";
+                        return;
+                    }else if(soPhut > 1000){
+                        result7.innerHTML = tiencuoc+"VNĐ" +" Bạn Dùng Quá Số Cước Giới Hạn, Bạn Phải Đóng Thêm Cước Phí:" +(tiencuoc/25)+"VNĐ";
+                        return;
+                    }
+             }
+
+        </script>
+</body>
+</html>

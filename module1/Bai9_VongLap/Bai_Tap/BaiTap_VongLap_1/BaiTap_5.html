@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Tổng 20 Số Fibonacy Đầu Tiên</title>
+</head>
+<body>
+<script>
+    function Baitap5(n) {
+        if(n<2){
+            return 1;
+        }else{
+            return Baitap5(n-2) + Baitap5(n-1);
+        }
+    }
+    function displayTong() {
+        let nhapSo = prompt("Nhập Số Fibonacy");
+        let totalOfFibo = 0;
+        for (let i = 0; i<nhapSo;i++){
+            totalOfFibo += Baitap5(i);
+        }
+       document.write(totalOfFibo);
+    }
+    displayTong();
+
+</script>
+</body>
+</html>

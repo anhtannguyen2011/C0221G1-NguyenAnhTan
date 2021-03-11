@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Toán Nhiệt Độ</title>
+</head>
+<body>
+<script>
+    do{
+        nhietDo = parseInt(prompt("Nhập Nhiệt Độ Vào :"));
+    }while (isNaN(nhietDo));
+
+    if(nhietDo > 100){
+        alert("Yêu Cầu Giảm Nhiệt Độ");
+    }else if(nhietDo < 20){
+        alert("Yêu Cầu Tăng Nhiệt Độ");
+    }else {
+        alert("Nhiệt Độ Đã Chuẩn");
+    }
+</script>
+</body>
+</html>

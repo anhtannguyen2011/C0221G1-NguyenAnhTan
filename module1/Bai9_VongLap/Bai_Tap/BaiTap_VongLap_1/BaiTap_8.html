@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô Tả Ứng Dụng Người Chơi</title>
+</head>
+<body>
+        <h3>Mô Tả Ứng Dụng Người Chơi</h3>
+        <pre>-Ứng dụng hiển thị cửa sổ prompt cho phép người dùng nhập vào muốn đoán trong khoảng nào
+    Ứng dụng chọn ra số ngẫu nhiên trong khoảng mà ngườI dùng chọn  
+    Ứng dụng hiển thị cửa số prompt cho người dùng nhập giá trị mà người dùng đoán  
+    Ứng dụng lấy kết quả và so sánh với giá trị ngẫu nhiên.
+    Nếu bằng thì hiển thị thông báo chúc mừng và kết thúc lượt chơi  
+    Nếu lớn hơn hoặc bé thua thì hiển thị thông báo lớn hơn hay bé thua và cho phép người dùng lựa chọn lại.</pre>
+
+<input type="button" style="display: block" value="Play" onclick="Flay()" id="playButton">
+<input type="button" style="display: none" value="Play Again" id="playAgain" onclick="playAgain()">
+<p id="result"></p>
+
+<script>
+                let re = document.getElementById("result");
+                let play = document.getElementById("playButton");
+                let again = document.getElementById("playAgain");
+        function Flay() {
+
+            let count = 0;
+            let min = parseInt(prompt("Nhập Min",""));
+            let max = parseInt(prompt("Nhập Max",""));
+            let random = Math.floor(Math.random() * (max - min + 1) + min);
+            while (count < 3){
+                let duDoanSo = parseInt(prompt("Số Đoán Của Bạn"));
+                if (random === duDoanSo ){
+                    re.innerHTML = "Chúc Mừng Bạn Đã Đúng";
+                    play.style.display = "none";
+                    again.style.display= "block";
+                    break;
+                }else {
+                    if(duDoanSo > random){
+                        alert("Số Bạn Đoán Lớn Hơn Số Đúng") ;
+                    }else {
+                       alert("Số Bạn Đoán Lớn Hơn Số Đúng");
+                    }
+                }
+                count++;
+            }
+
+
+
+        }
+        function playAgain() {
+            play.style.display = "block";
+            again.style.display = "none";
+        }
+
+
+</script>
+</body>
+</html>

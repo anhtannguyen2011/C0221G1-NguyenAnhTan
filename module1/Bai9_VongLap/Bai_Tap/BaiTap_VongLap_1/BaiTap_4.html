@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dãy Fibonaci Chia Hết Cho 5</title>
+</head>
+<body>
+    <script>
+         function fiboNacy(n) {
+                if(n < 2){
+                    return 1;
+                }else {
+                    return fiboNacy(n - 2) + fiboNacy(n - 1);
+                }
+         }
+         function disPlay() {
+            let num =2;
+
+            while (fiboNacy(num) % 5 != 0){
+
+                num++;
+            }
+
+            document.write("Số Fibonaci Chia Hết cho 5 là :"+fiboNacy(num)) ;
+
+         }
+         disPlay();
+    </script>
+</body>
+</html>

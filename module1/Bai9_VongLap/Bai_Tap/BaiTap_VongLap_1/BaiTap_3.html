@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Fibonaci</title>
+</head>
+<body>
+    <script>
+        function Fibonancci(n) {
+            if (n < 2) {
+                return 1;
+            } else {
+                return Fibonancci(n-2) + Fibonancci(n-1);
+            }
+        }
+        function display() {
+            let nhapso = prompt("Nhập Số Cần Nhập");
+            let dayFibo = "";
+
+            for (let i = 0; i<=nhapso ; i++){
+                dayFibo += Fibonancci(i) + ",";
+            }
+            document.write(dayFibo);
+        }
+        display();
+    </script>
+</body>
+</html>

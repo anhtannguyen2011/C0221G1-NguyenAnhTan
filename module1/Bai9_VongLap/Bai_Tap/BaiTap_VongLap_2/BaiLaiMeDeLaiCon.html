@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lãi</title>
+</head>
+<body>
+        <script>
+            let soTien = prompt("Nhập Số Tiền Tiết Kiệm");
+            let soThang = prompt("Nhập Số Tháng");
+            let loiNhuan= prompt("Nhập Số %");
+            let tong=0;
+            for(let i = 1; i<=soThang; i++){
+                tong = soTien+ (soTien* loiNhuan);
+            }
+            document.write(tong);
+        </script>
+</body>
+</html>

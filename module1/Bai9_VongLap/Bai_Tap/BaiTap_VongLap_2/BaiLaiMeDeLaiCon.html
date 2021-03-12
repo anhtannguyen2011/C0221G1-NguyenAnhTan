@@ -6,14 +6,14 @@
 </head>
 <body>
         <script>
-            let soTien = prompt("Nhập Số Tiền Tiết Kiệm");
-            let soThang = prompt("Nhập Số Tháng");
-            let loiNhuan= prompt("Nhập Số %");
-            let tong=0;
+            let soTien = parseFloat(prompt("Nhập Số Tiền Tiết Kiệm"));
+            let soThang =parseFloat(prompt("Nhập Số Tháng")) ;
+            let loiNhuan= parseFloat(prompt("Nhập Số %"));
+            // let tong=0;
             for(let i = 1; i<=soThang; i++){
-                tong = soTien+ (soTien* loiNhuan);
+                soTien = soTien+ (soTien* loiNhuan);
             }
-            document.write(tong);
+            document.write(soTien);
         </script>
 </body>
 </html>

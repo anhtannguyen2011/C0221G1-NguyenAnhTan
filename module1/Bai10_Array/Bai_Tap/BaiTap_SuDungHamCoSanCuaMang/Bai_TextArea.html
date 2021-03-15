@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Area</title>
+</head>
+<body>
+<textarea rows="10" cols="10" style="width: 300px" id="textArea" onkeydown="myFuntion()"></textarea>
+
+    <script>
+
+        function myFuntion() {
+            let arr = ["T","Ô","I"," ","","L","À"," "," ","K","Ẻ"," ","N","G","Ố","C"," ","!","!","!"];
+            let key = "";
+
+            let area = document.getElementById('textArea').value;
+            let textArea = area.length;
+
+            if (textArea > 0){
+                for(let i =0 ; i <= textArea; i++){
+                    key = key + arr[i];
+                    if(i == 20 ){
+                        document.getElementById('textArea').value = "";
+                        key= "";
+                    }
+                }
+            }
+            document.getElementById('textArea').value = key;
+            key =  "";
+            setTimeout("myFuntion()", 1);
+        }
+    </script>
+</body>
+</html>

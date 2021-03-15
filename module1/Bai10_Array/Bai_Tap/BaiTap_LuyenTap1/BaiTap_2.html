@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 2</title>
+</head>
+<body>
+    <script>
+        let arr = [1,12,33,55,77,101,12,13,0,303];
+        // let count ="";
+        // arr1 = parseFloat(arr);
+        let max =arr[0];
+        let index = 0;
+        // document.write(arr);
+        for (let i =0 ; i<arr.length; i++){
+                if(arr[i] > max  ){
+                    max = arr[i];
+                    index = i ;
+                }
+        }
+        document.write("Số Lớn Nhất Là :" +max+" vị trí thứ :"+index);
+    </script>
+</body>
+</html>

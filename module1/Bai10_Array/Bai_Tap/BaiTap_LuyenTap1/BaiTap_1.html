@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 1</title>
+</head>
+<body>
+        <script>
+           let arr = new Array();
+            let count = 0;
+            let nhapSoPhanTu = prompt("Số Phần Tử cần Nhập")
+            for(let i = 0 ; i < nhapSoPhanTu; i++){
+                arr[i] = prompt("Số Phần Tử Nhập Vào");
+                if(arr[i] >= 10){
+                   count++
+                }
+
+            }
+            document.write("Có "+count+" số nguyên lớn hơn 10");
+        </script>
+</body>
+</html>

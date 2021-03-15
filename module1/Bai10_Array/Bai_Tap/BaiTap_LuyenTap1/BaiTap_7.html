@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 7</title>
+</head>
+<body>
+        <script>
+            let arr = [1,2,4,5,6,7,8,10,20,30];
+            let nhapSo = parseInt(prompt("Nhập Số Vào"));
+            let check = false;
+            for (let i = 0; i < arr.length; i++){
+                if (nhapSo === arr[i]){
+                    check = true;
+                    break;
+                }
+            }
+            if (check){
+
+            }else {
+                alert("Số Đó không nằm trong mảng");
+
+            }
+
+            alert("Mảng Sau Khi Xóa :" +nhapSo+"là" +arr.filter(function (b) {
+                    return b !== nhapSo;
+            })+",0");
+
+        </script>
+</body>
+</html>

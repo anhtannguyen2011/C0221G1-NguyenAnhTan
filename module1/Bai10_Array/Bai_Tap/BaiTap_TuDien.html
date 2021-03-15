@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Từ Điển</title>
+</head>
+<body>
+<input type="text" id="vietNamese">
+<input type="button" value="Translate" onclick="transLate()">
+<input type="text" id="en">
+<p id="result"></p>
+
+        <script>
+            // let result = document.getElementById('result');
+            function transLate() {
+
+                // let outputEn = document.getElementById("en").value;
+                let inputVietNam = document.getElementById("vietNamese").value;
+                let vietNam = ["Mèo", "Chó", "Gà" , "Cá"];
+                let tiengAnh = ["Cat", "Dog", "Chicken" , "Fish"];
+                for (let i = 0; i < vietNam.length; i++) {
+                        if(inputVietNam === vietNam[i]){
+
+                            document.getElementById("en").value = tiengAnh[i];
+                            break;
+                        }else {
+                            document.getElementById("en").value = "Không Tìm Thấy Dữ Liệu";
+                        }
+
+                }
+            }
+
+        </script>
+</body>
+</html>

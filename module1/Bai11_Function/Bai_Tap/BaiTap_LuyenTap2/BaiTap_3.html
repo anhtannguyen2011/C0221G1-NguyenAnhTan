@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 3</title>
+</head>
+<body>
+        <script>
+            function tinhGiaiThua(number) {
+                let count = 1;
+                for(let i = number; i >0; i--){
+                    count = count * i;
+                }
+                return count;
+            }
+
+            let nhapSo = parseInt(prompt("Nhập Số Vào"));
+            document.write(tinhGiaiThua(nhapSo));
+        </script>
+</body>
+</html>

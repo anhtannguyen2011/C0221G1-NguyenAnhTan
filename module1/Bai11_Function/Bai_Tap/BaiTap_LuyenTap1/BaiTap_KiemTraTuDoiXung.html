@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Từ Đối Xứng</title>
+</head>
+<body>
+
+
+<!--        <script>-->
+<!--            function isPalindrome(chuoi) {-->
+<!--                chuoi = prompt("Nhập Chuỗi Thứ Nhất");-->
+<!--                let epchuoi = chuoi.split("");-->
+<!--                for(let i = 0 ; i < epchuoi.length; i++){-->
+<!--                    if(epchuoi[0] === epchuoi[length-1]){-->
+<!--                        if(epchuoi.length === 1){-->
+<!--                            alert("Chuỗi Đối Xứng")-->
+<!--                        }-->
+<!--                    }-->
+<!--                }-->
+
+
+<!--            }-->
+<!--        </script>-->
+<script>
+    // function isChecked(str) {
+    //     if (str[0] == str[str.length - 1]) {
+    //         if (str.length === 1) {
+    //             alert('Array is PALINDROME array');
+    //             return;
+    //         }
+    //         newStr = str.slice(1,str.length-1);
+    //         isChecked(newStr);
+    //     } else {
+    //         alert('Array is NOT PALINDROME array');
+    //         return;
+    //     }
+    //     return str;
+    // }
+    //
+    // alert(isChecked(prompt("Truyền Chuỗi Vào")));
+
+
+    function isPalindrome(chuoi) {
+        if (chuoi[0] === chuoi[chuoi.length - 1]) {
+            if (chuoi.length === 1) {
+                alert("Chuỗi Này Đối Xứng Nhau");
+                return;
+            }
+            newchuoi = chuoi.slice(1, chuoi.length - 1);
+            isPalindrome(newchuoi);
+        } else {
+            alert("Không Phải Chuỗi Đối Xứng");
+
+        }
+        return "Đã Kiểm Tra Xong";
+    }
+    alert(isPalindrome(prompt("Nhập Vào Chuỗi Palindrome")));
+
+</script>
+</body>
+</html>

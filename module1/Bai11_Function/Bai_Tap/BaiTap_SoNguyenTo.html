@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Số Nguyên Tố</title>
+</head>
+<body>
+        <script>
+            let nhapSo= prompt("Nhập Số Vào");
+            let count=0;
+            let result= "";
+            let n =0;
+                function isPrime() {
+
+                    while (count<nhapSo){
+                        let check = true;
+                        if(n < 2){
+                            check =false;
+
+                        }else if(n === 2 ){
+                            check = true;
+                        }else {
+                            for(let i = 2 ; i < n; i++){
+                                if(n % i == 0){
+                                    check = false;
+                                    break;
+                                }
+                            }
+                        }
+                        if(check === true){
+                            count ++;
+                            result += n + "<br>";
+                        }
+                        n++;
+                    }
+                document.write(result);
+
+                }
+             isPrime();
+        </script>
+</body>
+</html>

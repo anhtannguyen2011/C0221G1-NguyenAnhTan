@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 8</title>
+</head>
+<body>
+        <script>
+            let arr = new Array();
+            let nhapSoPhanTu = prompt("Nhập Số Phần Tử");
+            for (let i = 0; i< nhapSoPhanTu;i++){
+                arr[i] = prompt("Mảng Cần Nhập");
+            }
+            function daoSoPhanTu(number) {
+
+                for(let i = 0; i<number.length/2;i++){
+                    let c = number[i];
+                    number[i] = number[number.length -1 -i];
+                    number[number.length -1 -i] = c;
+                }
+                return number;
+
+
+            }
+
+            document.write(daoSoPhanTu(arr));
+        </script>
+</body>
+</html>

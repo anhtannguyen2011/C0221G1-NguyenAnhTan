@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 9</title>
+</head>
+<body>
+    <script>
+        function check(a, array) {
+            let check = false;
+            let count = 0;
+            for(let i = 0; i < array.length; i++){
+                if(array[i] === a){
+                    check = true;
+                    count++;
+
+                }
+            }
+            if(check) {
+                return count;
+            }else {
+                return -1
+            }
+           // return "Kết Thúc Kiểm Tra";
+
+
+
+        }
+        function nhapMang(arr) {
+            let nhapSo= prompt("Nhập Số Vào Kí Tự Mảng");
+
+            for(let j =0; j<nhapSo;j++){
+                arr[j]=prompt("Nhập Số Mảng");
+            }
+            return arr;
+        }
+        let arr = new Array();
+        alert(nhapMang(arr));
+        let nhapSo= prompt("Nhập Số Cần Kiểm Tra");
+        alert(check(nhapSo,arr));
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 2</title>
+</head>
+<body>
+        <script>
+            function dienTichHinhTron(r) {
+               let dientich = r * r * 3.14;
+                return dientich;
+            }
+            function chuViHinhTron(r) {
+              let chuvi = 2 * r * 3.14;
+                return chuvi;
+            }
+
+            let nhapSo = parseInt(prompt("Nhập Số Vào"));
+            document.write("Diện Tích Hình Tròn Là : "+dienTichHinhTron(nhapSo));
+            document.write("<br>");
+            document.write("Chu Vi Hình Tròn :  "+chuViHinhTron(nhapSo));
+        </script>
+</body>
+</html>

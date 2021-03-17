@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 5</title>
+</head>
+<body>
+        <script>
+            let arrOne = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe Regulus'];
+            let arrTwo = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major' , 'Leo'];
+            
+            function checkMang(arrMot, arrHai , nhapChu) {
+
+                for (let i =0 ; i < arrMot.length; i++){
+                    if(nhapChu === arrMot[i]  ){
+                       return arrHai[i];
+
+                    }
+                }
+                return "Không Nằm Trong"
+
+                // if(check){
+                //     alert("Bạn Đã Tìm Đúng");
+                // }else {
+                //     alert("Không Nằm Trong Mảng");
+                //
+                // }
+                //
+                // return ;
+            }
+
+            let nhap = prompt("Nhập Chòm Sao");
+            let result = checkMang(arrOne,arrTwo,nhap);
+            document.write(result);
+        </script>
+</body>
+</html>

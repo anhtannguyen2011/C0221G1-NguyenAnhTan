@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 6</title>
+</head>
+<body>
+        <script>
+           let arr = new Array();
+           let nhapSoPhanTu = prompt("Số Phần Tử Trong Mảng");
+           for (let i = 0; i < nhapSoPhanTu;i++){
+               arr[i]= prompt("Nhập Vào")
+           }
+
+            function doiCho(number) {
+                let c = number[0];
+                number[0]=number[1];
+                number[1]= c;
+
+                return number;
+            }
+
+
+            document.write(doiCho(arr));
+        </script>
+</body>
+</html>

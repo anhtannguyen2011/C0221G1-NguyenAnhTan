@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="61457da0-2599-49d2-985c-9edcfae4c093" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Array/.idea/Array.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../BaiTap_HTML/.idea/BaiTap_HTML.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Bai_Tap2/.idea/Bai_Tap2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/Function.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/Bai_Tap.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaiTap_ChuyenFeetSangMeters.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaiTap_LuyenTap1/.idea/BaiTap_LuyenTap1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaiTap_LuyenTap1/BaiTap_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaiTap_LuyenTap1/BaiTap_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaiTap_LuyenTap1/BaiTap_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaiTap_LuyenTap1/BaiTap_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaiTap_LuyenTap1/BaiTap_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/BaiTap_LuyenTap2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap_2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap_3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap_4.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap_5.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap_6.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap_7.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap_8.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BaiTap_9.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BaiTap_SoNguyenTo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ThucHanh_1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ThucHanh_ChuyenDoiNhietDo.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../ThucHanh_TimGiaTriNhoNhatCuaMang.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Vong_Lap/.idea/Vong_Lap.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Vong_Lap/BaiTap_VongLap/.idea/BaiTap_VongLap.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Vong_Lap/BaiVongLap_2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Vong_Lap/BaiVongLap_2/.idea/BaiVongLap_2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Vong_Lap/BaiVongLap_2/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Vong_Lap/BaiVongLap_2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Vong_Lap/BaiVongLap_2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Vong_Lap/LuyenTap_VongLap/.idea/LuyenTap_VongLap.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Bai1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Bai2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BaiCodeGit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BaiTapGit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Baitap.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../BaitapGit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../Baitapgitchinh.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../baitap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../index.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1ppTIqtSmBXGxBQOKzlmWMPbGlK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="61457da0-2599-49d2-985c-9edcfae4c093" name="Default Changelist" comment="" />
+      <created>1615878954788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1615878954788</updated>
+      <workItem from="1615878955886" duration="10954000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Thực Hành 4</title>
+</head>
+<body>
+        <script>
+                class Battery{
+                    constructor(energy) {
+                        this.energy = energy;
+                    }
+                    getEnergy(){
+                        return this.energy;
+                    }
+                    setEnergy(energy){
+                        this.energy = energy;
+                    }
+                    decresaEnergy(){
+                        if(this.energy > 0){
+                            this.energy--;
+                        }
+                    }
+                }
+                class FlassLamp{
+                    constructor(battery,status) {
+                        this.battery = battery;
+                        this.status = status;
+                    }
+                    getBatteryInfo(){
+                        return this.battery.getEnergy();
+                    }
+                    setBattery(battery){
+                        this.battery = battery;
+                    }
+                    light(){
+                        if(this.status){
+                            alert("Lighting");
+                        }else {
+                            alert("Not lighting");
+                        }
+                    }
+                    turnOn(){
+                        this.status = true
+                    }
+                    turnOff(){
+                        this.status = false;
+                    }
+                }
+                let battery = new Battery();
+                battery.setEnergy(10);
+
+                let flassLamp = new FlassLamp();
+                flassLamp.setBattery(battery);
+
+                document.write("Battery Info: " +flassLamp.getBatteryInfo()+ "<br>");
+                flassLamp.light();
+
+                document.write("Turn on </br>");
+                flassLamp.turnOn();
+                flassLamp.turnOff();
+                document.write("Battery Info :" +flassLamp.getBatteryInfo() +"<br>");
+
+                document.write("Turn 0ff <br>");
+                flassLamp.turnOff();
+                flassLamp.light();
+        </script>
+</body>
+</html>

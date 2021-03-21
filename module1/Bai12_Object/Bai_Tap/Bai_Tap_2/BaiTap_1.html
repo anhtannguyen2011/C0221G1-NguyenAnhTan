@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 1</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="1368px" height="768px" style="border:1px solid #d3d3d3;"/>
+        <script>
+            class Rectangle{
+                constructor(chieuDai,chieuRong) {
+                    this.chieuDai =chieuDai ;
+                    this.chieuRong = chieuRong;
+                }
+                getDienTich(){
+                    return this.chieuDai * this.chieuRong;
+                }
+                getChuVi(){
+                    return (this.chieuDai + this.chieuRong) * 2;
+                }
+                setChieuDai(chieuDai){
+                    this.chieuDai = chieuDai;
+
+                }
+                setChieuRong(chieuRong){
+                    this.chieuRong = chieuRong;
+                }
+                // setChangeSize(){
+                //     let chieudai = prompt("Nhập Chiều Dài :");
+                //     let chieurong = prompt("Nhập Chiều Rộng ");
+                //     this.setChieuDai(chieudai);
+                //     this.setChieuRong(chieurong);
+                // }
+                getveHinh() {
+                    let ctx = document.getElementById("myCanvas").getContext("2d");
+                    ctx.fillStyle ="red";
+                    ctx.beginPath();
+                    ctx.fillRect(0,30,this.chieuDai,this.chieuRong);
+                    ctx.fill();
+                    // alert(ctx+this.chieuDai+this.chieuRong);
+
+
+                }
+            }
+            let rectangObj = new Rectangle(100,70);
+            let dienTich = rectangObj.getDienTich();
+            let chuVi = rectangObj.getChuVi();
+            alert(dienTich);
+            alert(chuVi);
+            let vehinh = rectangObj.getveHinh();
+            document.write(vehinh);
+
+
+
+
+
+
+
+
+        </script>
+</body>
+</html>

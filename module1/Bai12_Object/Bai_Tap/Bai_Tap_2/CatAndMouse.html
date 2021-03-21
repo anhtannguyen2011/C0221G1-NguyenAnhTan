@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cat And Mouse</title>
+</head>
+<body>
+        <script>
+            class Animal{
+                constructor(name,weight,speed) {
+                    this.name = name;
+                    this.weight = weight;
+                    this.speed = speed;
+                }
+                getWeight(){
+                    return this.speed
+                }
+
+            }
+            class Cat extends Animal{
+                constructor(name,weight,speed) {
+                    super(name,weight,speed);
+                }
+                getName(){
+                    return this.name;
+
+                }
+                say(){
+                    alert("Meo Meo");
+                }
+                eat(mouse){
+                    if(mouse.getStatus()){
+                        this.say();
+                        mouse.say();
+                        this.weight += mouse.getWeight();
+
+                    }
+                }
+                catchMouse(mouse){
+                    if(this.speed > mouse.speed){
+                        this.eat(mouse);
+                    }
+                }
+            }
+            class Mouse extends Animal{
+                constructor(name,weight,speed,status) {
+                    super(name,weight,speed);
+                    this.status = status;
+                }
+                getStatus(){
+                    return this.status;
+                }
+                say(){
+                    alert("Chit chit");
+                }
+
+            }
+
+            let mouse = new Mouse("Chuột",3,5,"Sống");
+            let cat = new Cat("Mèo",10,10);
+
+            cat.eat(mouse);
+            alert(cat.weight);
+        </script>
+</body>
+</html>

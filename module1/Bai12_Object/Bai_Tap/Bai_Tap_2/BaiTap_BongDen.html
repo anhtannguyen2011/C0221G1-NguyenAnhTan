@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bóng Đèn</title>
+</head>
+<body>
+    <h3>Bài Tập Bóng Đèn</h3>
+    <img src="pikachu.jpg" id="hinhanh" style="height: 400px;width: 400px">
+    <h3 id="result">PiKaChu Cười</h3>
+    <button onclick="clickOnOff()">Click</button>
+
+
+<script>
+        class Button{
+            constructor(status) {
+                this.status = status;
+            }
+
+            buttonStatus(){
+                this.status = !this.status;
+            }
+        }
+        class Pikachu{
+            constructor(button, status) {
+                this.button = button;
+                this.status = status;
+            }
+
+            change(){
+                if(this.button.status){
+                    document.getElementById("hinhanh").src = "pikachu.jpg";
+                    document.getElementById("result").innerText ="PiKaChu Cười";
+                }else {
+                    document.getElementById("hinhanh").src = "pikachu1.jpg";
+                    document.getElementById("result").innerText ="Pika Pika";
+                }
+
+            }
+        }
+        let button = new Button(false);
+        let pikachu = new Pikachu(button,false);
+
+        function clickOnOff() {
+            button.buttonStatus();
+            pikachu.change();
+        }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam vs Eva</title>
+</head>
+<body>
+        <script>
+            class Apple{
+                constructor(weight) {
+                    this.weight = weight;
+                }
+
+
+                getWeight(){
+                    return this.weight;
+                }
+                descreate(){
+                    this.weight--
+                }
+            }
+            class Human{
+                constructor(name,gender,cannang) {
+                    this.name = name;
+                    this.gender = gender;
+                    this.cannang = cannang;
+                }
+                getName(){
+                    return this.name;
+                }
+                getGender(){
+                    return this.gender;
+                }
+                getCanNang(){
+                    return  this.cannang;
+                }
+                eat(apple){
+                    if(apple.getWeight()> 0){
+                        this.cannang++;
+                        apple.descreate();
+
+                    }
+                }
+            }
+            let apple = new Apple(10);
+            let adam = new Human("Adam","Famale",60);
+            let eva = new Human("Eva", "Male", 50);
+
+            adam.eat(apple);
+
+            alert(adam.cannang);
+            alert(apple.weight);
+
+            eva.eat(apple);
+            alert(eva.cannang);
+            alert(apple.weight);
+
+
+
+
+
+        </script>
+</body>
+</html>

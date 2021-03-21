@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tivi</title>
+</head>
+<body>
+<script>
+    class Remote {
+        constructor() {
+
+
+        }
+
+        controlRemote(television) {
+            television.channel++;
+
+        }
+
+        volumeRemote(televidion) {
+            televidion.volume++;
+        }
+
+
+    }
+
+    class Tivi {
+        constructor(channel, volume,onoff) {
+            this.channel = channel;
+            this.volume = volume;
+            this.onoff = onoff;
+
+
+        }
+        getChannel(){
+            return this.channel;
+        }
+        getVolume(){
+            return this.volume;
+        }
+        turnOn_turnOff(){
+            this.onoff =! this.onoff
+        }
+        change(){
+            if(this.onoff === true){
+                alert("Tivi Dang Mo")
+            }else {
+                alert("Tivi Dang Dong")
+            }
+
+        }
+
+    }
+
+    let remote = new Remote();
+    let tivi = new Tivi(2,15,true);
+    tivi.change();
+    alert("Kenh Hien Tai : " + tivi.channel);
+    alert("Volume Hien Tai : " + tivi.volume);
+    remote.controlRemote(tivi);
+
+    alert("chuyen kenh khac" +tivi.getChannel());
+
+    remote.volumeRemote(tivi);
+    alert("tang volume" +tivi.getVolume());
+
+
+</script>
+</body>
+</html>

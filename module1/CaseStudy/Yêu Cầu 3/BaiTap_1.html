@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+       let a = [1, 2, 3];
+       let b =[];
+       b.push(a[0]);
+       for(let i = 1 ; i < a.length; i++){
+           b.push(b[i-1] + a[i]);
+
+       }
+       alert(b);
+    </script>
+</body>
+</html>

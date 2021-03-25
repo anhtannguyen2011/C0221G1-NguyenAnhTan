@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 1</title>
+</head>
+<body>
+    <script>
+        function subMatrix(arr) {
+            let tong = 0;
+            for(let i = 0 ;i< arr.length; i++ ){
+                for(let j =0 ; j<arr[i].length; j++){
+                    if(arr[i][j] % 2 == 0 ){
+                        tong += arr[i][j]
+                    }
+                }
+            }
+            return tong;
+        }
+        let array =[
+            [2,3,4],
+            [4,5,6]
+        ];
+        alert(subMatrix(array));
+    </script>
+</body>
+</html>

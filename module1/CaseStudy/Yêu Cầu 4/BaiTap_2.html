@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 2</title>
+</head>
+<body>
+<script>
+    function differentSymbolsNaive(s) {
+        let chuyenMang= s.split('');
+        let array = [];
+        for(let i =0 ; i < chuyenMang.length; i++){
+            if (array.includes(chuyenMang[i]) === false){
+                array.push(chuyenMang[i]);
+            }
+        }
+        return array.length;
+    }
+
+    alert(differentSymbolsNaive("cabcadfgdfg"));
+</script>
+</body>
+</html>

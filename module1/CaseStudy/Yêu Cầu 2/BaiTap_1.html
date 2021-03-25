@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 1</title>
+</head>
+<body>
+    <script>
+        let nhapLuong = parseInt(prompt("Nhap Luong Nhan Vien"));
+        let luongThucNhan;
+        if(nhapLuong > 15000000){
+            luongThucNhan = nhapLuong - (nhapLuong * 20 / 100);
+            document.write("Luong Nhan Duoc La:"+luongThucNhan);
+        }else if(nhapLuong <= 15000000 && nhapLuong >= 7000000){
+            luongThucNhan = nhapLuong - (nhapLuong * 10 / 100);
+            document.write("Luong Nhan Duc la: "+luongThucNhan);
+        }else {
+            luongThucNhan = nhapLuong- (nhapLuong * 5 / 100);
+            document.write("Luong Nhan duoc la:" +luongThucNhan );
+        }
+    </script>
+</body>
+</html>

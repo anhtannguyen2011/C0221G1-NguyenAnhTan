@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 5</title>
+</head>
+<body>
+
+<h3>MeNu</h3>
+<ol>
+    <li>Cà Phê         : 10000đ</li>
+    <li>Cam Vắt        : 20000đ</li>
+    <li>Nước Ép Cà Rốt : 12000đ</li>
+    <li>Nước Ép Cà Chua: 15000đ</li>
+    <li>Nước Danasi    : 5000đ</li>
+    <li>Nước Ép Cà Chua: 30000đ</li>
+</ol>
+<button onclick="totalBill()">Total :</button>
+
+<script>
+     let menu = [10000,20000,12000,15000,5000,30000];
+     function totalBill() {
+            let totalbill = 0;
+
+            do {
+                let nhapThucUong = prompt("Nhập Thức Uống");
+                if(nhapThucUong <7){
+                    let nhapSoLuong = parseInt(prompt("Nhập Số Lượng Thức Uống"));
+                        totalbill += nhapSoLuong * menu[nhapThucUong -1];
+                }else {
+                    break;
+                }
+
+            }while (true);
+         alert(totalbill);
+     }
+
+
+</script>
+</body>
+</html>

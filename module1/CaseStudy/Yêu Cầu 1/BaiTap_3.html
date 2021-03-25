@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập 3</title>
+</head>
+<body>
+    <script>
+
+
+            let line = 1;
+            let character = "";
+            let result ="";
+            let space ="";
+            while (line <=4){
+                space ="";
+                character = "";
+                for(let s = 1; s <=(4-line); s++){
+                    space +="&nbsp&nbsp"
+                }
+                for (let c = 1; c <= (2*line) -1; c++){
+                    character +="*"
+                }
+
+                result += space + character + "</br>";
+                line ++;
+            }
+            document.write(result);
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -5,16 +5,48 @@
     <title>Title</title>
 </head>
 <body>
-    <script>
-        let nhap = "tRuong    TaN   HAI".toLowerCase().split(' ');
-        for(let i = 0 ; i < nhap.length;i++){
-            nhap[i] = nhap[i].charAt(0).toUpperCase() + nhap[i].substring(1);
+
+        <script>
+
+
+
+        function inchuCaiHoa() {
+            let chuCai = "im                      a good student".toLowerCase().split(" ");
+            let newArr = [];
+            for (let i = 0 ; i < chuCai.length ; i++){
+                if(chuCai[i].length > 0){
+                    newArr.push(chuCai[i]);
+                }
+            }
+            for (let k = 0 ; k< newArr.length; k++){
+                newArr[k] = newArr[k].charAt(0).toUpperCase() + newArr[k].substring(1);
+            }
+
+
+
+
+            alert(newArr.join(" "));
         }
-        alert(nhap.join(' '));
 
-
-
-
+        inchuCaiHoa();
+        //  function maxChuoi() {
+        //      let nhapChuoi = prompt("Nhập chuỗi vào");
+        //      let chuyenMang = nhapChuoi.split(' ');
+        //      let max = 0;
+        //      let index = 0;
+        //      for(let i = 0 ; i < chuyenMang.length ; i++){
+        //          let length = chuyenMang[i].length;
+        //          if(length > max){
+        //              max = length;
+        //              index = i;
+        //          }
+        //      }
+        //      alert("Chuỗi Dài Nhất Là :"+chuyenMang[index]+"vị trí thứ:"+(index+1)+"Nó Có Bao Nhiêu Kí Tự"+max);
+        //  }
+        // maxChuoi();
     </script>
+
+
+
 </body>
 </html>

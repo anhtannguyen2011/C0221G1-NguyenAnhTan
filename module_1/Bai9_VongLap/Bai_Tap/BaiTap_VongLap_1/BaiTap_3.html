@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập Fibonaci</title>
+</head>
+<body>
+    <script>
+        function Fibonancci(n) {
+            if (n < 2) {
+                return 1;
+            } else {
+                return Fibonancci(n-2) + Fibonancci(n-1);
+            }
+        }
+
+        function display() {
+            let nhapso = parseInt(prompt("Nhập Số Cần Nhập"));
+            let dayFibo = "";
+            let check = false;
+            for (let i = 0; i< nhapso ; i++){
+                dayFibo += Fibonancci(i) ;
+                if(nhapso == Fibonancci(i)){
+                  check = true;
+                }
+            }
+            alert("Day so fibonacy do la : " +dayFibo);
+
+            if (check){
+                alert(nhapso + " : So do la so fibonaci : ");
+            }else {
+                alert("no ko phai la so fibobaci : ");
+            }
+
+        }
+        display();
+    </script>
+</body>
+</html>

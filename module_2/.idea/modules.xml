@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/module_2.iml" filepath="$PROJECT_DIR$/.idea/module_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/C0221G1_NguyenAnhTan_Module_2.iml" filepath="$PROJECT_DIR$/C0221G1_NguyenAnhTan_Module_2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Session_1_BaiTap/Session_1_BaiTap.iml" filepath="$PROJECT_DIR$/Session_1_BaiTap/Session_1_BaiTap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Session_1_ThucHanh/Session_1_ThucHanh.iml" filepath="$PROJECT_DIR$/Session_1_ThucHanh/Session_1_ThucHanh.iml" />
     </modules>
   </component>
 </project>

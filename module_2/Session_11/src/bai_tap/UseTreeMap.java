@@ -1,7 +1,6 @@
 package bai_tap;
 
-import java.util.Map;
-import java.util.TreeMap;
+import java.util.*;
 
 public class UseTreeMap {
     public static void main(String[] args) {
@@ -10,10 +9,17 @@ public class UseTreeMap {
         map.put(2,"Code Gym");
         System.out.println(map);
         System.out.println("Phân Tử có key =1 là : " +map.get(1));
-//        for(Integer key : map.keySet()){
-//            System.out.println(key.toUpperCase());
-//        }
+
+       String[] dem = map.get(1).split(" ");
+       int coi=0;
+       for(int i = 0 ; i < dem.length;i++){
+           coi++;
+       }
+        System.out.println(coi);
+
+        System.out.println(dem);
         int count = 0;
+        Set<String> va = new LinkedHashSet<>();
 
         for(Integer key : map.keySet()){
             String value = map.get(key);

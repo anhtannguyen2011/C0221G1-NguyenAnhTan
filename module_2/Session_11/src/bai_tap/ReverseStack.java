@@ -16,6 +16,10 @@ public class ReverseStack {
         stack.push(5);
         System.out.println("Mảng Sau Khi Push");
         System.out.println(stack);
+
+        while (!stack.isEmpty()){
+            System.out.println(stack.pop());
+        }
         Stack<String> wStack = new Stack<>();
         wStack.push("Tấn");
         wStack.push("Anh");

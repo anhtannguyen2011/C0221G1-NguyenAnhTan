@@ -9,9 +9,11 @@ where month(c.StartDate) = 12;
 select * from `subject` s
 where s.Credit >=3 and s.Credit<=5;
 
-update class
-set ClassName = "Hai"
-where ClassID = 2;
+
+SET SQL_SAFE_UPDATES = 0;
+update student
+set ClassID = 2
+where StudentName = "Hung";
 
 select student.StudentName, `subject`.SubName, mark.Mark
 from mark join student on mark.StudentID = student.StudentID

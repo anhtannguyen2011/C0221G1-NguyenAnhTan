@@ -42,8 +42,10 @@ values(1,"May Giat",3),
 --  
 --  having count(customers.cID) <1;
  
- select customers.cName 
- from customers 
+select customers.cName
+ from order_details join `order` on order_details.oID = `order`.oID 
+ join product on order_details.pID = product.pID
+ right join customers on `order`.cID = customers.cID 
  where customers.cID NOT IN (select cID from `order`);
 
 

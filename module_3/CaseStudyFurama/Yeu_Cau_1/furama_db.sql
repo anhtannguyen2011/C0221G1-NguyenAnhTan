@@ -1,4 +1,5 @@
 create database casestudy_furama;
+
 use casestudy_furama;
 create table vi_tri(
 	id_vi_tri int primary key,
@@ -21,9 +22,9 @@ id_vi_tri int,
 id_trinh_do int,
 id_bo_phan int,
 ngay_sinh date,
-cmnd varchar(45),
-luong varchar(45),
-so_dien_thoai varchar(50),
+cmnd int,
+luong float,
+so_dien_thoai int,
 email varchar(50),
 dia_chi varchar(50),
 foreign key (id_vi_tri) references vi_tri(id_vi_tri),
@@ -34,8 +35,8 @@ foreign key (id_bo_phan) references bo_phan(id_bo_phan)
 create table dich_vu_di_kem(
 id_dich_vu_di_kem int primary key,
 ten_dich_vu_di_kem varchar(50),
-gia int,
-don_vi int,
+gia float,
+don_vi float,
 trang_thai_kha_dung varchar(50)
 );
 create table loai_khach(
@@ -46,8 +47,8 @@ create table khach_hang(
 id_khach_hang int primary key,
 ho_ten varchar(45),
 ngay_sinh date,
-cmnd varchar(9),
-so_dien_thoai varchar(10),
+cmnd int,
+so_dien_thoai int,
 email varchar(45),
 dia_chi varchar (45),
 id_loai_khach int,
@@ -68,10 +69,10 @@ ten_loai_dich_vu varchar(50)
 create table dich_vu(
 id_dich_vu int primary key,
 ten_dich_vu varchar(50),
-dien_tich varchar(10),
-so_tang varchar (50),
-so_nguoi_toi_da varchar(50),
-chi_phi_thue varchar(50),
+dien_tich int,
+so_tang int,
+so_nguoi_toi_da int,
+chi_phi_thue float,
 trang_thai varchar(50),
 id_kieu_thue int,
 id_loai_dich_vu int,
@@ -83,8 +84,8 @@ create table hop_dong(
 id_hop_dong int primary key,
 ngay_lam_hop_dong date,
 ngay_ket_thuc date,
-tien_dat_coc int,
-tong_tien int,
+tien_dat_coc float,
+tong_tien float,
 id_nhan_vien int,
 id_khach_hang int,
 id_dich_vu int,

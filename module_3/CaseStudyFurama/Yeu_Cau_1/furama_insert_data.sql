@@ -39,9 +39,9 @@ values(1,"Dai Hoc"),
 	(5, 'Member');
     
     insert into khach_hang values
-	(1, 'Hung', '1997-11-20', '205201201', '0123456789', 'hung@gmail.com', 'Da Nang', 2),
-	(2, 'Minh', '2005-04-09', '203203022', '0909090909', 'minh@gmail.com', 'Quang Tri', 1),
-	(3, 'Tam', '1993-12-13', '201201201', '0905044567', 'tam@gmail.com', 'Thua Thien Hue', 3);
+	(1, 'Hung', '1997-11-20', 205201201, 0123456789, 'hung@gmail.com', 'Da Nang', 2),
+	(2, 'Minh', '2005-04-09', 203203022, 0909090909, 'minh@gmail.com', 'Quang Tri', 1),
+	(3, 'Tam', '1993-12-13', 201201201, 0905044567, 'tam@gmail.com', 'Thua Thien Hue', 3);
     
     insert into kieu_thue values
 	(1, 'Nam', 100000000),
@@ -55,9 +55,9 @@ values(1,"Dai Hoc"),
 	(3, 'President');
     
     insert into dich_vu values
-    (1, 'Villa', 500, 5, '4', '20000000', 'Con', 2, 1),
-    (2, 'House', 100, 3, '8', '8000000', 'Con', 1, 2),
-    (3, 'Room', 50, 1, '4', '1000000', 'Con', 3, 3);
+    (1, 'Villa', 500, 5, 4, 20000000, 'Con', 2, 1),
+    (2, 'House', 100, 3, 8, 8000000, 'Con', 1, 2),
+    (3, 'Room', 50, 1, 4, 1000000, 'Con', 3, 3);
     
     insert into hop_dong values
 	(1, '2018-12-04', '2020-12-25', 30000000, 60000000, 1, 2, 2),
@@ -66,6 +66,6 @@ values(1,"Dai Hoc"),
     
  insert into hop_dong_chi_tiet values
 	(1, 2, 3, 2),
-	(2, 3, 4, 3),
+	(2, 3, 5, 3),
 	(3, 1, 1, 2);
  

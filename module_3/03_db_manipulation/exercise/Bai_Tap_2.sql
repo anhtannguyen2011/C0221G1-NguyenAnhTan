@@ -51,9 +51,10 @@ select customers.cName
 
 
 
-select `order`.oID,`order`.oDate,product.pName,(order_details.odQTY*product.pPrice) as tong_tien
+select `order`.oID,`order`.oDate,sum(order_details.odQTY*product.pPrice) as tong_tien
 from order_details join `order` on order_details.oID = `order`.oID 
 join product on order_details.pID = product.pID
 join customers on `order`.cID = customers.cID
+group by order_details.oID
 order by tong_tien;
  

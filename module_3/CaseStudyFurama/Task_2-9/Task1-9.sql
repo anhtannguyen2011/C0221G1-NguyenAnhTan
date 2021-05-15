@@ -26,13 +26,13 @@ order by dem_sohd;
 -- task 5
 
 select kh.id_khach_hang, kh.ho_ten,lk.ten_loai_khach,hd.id_hop_dong,dv.ten_dich_vu,
-hd.ngay_lam_hop_dong,hd.ngay_ket_thuc, (dv.chi_phi_thue + (dvdk.gia * hdct.so_luong)) as tong_tien
+hd.ngay_lam_hop_dong,hd.ngay_ket_thuc, sum(dv.chi_phi_thue + (dvdk.gia * hdct.so_luong)) as tong_tien
 from khach_hang as kh left join loai_khach as lk on kh.id_loai_khach = lk.id_loai_khach
 					left join hop_dong as hd on kh.id_khach_hang = hd.id_khach_hang
                     left join dich_vu as dv on hd.id_dich_vu = dv.id_dich_vu
                     left join hop_dong_chi_tiet as hdct on hd.id_hop_dong = hdct.id_hop_dong
                     left join dich_vu_di_kem as dvdk on hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
-group by kh.id_khach_hang ;                   
+group by kh.id_khach_hang, hd.id_hop_dong;                   
 -- task 6
 
 select dv.id_dich_vu, dv.ten_dich_vu, dv.dien_tich, dv.chi_phi_thue, ldv.ten_loai_dich_vu, hd.ngay_lam_hop_dong, hd.id_hop_dong
@@ -107,14 +107,22 @@ group by hdct.id_hop_dong;
 
 -- task 11
 
-select kh.id_khach_hang, kh.ho_ten, lk.ten_loai_khach, dvdk.ten_dich_vu_di_kem
-from khach_hang as kh join loai_khach as lk on kh.id_loai_khach = lk.id_loai_khach
-join hop_dong as hd on kh.id_khach_hang = hd.id_khach_hang
-join hop_dong_chi_tiet as hdct on hd.id_hop_dong = hdct.id_hop_dong
-join dich_vu_di_kem as dvdk on hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
-where lk.ten_loai_khach = "Diamond" and (kh.dia_chi in("Vinh","Quang Ngai"))
-group by kh.ho_ten;
+select dv.id_dich_vu,dv.ten_dich_vu,dv.dien_tich,dv.chi_phi_thue,lk.ten_loai_khach,kh.dia_chi
+from dich_vu as dv
+join hop_dong as hd on dv.id_dich_vu = hd.id_dich_vu
+join khach_hang as kh on hd.id_khach_hang = kh.id_khach_hang
+join loai_khach as lk on lk.id_loai_khach = kh.id_loai_khach
+where (lk.id_loai_khach = "Diamond") and (kh.dia_chi in ("Vinh","Quang Ngai"))
+group by dv.id_dich_vu;
 
+
+select * 
+from dich_vu dv
+join hop_dong hd on dv.id_dich_vu = hd.id_dich_vu
+join khach_hang kh on hd.id_khach_hang = kh.id_khach_hang
+join loai_khach lk on kh.id_loai_khach = lk.id_loai_khach
+group by dv.ten_dich_vu
+having lk.ten_loai_khach="Diamond"  and kh.dia_chi in ("Vinh","Quảng Ngãi");
 update khach_hang
 set dia_chi = "Da Nang"
 where id_khach_hang = 5;

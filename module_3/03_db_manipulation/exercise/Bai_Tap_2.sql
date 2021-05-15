@@ -35,19 +35,13 @@ values(1,"May Giat",3),
  join customers on `order`.cID = customers.cID;
 
 
---  select customers.cName,count(customers.cID)
---  from order_details join `order` on order_details.oID = `order`.oID 
---  join product on order_details.pID = product.pID
---  join customers on `order`.cID = customers.cID
---  
---  having count(customers.cID) <1;
  
-select customers.cName
- from order_details join `order` on order_details.oID = `order`.oID 
- join product on order_details.pID = product.pID
- right join customers on `order`.cID = customers.cID 
- where customers.cID NOT IN (select cID from `order`);
-
+ 
+ -- sửa lại lỗi quản lý bán hàng theo truy vấn con
+ -- hiển thị tên những khách hàng không mua bất kỳ một sản phẩm nào
+select c.cName
+from customers as c
+where c.cID not in (select o.cID from `order` as o);
 
 
 

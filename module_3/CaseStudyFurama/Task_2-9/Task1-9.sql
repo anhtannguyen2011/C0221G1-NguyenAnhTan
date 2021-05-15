@@ -108,21 +108,14 @@ group by hdct.id_hop_dong;
 -- task 11
 
 select dv.id_dich_vu,dv.ten_dich_vu,dv.dien_tich,dv.chi_phi_thue,lk.ten_loai_khach,kh.dia_chi
-from dich_vu as dv
-join hop_dong as hd on dv.id_dich_vu = hd.id_dich_vu
-join khach_hang as kh on hd.id_khach_hang = kh.id_khach_hang
-join loai_khach as lk on lk.id_loai_khach = kh.id_loai_khach
-where (lk.id_loai_khach = "Diamond") and (kh.dia_chi in ("Vinh","Quang Ngai"))
-group by dv.id_dich_vu;
-
-
-select * 
 from dich_vu dv
 join hop_dong hd on dv.id_dich_vu = hd.id_dich_vu
 join khach_hang kh on hd.id_khach_hang = kh.id_khach_hang
 join loai_khach lk on kh.id_loai_khach = lk.id_loai_khach
-group by dv.ten_dich_vu
-having lk.ten_loai_khach="Diamond"  and kh.dia_chi in ("Vinh","Quảng Ngãi");
+where lk.ten_loai_khach = "Diamond" and (kh.dia_chi in ("Vinh","Quang Ngai"))
+group by dv.ten_dich_vu;
+
+
 update khach_hang
 set dia_chi = "Da Nang"
 where id_khach_hang = 5;
@@ -154,4 +147,24 @@ update hop_dong
 set ngay_ket_thuc = "2021-12-12"
 where id_hop_dong = 5;
 
+-- task 13
 
+select dvdk.ten_dich_vu_di_kem , dvdk.gia, dvdk.don_vi , max(dvdk.id_dich_vu_di_kem) as maximum
+from dich_vu_di_kem as dvdk
+join hop_dong_chi_tiet as hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
+join hop_dong as hd on hdct.id_hop_dong = hd.id_hop_dong
+group by dvdk.id_dich_vu_di_kem
+having max(dvdk.id_dich_vu_di_kem) >= all (select max(dvdk.id_dich_vu_di_kem) from dich_vu_di_kem as dvdk);
+
+
+-- task 14
+
+select hd.id_hop_dong , dv.ten_dich_vu , dvdk.ten_dich_vu_di_kem, count(dvdk.id_dich_vu_di_kem) as so_lan_su_dung
+from hop_dong as hd join dich_vu as dv on hd.id_dich_vu = dv.id_dich_vu
+join hop_dong_chi_tiet as hdct on hd.id_hop_dong = hdct.id_hop_dong
+join dich_vu_di_kem as dvdk on hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
+group by dvdk.id_dich_vu_di_kem
+having count(dvdk.id_dich_vu_di_kem) = 1;
+ 
+ 
+ -- task 15

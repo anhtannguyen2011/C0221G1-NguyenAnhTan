@@ -19,11 +19,9 @@ SET SQL_SAFE_UPDATES = 0;
 select hop_dong.id_khach_hang, khach_hang.ho_ten,loai_khach.ten_loai_khach, count(hop_dong.id_dich_vu) as dem_sohd
 from hop_dong join khach_hang on hop_dong.id_khach_hang = khach_hang.id_khach_hang
 join loai_khach on khach_hang.id_loai_khach = loai_khach.id_loai_khach
--- where loai_khach.ten_loai_khach = "Diamond"
+where loai_khach.ten_loai_khach = "Diamond"
 group by hop_dong.id_khach_hang
-having loai_khach.ten_loai_khach = "Diamond"
 order by dem_sohd;
-
 
 -- task 5
 
@@ -33,7 +31,8 @@ from khach_hang as kh left join loai_khach as lk on kh.id_loai_khach = lk.id_loa
 					left join hop_dong as hd on kh.id_khach_hang = hd.id_khach_hang
                     left join dich_vu as dv on hd.id_dich_vu = dv.id_dich_vu
                     left join hop_dong_chi_tiet as hdct on hd.id_hop_dong = hdct.id_hop_dong
-                    left join dich_vu_di_kem as dvdk on hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem;
+                    left join dich_vu_di_kem as dvdk on hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
+group by kh.id_khach_hang ;                   
 -- task 6
 
 select dv.id_dich_vu, dv.ten_dich_vu, dv.dien_tich, dv.chi_phi_thue, ldv.ten_loai_dich_vu, hd.ngay_lam_hop_dong, hd.id_hop_dong
@@ -58,6 +57,10 @@ from dich_vu as dv join loai_dich_vu as ldv on dv.id_loai_dich_vu = ldv.id_loai_
 join hop_dong as hd on dv.id_dich_vu = hd.id_dich_vu
 where (year(hd.ngay_lam_hop_dong) = 2018) and hd.id_dich_vu not in (select hd.id_dich_vu from hop_dong as hd where year(hd.ngay_lam_hop_dong) =2019);
 
+-- câu lệnh test task 7
+update hop_dong
+set ngay_lam_hop_dong = "2018-2-24"
+where id_hop_dong = 2;
 
 -- task 8
 update khach_hang 

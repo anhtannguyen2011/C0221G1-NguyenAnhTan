@@ -148,14 +148,13 @@ set ngay_ket_thuc = "2021-12-12"
 where id_hop_dong = 5;
 
 -- task 13
-
-select dvdk.ten_dich_vu_di_kem , dvdk.gia, dvdk.don_vi , count(dvdk.id_dich_vu_di_kem) as dem
+select * , max(tong_so) as "Tổng Số Hợp Đồng" from (
+select dvdk.ten_dich_vu_di_kem , dvdk.gia, dvdk.don_vi , sum(hdct.so_luong) as tong_so
 from dich_vu_di_kem as dvdk
 join hop_dong_chi_tiet as hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
 join hop_dong as hd on hdct.id_hop_dong = hd.id_hop_dong
-group by dvdk.id_dich_vu_di_kem
-having count(dvdk.id_dich_vu_di_kem) >= all (select count(id_dich_vu_di_kem) from hop_dong_chi_tiet
-												group by id_dich_vu_di_kem);
+group by dvdk.ten_dich_vu_di_kem) x;
+
 
 
 -- task 14
@@ -211,7 +210,46 @@ add foreign key (id_nhan_vien) references nhan_vien(id_nhan_vien);
 SET FOREIGN_KEY_CHECKS=1; -- to re-enable them				
 SET SQL_SAFE_UPDATES = 0;
 
- 
  -- task 17
  
  
+ update khach_hang
+ set id_loai_khach = 1
+ where id_loai_khach = 2  and khach_hang.id_khach_hang in (select id_khach_hang					
+						from hop_dong as hd 
+						join dich_vu as dv on hd.id_dich_vu = dv.id_dich_vu
+						join hop_dong_chi_tiet as hdct on hd.id_hop_dong = hdct.id_hop_dong
+						join dich_vu_di_kem as dvdk on hdct.id_dich_vu_di_kem = dvdk.id_dich_vu_di_kem
+                        where year(ngay_lam_hop_dong) = 2019
+                        group by hd.id_khach_hang
+                        having sum(dv.chi_phi_thue + dvdk.gia * hdct.so_luong) > 10000000);
+ 
+ 
+ -- task 18 
+ alter table hop_dong
+ add foreign key (id_khach_hang) references khach_hang(id_khach_hang)
+ on delete cascade;
+ 
+ SET FOREIGN_KEY_CHECKS=0;
+ delete from khach_hang as kh where kh.id_khach_hang in
+ (select id from (select kh.id_khach_hang as id from khach_hang as kh join hop_dong as
+					hd on kh.id_khach_hang = hd.id_hop_dong where year(hd.ngay_lam_hop_dong) < 2016) sub_q2);				
+SET FOREIGN_KEY_CHECKS=1;              						
+ -- task 19
+ 
+ update dich_vu_di_kem as dvdk
+ set gia = gia * 2
+ where dvdk.id_dich_vu_di_kem in (select id from(select dvdk.id_dich_vu_di_kem as id , sum(hdct.so_luong) from dich_vu_di_kem as dvdk
+									join hop_dong_chi_tiet as hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
+                                    join hop_dong as hd on hd.id_hop_dong = hdct.id_hop_dong
+                                    where year(hd.ngay_lam_hop_dong) = 2019 
+                                     group by hdct.id_dich_vu_di_kem
+                                     having sum(hdct.so_luong) >= 10) sub_qr1);
+ 
+ -- task 20
+ 
+ select id_nhan_vien,ho_ten,email,so_dien_thoai,ngay_sinh,dia_chi
+ from nhan_vien
+ union all 
+ select id_khach_hang, ho_ten,email,so_dien_thoai,ngay_sinh,dia_chi
+ from khach_hang;

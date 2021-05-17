@@ -168,3 +168,48 @@ having count(dvdk.id_dich_vu_di_kem) = 1;
  
  
  -- task 15
+ 
+ select nv.id_nhan_vien, nv.ho_ten, td.trinh_do, bp.ten_bo_phan, nv.so_dien_thoai, nv.dia_chi,count(hd.id_nhan_vien) as "Tổng Hợp Đòng"
+ from nhan_vien as nv join trinh_do as td on nv.id_trinh_do = td.id_trinh_do
+ join bo_phan as bp on nv.id_bo_phan = bp.id_bo_phan
+ join vi_tri as vt on nv.id_vi_tri = vt.id_vi_tri
+ join hop_dong as hd on hd.id_nhan_vien = nv.id_nhan_vien
+ where year(hd.ngay_lam_hop_dong) between 2018 and 2019 
+ group by nv.id_nhan_vien
+ having count(hd.id_nhan_vien) <=3 ;
+ 
+ update nhan_vien
+ set ho_ten = "Van Long"
+ where id_nhan_vien = 2;
+
+ update nhan_vien
+ set ho_ten = "Thien Ha"
+ where id_nhan_vien = 3;
+ 
+ update hop_dong
+ set id_nhan_vien = 1
+ where id_hop_dong = 2;
+ 
+  update hop_dong
+ set id_nhan_vien = 1
+ where id_hop_dong = 3;
+ 
+  update hop_dong
+ set id_nhan_vien = 1
+ where id_hop_dong = 4;
+ 
+ -- task 16
+ 
+
+ 
+ SET FOREIGN_KEY_CHECKS=0; -- to disable them
+ delete from nhan_vien 
+  where id_nhan_vien not in (select hop_dong.id_nhan_vien from hop_dong
+								where year(hop_dong.ngay_lam_hop_dong) between 2017 and 2019);
+SET FOREIGN_KEY_CHECKS=1; -- to re-enable them				
+SET SQL_SAFE_UPDATES = 0;
+
+ 
+ -- task 17
+ 
+ 

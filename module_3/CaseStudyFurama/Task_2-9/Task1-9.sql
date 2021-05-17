@@ -58,9 +58,9 @@ join hop_dong as hd on dv.id_dich_vu = hd.id_dich_vu
 where (year(hd.ngay_lam_hop_dong) = 2018) and hd.id_dich_vu not in (select hd.id_dich_vu from hop_dong as hd where year(hd.ngay_lam_hop_dong) =2019);
 
 -- câu lệnh test task 7
-update hop_dong
-set ngay_lam_hop_dong = "2018-2-24"
-where id_hop_dong = 2;
+-- update hop_dong
+-- set ngay_lam_hop_dong = "2018-2-24"
+-- where id_hop_dong = 2;
 
 -- task 8
 update khach_hang 
@@ -149,12 +149,13 @@ where id_hop_dong = 5;
 
 -- task 13
 
-select dvdk.ten_dich_vu_di_kem , dvdk.gia, dvdk.don_vi , max(dvdk.id_dich_vu_di_kem) as maximum
+select dvdk.ten_dich_vu_di_kem , dvdk.gia, dvdk.don_vi , count(dvdk.id_dich_vu_di_kem) as dem
 from dich_vu_di_kem as dvdk
 join hop_dong_chi_tiet as hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
 join hop_dong as hd on hdct.id_hop_dong = hd.id_hop_dong
 group by dvdk.id_dich_vu_di_kem
-having max(dvdk.id_dich_vu_di_kem) >= all (select max(dvdk.id_dich_vu_di_kem) from dich_vu_di_kem as dvdk);
+having count(dvdk.id_dich_vu_di_kem) >= all (select count(id_dich_vu_di_kem) from hop_dong_chi_tiet
+												group by id_dich_vu_di_kem);
 
 
 -- task 14
@@ -200,12 +201,13 @@ having count(dvdk.id_dich_vu_di_kem) = 1;
  
  -- task 16
  
-
+alter table hop_dong
+add foreign key (id_nhan_vien) references nhan_vien(id_nhan_vien);
  
  SET FOREIGN_KEY_CHECKS=0; -- to disable them
  delete from nhan_vien 
   where id_nhan_vien not in (select hop_dong.id_nhan_vien from hop_dong
-								where year(hop_dong.ngay_lam_hop_dong) between 2017 and 2019);
+								where year(hop_dong.ngay_lam_hop_dong) >=2017 and year(hop_dong.ngay_lam_hop_dong) <2020);
 SET FOREIGN_KEY_CHECKS=1; -- to re-enable them				
 SET SQL_SAFE_UPDATES = 0;
 

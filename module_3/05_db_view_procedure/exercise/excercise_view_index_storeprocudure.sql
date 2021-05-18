@@ -27,13 +27,15 @@ values (1,"code001","kem",2000,20000,"usa","con"),
 
 explain select * from product_exercise where product_Code = "code001";
 
-
+-- Tạo Unique Index trên bảng Products (sử dụng cột productCode để tạo chỉ mục)
 alter table product_exercise
 add index idx_product_Code(product_Code);
 
+-- Tạo Composite Index trên bảng Products (sử dụng 2 cột productName và productPrice)
 alter table product_exercise
 add index idx_full(product_Name,product_Price);
 
+-- Sử dụng câu lệnh EXPLAIN để biết được câu lệnh SQL của bạn thực thi như nào
 explain select * from product_exercise where product_Name = "kem" or product_Price = 2000;
 
 
@@ -41,6 +43,8 @@ explain select * from product_exercise where product_Name = "kem" or product_Pri
 -- Tiến hành sửa đổi view
 -- Tiến hành xoá view
 
+
+-- Tạo view lấy về các thông tin: productCode, productName, productPrice, productStatus từ bảng products.
 
 create view view_products as
 select product_Code,product_Name,product_Price,product_Status
@@ -65,6 +69,10 @@ where id = 2;
 -- kiểm tra lại view--
 select * from view_products;
 
+-- xóa view 
+drop view view_products;
+
+
 -- Tạo store procedure lấy tất cả thông tin của tất cả các sản phẩm trong bảng product
 -- Tạo store procedure thêm một sản phẩm mới
 -- Tạo store procedure sửa thông tin sản phẩm theo id
@@ -73,7 +81,6 @@ select * from view_products;
 Drop procedure proc_products;
 -- tạo procedure
 DELIMITER //
-
 create procedure proc_products()
 begin
 	select * from product_exercise;
@@ -104,11 +111,6 @@ begin
     proc_status varchar (45)
  )
  begin
- -- lệnh kiểm tra nếu có khóa chính . kiểm tra ko đc trùng nhau
---   if exists (select * from product_exercise where id = id ) 
---   then return 0;
---  else
-
 	insert into product_exercise
     values(id,proc_code,proc_name,proc_price,proc_amount,proc_des,proc_status) ;
 end //

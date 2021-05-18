@@ -8,16 +8,16 @@ having s.credit = (select max(credit) from `subject`);
 
 -- hiển thị thông tin môn học ó điểm thi cao nhất
 
-select s.sub_name , s.sub_id , s.credit
+select s.sub_name , s.sub_id , s.credit ,s.`status`
 from `subject` as s
 join mark as m on m.sub_id = s.sub_id
-where m.mark >= all(select max(mark) from mark);
+where m.mark >= all (select max(mark) from mark);
 
 
 
 
 insert into mark
-values (4,3,3,7,1);
+values (5,3,3,7,1);
 
 update student as s
 set s.student_name = "Long"

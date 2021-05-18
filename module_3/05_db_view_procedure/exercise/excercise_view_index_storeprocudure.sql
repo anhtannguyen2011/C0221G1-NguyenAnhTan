@@ -130,22 +130,27 @@ call insert_procedure(5,"code005","quat",3000,30000,"thailand","con");
 call proc_products();
 
 
--- tạo update_procedure theo giá tiền 
+-- tạo update_procedure theo id để thay đổi code,name,price
+
 DELIMITER //
 create procedure update_procedure( 
 IN id_proc int,
+proc_code varchar(45),
+proc_name varchar(45),
 proc_price float)
 
 begin 
 	update product_exercise
-    set product_Price = proc_price
+    set product_Code = proc_code,
+		product_Name = proc_name,
+		product_Price = proc_price 
     where id = id_proc;
 end //
 
 DELIMITER ;
 -- call update_procedure để test 
 SET SQL_SAFE_UPDATES = 0;
-call update_procedure(4,5000);
+call update_procedure(4,"code005","kiem","5000");
 
 -- test kết quả update
 call proc_products();

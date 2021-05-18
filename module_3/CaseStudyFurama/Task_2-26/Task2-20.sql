@@ -148,12 +148,14 @@ set ngay_ket_thuc = "2021-12-12"
 where id_hop_dong = 5;
 
 -- task 13
-select * , max(tong_so) as "Tổng Số Hợp Đồng" from (
+
 select dvdk.ten_dich_vu_di_kem , dvdk.gia, dvdk.don_vi , sum(hdct.so_luong) as tong_so
 from dich_vu_di_kem as dvdk
 join hop_dong_chi_tiet as hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
 join hop_dong as hd on hdct.id_hop_dong = hd.id_hop_dong
-group by dvdk.ten_dich_vu_di_kem) as x;
+group by dvdk.ten_dich_vu_di_kem, dvdk.id_dich_vu_di_kem 
+having tong_so >= all (select sum(hdct.so_luong) from hop_dong_chi_tiet as hdct
+						group by hdct.id_dich_vu_di_kem);
 
 
 
@@ -208,7 +210,7 @@ add foreign key (id_nhan_vien) references nhan_vien(id_nhan_vien) on delete casc
  delete from nhan_vien 
   where id_nhan_vien not in (select x.id from(select hop_dong.id_nhan_vien as id from hop_dong
 											join nhan_vien 
-								where year(hop_dong.ngay_lam_hop_dong) >=2017 and year(hop_dong.ngay_lam_hop_dong) <2020)x);
+										where year(hop_dong.ngay_lam_hop_dong) >=2017 and year(hop_dong.ngay_lam_hop_dong) <2020)x);
 SET FOREIGN_KEY_CHECKS=1; -- to re-enable them				
 SET SQL_SAFE_UPDATES = 0;
 

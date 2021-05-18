@@ -153,7 +153,7 @@ select dvdk.ten_dich_vu_di_kem , dvdk.gia, dvdk.don_vi , sum(hdct.so_luong) as t
 from dich_vu_di_kem as dvdk
 join hop_dong_chi_tiet as hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
 join hop_dong as hd on hdct.id_hop_dong = hd.id_hop_dong
-group by dvdk.ten_dich_vu_di_kem) x;
+group by dvdk.ten_dich_vu_di_kem) as x;
 
 
 
@@ -206,8 +206,9 @@ add foreign key (id_nhan_vien) references nhan_vien(id_nhan_vien) on delete casc
  
 
  delete from nhan_vien 
-  where id_nhan_vien not in (select hop_dong.id_nhan_vien from hop_dong
-								where year(hop_dong.ngay_lam_hop_dong) >=2017 and year(hop_dong.ngay_lam_hop_dong) <2020);
+  where id_nhan_vien not in (select x.id from(select hop_dong.id_nhan_vien as id from hop_dong
+											join nhan_vien 
+								where year(hop_dong.ngay_lam_hop_dong) >=2017 and year(hop_dong.ngay_lam_hop_dong) <2020)x);
 SET FOREIGN_KEY_CHECKS=1; -- to re-enable them				
 SET SQL_SAFE_UPDATES = 0;
 
@@ -236,14 +237,14 @@ SET SQL_SAFE_UPDATES = 0;
  
 
  delete from khach_hang as kh where kh.id_khach_hang in
- (select id from (select kh.id_khach_hang as id from khach_hang as kh join hop_dong as
+ (select sub_q2.id from (select kh.id_khach_hang as id from khach_hang as kh join hop_dong as
 					hd on kh.id_khach_hang = hd.id_hop_dong where year(hd.ngay_lam_hop_dong) < 2016) sub_q2);				
 SET FOREIGN_KEY_CHECKS=1;              						
  -- task 19
- 
+ SET SQL_SAFE_UPDATES = 0;
  update dich_vu_di_kem as dvdk
  set gia = gia * 2
- where dvdk.id_dich_vu_di_kem in (select id from(select dvdk.id_dich_vu_di_kem as id , sum(hdct.so_luong) from dich_vu_di_kem as dvdk
+ where dvdk.id_dich_vu_di_kem in (select sub_qr1.id from(select dvdk.id_dich_vu_di_kem as id , sum(hdct.so_luong) from dich_vu_di_kem as dvdk
 									join hop_dong_chi_tiet as hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
                                     join hop_dong as hd on hd.id_hop_dong = hdct.id_hop_dong
                                     where year(hd.ngay_lam_hop_dong) = 2019 

@@ -199,11 +199,12 @@ having count(dvdk.id_dich_vu_di_kem) = 1;
  where id_hop_dong = 4;
  
  -- task 16
- 
+  SET FOREIGN_KEY_CHECKS=0; -- to disable them
+  
 alter table hop_dong
-add foreign key (id_nhan_vien) references nhan_vien(id_nhan_vien);
+add foreign key (id_nhan_vien) references nhan_vien(id_nhan_vien) on delete cascade;
  
- SET FOREIGN_KEY_CHECKS=0; -- to disable them
+
  delete from nhan_vien 
   where id_nhan_vien not in (select hop_dong.id_nhan_vien from hop_dong
 								where year(hop_dong.ngay_lam_hop_dong) >=2017 and year(hop_dong.ngay_lam_hop_dong) <2020);
@@ -226,11 +227,14 @@ SET SQL_SAFE_UPDATES = 0;
  
  
  -- task 18 
+ 
+  SET FOREIGN_KEY_CHECKS=0;
+  
  alter table hop_dong
  add foreign key (id_khach_hang) references khach_hang(id_khach_hang)
  on delete cascade;
  
- SET FOREIGN_KEY_CHECKS=0;
+
  delete from khach_hang as kh where kh.id_khach_hang in
  (select id from (select kh.id_khach_hang as id from khach_hang as kh join hop_dong as
 					hd on kh.id_khach_hang = hd.id_hop_dong where year(hd.ngay_lam_hop_dong) < 2016) sub_q2);				

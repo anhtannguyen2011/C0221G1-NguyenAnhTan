@@ -56,6 +56,12 @@ alter view view_products as
 select * from product_exercise
 where product_Price >= 2000;
 
+-- cách 2 : or replace tạo view mới nếu chưa tồn tại hoặc ghi đè lên view cũ ; 
+create or replace view view_products as
+select * from product_exercise
+where product_Price >= 2001;
+
+
 -- kiểm tra lại view
 select * from view_products;
 

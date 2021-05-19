@@ -1,4 +1,5 @@
 create database casestudy_furama;
+
 use casestudy_furama;
 create table vi_tri(
 	id_vi_tri int primary key,

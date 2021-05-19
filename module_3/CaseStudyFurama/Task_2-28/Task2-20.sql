@@ -237,7 +237,6 @@ SET SQL_SAFE_UPDATES = 0;
  add foreign key (id_khach_hang) references khach_hang(id_khach_hang)
  on delete cascade;
  
-
  delete from khach_hang as kh where kh.id_khach_hang in
  (select sub_q2.id from (select kh.id_khach_hang as id from khach_hang as kh join hop_dong as
 					hd on kh.id_khach_hang = hd.id_hop_dong where year(hd.ngay_lam_hop_dong) < 2016) sub_q2);				

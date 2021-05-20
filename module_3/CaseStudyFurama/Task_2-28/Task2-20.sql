@@ -35,7 +35,7 @@ from khach_hang as kh left join loai_khach as lk on kh.id_loai_khach = lk.id_loa
 group by kh.id_khach_hang, hd.id_hop_dong;                   
 -- task 6
 
-select dv.id_dich_vu, dv.ten_dich_vu, dv.dien_tich, dv.chi_phi_thue, ldv.ten_loai_dich_vu, hd.ngay_lam_hop_dong, hd.id_hop_dong
+select dv.id_dich_vu, dv.ten_dich_vu, dv.dien_tich, dv.chi_phi_thue, ldv.ten_loai_dich_vu, hd.ngay_lam_hop_dong, hd.id_hop_dong,dv.id_dich_vu
 from dich_vu as dv join loai_dich_vu as ldv
 on dv.id_loai_dich_vu = ldv.id_loai_dich_vu
 join hop_dong as hd on dv.id_dich_vu = hd.id_dich_vu 
@@ -80,7 +80,7 @@ select ho_ten from khach_hang;
 -- task 9
 
 -- month(hd.ngay_lam_hop_dong) as "Tháng"
-select month(hd.ngay_lam_hop_dong) as "Tháng", sum(dv.chi_phi_thue + (dvdk.gia * hdct.so_luong)) as "Tổng Doanh Thu Theo Tháng"
+select month(hd.ngay_lam_hop_dong) as "Tháng", sum(dv.chi_phi_thue + (dvdk.gia * hdct.so_luong)) as "tong doanh thu"
 from khach_hang as kh join loai_khach as lk on kh.id_loai_khach = lk.id_loai_khach
 					join hop_dong as hd on kh.id_khach_hang = hd.id_khach_hang
                     join dich_vu as dv on hd.id_dich_vu = dv.id_dich_vu
@@ -210,7 +210,7 @@ add foreign key (id_nhan_vien) references nhan_vien(id_nhan_vien) on delete casc
  delete from nhan_vien 
   where id_nhan_vien not in (select x.id from(select hop_dong.id_nhan_vien as id from hop_dong
 											join nhan_vien 
-										where year(hop_dong.ngay_lam_hop_dong) >=2017 and year(hop_dong.ngay_lam_hop_dong) <2020)x);
+										    where year(hop_dong.ngay_lam_hop_dong) >=2017 and year(hop_dong.ngay_lam_hop_dong) <2020)x);
 SET FOREIGN_KEY_CHECKS=1; -- to re-enable them				
 SET SQL_SAFE_UPDATES = 0;
 
@@ -245,7 +245,7 @@ SET FOREIGN_KEY_CHECKS=1;
  SET SQL_SAFE_UPDATES = 0;
  update dich_vu_di_kem as dvdk
  set gia = gia * 2
- where dvdk.id_dich_vu_di_kem in (select sub_qr1.id from(select dvdk.id_dich_vu_di_kem as id , sum(hdct.so_luong) from dich_vu_di_kem as dvdk
+ where dvdk.id_dich_vu_di_kem in (select sub_qr1.id from (select dvdk.id_dich_vu_di_kem as id , sum(hdct.so_luong) from dich_vu_di_kem as dvdk
 									join hop_dong_chi_tiet as hdct on dvdk.id_dich_vu_di_kem = hdct.id_dich_vu_di_kem
                                     join hop_dong as hd on hd.id_hop_dong = hdct.id_hop_dong
                                     where year(hd.ngay_lam_hop_dong) = 2019 

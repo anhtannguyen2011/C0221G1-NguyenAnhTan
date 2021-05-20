@@ -73,6 +73,11 @@ call procedure_sp_2 (16,"1990-12-12","1991-12-12",500000,50000000,1,1,1);
  create table `show`(
 		tong_so int
     );
+    
+    create table thong_tin_xoa(
+		tt varchar(100)
+    );
+    
 
 drop table `show_message`;
 
@@ -86,13 +91,16 @@ begin
     set count_dl = (select count(*) from hop_dong);
 	insert into `show`
     values(count_dl);
+    insert into thong_tin_xoa
+    values(OLD.id_hop_dong);
 end; //
 DELIMITER ;
 SET FOREIGN_KEY_CHECKS=0;  
 
 delete from hop_dong
-where id_hop_dong = 1 ;
+where id_hop_dong = 16 ;
 select * from `show`;
+select * from thong_tin_xoa;
 
 
 -- 26.Tạo triggers có tên Tr_2 Khi cập nhật Ngày kết thúc hợp đồng, cần kiểm tra xem thời gian 

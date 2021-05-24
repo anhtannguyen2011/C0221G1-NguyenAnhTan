@@ -35,21 +35,21 @@ a{
 
 .container{
     display: flex;
+    align-items: center;
 }
 .container__menu{
     width: 420px;
-
     text-align: center;
-    display: block;
+   display: block;
 }
 .container__menu-box{
-    padding-top: 10px;
-
+   margin-top: 20px;
     background: var(--font-color);
 }
 
 .container__content{
     padding-left: 30px;
+    margin-top: 50px;
 }
 p{
     font-size: 20px;
@@ -60,4 +60,29 @@ p{
     text-align: center;
     background: var(--font-color);
     line-height: 100px;
+}
+.container-link{
+    margin-top: 40px;
+}
+
+@media only screen and (max-width: 46.1875em) {
+    .container{
+        flex-direction: column-reverse;
+    }
+    .link__cartoon_01{
+        display: none;
+    }
+    .header__link{
+        display: none;
+    }
+
+}
+
+@media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+    .container{
+        flex-direction: column-reverse;
+    }
+     .header__link{
+         display: none;
+     }
 }

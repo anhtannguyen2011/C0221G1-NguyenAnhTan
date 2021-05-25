@@ -1,0 +1,24 @@
+.img{
+    background: #F5F5F5;
+    border: groove 1px #F5F5F5;
+    padding: 10px 10px 10px 10px;
+    margin-right: 10px;
+    width: 365px;
+    text-align: center;
+
+}
+.row{
+    text-align: center  ;
+    margin: 20px 5px;
+}
+
+.img:hover{
+    border: solid 2px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.caption{
+    padding-top: 20px;
+}

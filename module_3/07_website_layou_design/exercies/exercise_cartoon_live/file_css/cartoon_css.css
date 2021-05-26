@@ -56,10 +56,16 @@ p{
 
 }
 .footer{
-    min-height: 100px;
+    margin-top: 300px;
+    height: 80px;
     text-align: center;
     background: var(--font-color);
-    line-height: 100px;
+    line-height: 80px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+
 }
 .container-link{
     margin-top: 40px;

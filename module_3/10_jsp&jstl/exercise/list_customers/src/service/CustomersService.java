@@ -1,7 +1,11 @@
+package service;
+
+import model.Customers;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddCustomers {
+public class CustomersService {
 
     public static List<Customers> addCustomers(){
         List<Customers> customersList = new ArrayList<>();

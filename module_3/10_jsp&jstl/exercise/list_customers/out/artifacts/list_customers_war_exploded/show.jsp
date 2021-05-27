@@ -40,7 +40,7 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${cus}" var="c">
+        <c:forEach  var="c" items="${cus}" >
             <tr>
                 <td>${c.name}</td>
                 <td>${c.dayOfBirth}</td>

@@ -1,8 +1,3 @@
-package servlet;
-
-import controller.AddCustomers;
-import model.Customers;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,7 +15,7 @@ public class CustomersServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Customers> customers = AddCustomers.addCustomers();
-        request.setAttribute("cus",customers);
+        request.setAttribute("customers",customers);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("show.jsp");
         requestDispatcher.forward(request,response);
     }

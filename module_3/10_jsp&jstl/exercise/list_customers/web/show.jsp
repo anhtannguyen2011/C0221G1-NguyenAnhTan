@@ -1,7 +1,4 @@
-<%@ page import="model.Customers" %>
-<%@ page import="controller.AddCustomers" %>
-<%@ page import="java.util.List" %>
-<%@ page import="servlet.CustomersServlet" %>
+
 <%--
 
   Created by IntelliJ IDEA.
@@ -40,12 +37,12 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach  var="c" items="${cus}" >
+        <c:forEach  var="customer" items="${customers}" >
             <tr>
-                <td>${c.name}</td>
-                <td>${c.dayOfBirth}</td>
-                <td>${c.address}</td>
-                <td><img src="${c.image}" width="100px" height="100px"></td>
+                <td>${customer.name}</td>
+                <td>${customer.dayOfBirth}</td>
+                <td>${customer.address}</td>
+                <td><img src="${customer.image}" width="100px" height="100px"></td>
             </tr>
         </c:forEach>
         </tbody>

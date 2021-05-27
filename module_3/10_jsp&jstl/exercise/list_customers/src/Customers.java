@@ -1,5 +1,3 @@
-package model;
-
 public class Customers {
     private String name;
     private String dayOfBirth;

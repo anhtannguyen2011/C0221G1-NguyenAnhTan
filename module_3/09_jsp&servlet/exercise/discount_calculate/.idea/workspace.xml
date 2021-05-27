@@ -6,7 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0b7bbfa6-c3a5-4c29-9ab5-2eaeba61d4a0" name="Default Changelist" comment="" />
+    <list default="true" id="0b7bbfa6-c3a5-4c29-9ab5-2eaeba61d4a0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../10_jsp&amp;jstl/exercise/list_customers/src/controller/CustomersServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../10_jsp&amp;jstl/exercise/list_customers/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../10_jsp&amp;jstl/exercise/list_customers/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../10_jsp&amp;jstl/exercise/list_customers/out/artifacts/list_customers_war_exploded/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../10_jsp&amp;jstl/exercise/list_customers/out/artifacts/list_customers_war_exploded/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../10_jsp&amp;jstl/exercise/list_customers/out/production/list_customers/controller/AddCustomers.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../10_jsp&amp;jstl/exercise/list_customers/out/production/list_customers/controller/AddCustomers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../10_jsp&amp;jstl/exercise/list_customers/src/controller/AddCustomers.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../10_jsp&amp;jstl/exercise/list_customers/src/controller/AddCustomers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../10_jsp&amp;jstl/exercise/list_customers/web/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../10_jsp&amp;jstl/exercise/list_customers/web/index.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +28,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -27,6 +39,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1t3evxzn2T5RnI2qnS8DvulCyJi" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -34,8 +47,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -133,11 +148,6 @@
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -156,6 +166,7 @@
       <option name="presentableId" value="Default" />
       <updated>1622002434572</updated>
       <workItem from="1622002437690" duration="5472000" />
+      <workItem from="1622088365465" duration="1226000" />
     </task>
     <servers />
   </component>

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class AddCustomers {
 
-    public static List<Customers> addEmployee(){
+    public static List<Customers> addCustomers(){
         List<Customers> customersList = new ArrayList<>();
         customersList.add(new Customers("Mai Văn Hoàn","1983-08-20","Hà Nội","https://image.vtc.vn/files/ctv.giaoduc/2016/11/03/nguoi-dep-xu-tuyen-1-0633.jpg"));
         customersList.add(new Customers("Nguyễn Văn Nam","1983-08-21","Bắc Giang","https://lh3.googleusercontent.com/proxy/oCvmu0DnvzFMhcdgYJyke7EzYR6ibLlxhk0_FC71_gNGlIa48opjFjLV4ySy2rIBPLBezixokM2tHzCrU6Oh6jmcls_i4pjgtsOCVemDEwJhWUCJz8a0llI7EWs0FpMcQvBuaSdIb6U"));

@@ -19,8 +19,8 @@
 <body>
 <h1>Create new customer</h1>
 <p>
-    <c:if test='${requestScope["message"] != null}'>
-        <span class="message">${requestScope["message"]}</span>
+    <c:if test='${message != null}'>
+        <span class="message">${message}</span>
     </c:if>
 </p>
 <p>
@@ -52,7 +52,7 @@
             </tr>
             <tr>
                 <td></td>
-                <td><input type="submit" value="Create customer"></td>
+                <td><input type="submit" value="Create Products"></td>
             </tr>
         </table>
     </fieldset>

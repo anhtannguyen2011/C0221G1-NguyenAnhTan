@@ -25,8 +25,8 @@
     <tr>
         <th>Name </th>
         <th>Price </th>
-        <th>Description </th>
-        <th>Manufacture </th>
+        <th>Product Description </th>
+        <th>Manufacture</th>
     </tr>
     <c:forEach var="product" items="${products}">
         <tr>

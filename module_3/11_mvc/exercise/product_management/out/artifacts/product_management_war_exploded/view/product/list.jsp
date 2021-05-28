@@ -50,8 +50,8 @@
 <body>
 <h1>Product</h1>
 <p>
-    <a href="/product?action=create">Create new Product</a>
-    <a href="/product?action=search">Search  Product</a>
+    <a href="/product?action=create">Create new Product ||   </a>
+    <a href="/product?action=search"style="color: red">Search  Product</a>
 </p>
 <table border="1">
     <tr>
@@ -59,7 +59,7 @@
         <td>Name</td>
         <td>Price</td>
         <td>Description</td>
-        <td>Producer</td>
+        <td>Manufacturers</td>
         <td>Edit</td>
         <td>Delete</td>
     </tr>

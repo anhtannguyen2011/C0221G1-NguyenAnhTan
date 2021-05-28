@@ -1,6 +1,6 @@
-package services;
+package model.services;
 
-import model.Customers;
+import model.bean.Customers;
 
 import java.util.ArrayList;
 import java.util.List;

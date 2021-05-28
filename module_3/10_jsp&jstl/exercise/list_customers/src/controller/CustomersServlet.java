@@ -1,7 +1,7 @@
 package controller;
 
-import model.Customers;
-import services.CustomersService;
+import model.bean.Customers;
+import model.services.CustomersService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

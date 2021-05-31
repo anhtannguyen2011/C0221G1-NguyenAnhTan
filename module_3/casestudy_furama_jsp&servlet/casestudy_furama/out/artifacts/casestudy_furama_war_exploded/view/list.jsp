@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -58,49 +59,31 @@
             <th>Họ Tên</th>
             <th>Ngày Sinh</th>
             <th>Số CMND</th>
-            <th>Lương</th>
-            <th>Số ĐT</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Địa Chỉ</th>
+            <th>Loại Khách</th>
             <td><a href="" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
         </tr>
         </thead>
         <tbody>
+        <c:forEach var="listCustomer" items="${listCustomers}">
         <tr>
-            <td>1</td>
-            <td>Nguyễn Văn A</td>
-            <td>2020-12-12</td>
-            <td>20121021</td>
-            <td>1000000</td>
-            <td>0906060606</td>
+            <th>${listCustomer.id}</th>
+            <th>${listCustomer.name}</th>
+            <th>${listCustomer.dayOfBirth}</th>
+            <th>${listCustomer.idCard}</th>
+            <th>${listCustomer.phone}</th>
+            <th>${listCustomer.email}</th>
+            <th>${listCustomer.address}</th>
+            <th>${listCustomer.customerType}</th>
             <td>
                 <a href="edit.jsp" class="edit" ><i class="far fa-edit" style="font-size: 30px;color: red" ></i></a>
                 <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i data-toggle="tooltip" class="fas fa-trash-alt mb-1 style=" style="font-size: 30px; color: red" title="Delete">&#xE872;</i></a>
             </td>
 
         </tr>
-        <tr>
-            <td>2</td>
-            <td>Nguyễn Văn B</td>
-            <td>2020-12-12</td>
-            <td>20121021</td>
-            <td>1000000</td>
-            <td>0906060606</td>
-            <td>
-                <a href="" class="edit" data-toggle="modal"><i class="far fa-edit" style="font-size: 30px;color: red" ></i></a>
-                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i data-toggle="tooltip" class="fas fa-trash-alt mb-1 style=" style="font-size: 30px; color: red" title="Delete">&#xE872;</i></a>
-            </td>
-        </tr>
-        <tr>
-            <td>3</td>
-            <td>Nguyễn Văn C</td>
-            <td>2020-12-12</td>
-            <td>20121021</td>
-            <td>1000000</td>
-            <td>0906060606</td>
-            <td>
-                <a href="" class="edit" data-toggle="modal"><i class="far fa-edit" style="font-size: 30px;color: red" ></i></a>
-                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i data-toggle="tooltip" class="fas fa-trash-alt mb-1 style=" style="font-size: 30px; color: red" title="Delete">&#xE872;</i></a>
-            </td>
-        </tr>
+        </c:forEach>
         </tbody>
     </table>
     <nav aria-label="Page navigation example">

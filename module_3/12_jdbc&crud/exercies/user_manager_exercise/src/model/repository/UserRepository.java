@@ -19,7 +19,7 @@ public class UserRepository {
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
 
-    private static final String SEARCH_USER_BY_COUNTRY = "select id,name,email,country from users where country =?";
+    private static final String SEARCH_USER_BY_COUNTRY = "select id,name,email,country from users where country like ?";
 
     private static final String SORT_USER_BY_NAME = "SELECT * FROM users\n" +
             "ORDER BY `name` ASC;";
@@ -156,7 +156,7 @@ public class UserRepository {
       List<User> usersList = new ArrayList<>();
         try{
             statement  = connection.prepareStatement(SEARCH_USER_BY_COUNTRY);
-            statement.setString(1,search);
+            statement.setString(1,"%"+search+"%");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt("id");

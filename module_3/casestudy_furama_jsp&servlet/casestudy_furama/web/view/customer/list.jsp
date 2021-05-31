@@ -25,6 +25,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../datatables/css/dataTables.bootstrap4.min.css" />
+    <style>
+        .pagination{
+            font-size: 15px;
+        }
+        div.dataTables_wrapper div.dataTables_info {
+            padding-top: 0.85em;
+            white-space: nowrap;
+            font-size: 15px;
+        }
+    </style>
     <script>
 
         $(document).ready(function(){
@@ -55,11 +66,11 @@
 
 
 
-<div class="container mt-5 border border-body">
+<div class="container-fluid mt-5 border border-body">
     <div class="text-center">
         <h1>List</h1>
     </div>
-    <table class="table ">
+    <table class="table table-striped table-bordered" style="width:100%" id="tableStudent">
         <thead class="header">
         <tr>
             <th>ID</th>
@@ -69,7 +80,7 @@
             <th>Số Điện Thoại</th>
             <th>Email</th>
             <th>Địa Chỉ</th>
-            <th>ID Loại Khách</th>
+            <th>Loại Khách</th>
             <td><a href="" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
         </tr>
         </thead>
@@ -83,7 +94,7 @@
             <th>${customers.phone}</th>
             <th>${customers.email}</th>
             <th>${customers.address}</th>
-            <th>${customers.id_typeOfCustomer}</th>
+            <th>${customers.customerType.customerTypeName}</th>
             <td>
                 <a href="edit.jsp" class="edit" ><i class="far fa-edit" style="font-size: 30px;color: red" ></i></a>
                 <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i data-toggle="tooltip" class="fas fa-trash-alt mb-1 style=" style="font-size: 30px; color: red" title="Delete">&#xE872;</i></a>
@@ -93,17 +104,17 @@
         </c:forEach>
         </tbody>
     </table>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-end">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-            </li>
-        </ul>
-    </nav>
+<%--    <nav aria-label="Page navigation example">--%>
+<%--        <ul class="pagination justify-content-end">--%>
+<%--            <li class="page-item disabled">--%>
+<%--                <a class="page-link" href="#" tabindex="-1">Previous</a>--%>
+<%--            </li>--%>
+<%--            <li class="page-item"><a class="page-link" href="#">1</a></li>--%>
+<%--            <li class="page-item">--%>
+<%--                <a class="page-link" href="#">Next</a>--%>
+<%--            </li>--%>
+<%--        </ul>--%>
+<%--    </nav>--%>
 </div>
 <div id="deleteEmployeeModal" class="modal fade">
     <div class="modal-dialog">
@@ -125,6 +136,19 @@
         </div>
     </div>
 </div>
+
+<script src="../../jquery/jquery-3.5.1.min.js"></script>
+<script src="../../datatables/js/jquery.dataTables.min.js"></script>
+<script src="../../datatables/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#tableStudent').dataTable( {
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 3
+        } );
+    } );
+</script>
 </body>
 </html>
 

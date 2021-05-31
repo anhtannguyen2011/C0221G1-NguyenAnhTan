@@ -10,12 +10,12 @@ public class Customers {
     private int phone;
     private String email;
     private String address;
-    private int id_typeOfCustomer;
+    private CustomerType customerType;
 
     public Customers() {
     }
 
-    public Customers(int id, String name, String dayOfBirth, int idCard, int phone, String email, String address, int id_typeOfCustomer) {
+    public Customers(int id, String name, String dayOfBirth, int idCard, int phone, String email, String address, CustomerType customerType) {
         this.id = id;
         this.name = name;
         this.dayOfBirth = dayOfBirth;
@@ -23,7 +23,7 @@ public class Customers {
         this.phone = phone;
         this.email = email;
         this.address = address;
-        this.id_typeOfCustomer = id_typeOfCustomer;
+        this.customerType = customerType;
     }
 
     public int getId() {
@@ -82,11 +82,11 @@ public class Customers {
         this.address = address;
     }
 
-    public int getId_typeOfCustomer() {
-        return id_typeOfCustomer;
+    public CustomerType getCustomerType() {
+        return customerType;
     }
 
-    public void setId_typeOfCustomer(int id_typeOfCustomer) {
-        this.id_typeOfCustomer = id_typeOfCustomer;
+    public void setCustomerType(CustomerType customerType) {
+        this.customerType = customerType;
     }
 }

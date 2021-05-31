@@ -8,9 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class UserReponsitory {
-    private String jdbcURL= "jdbc:mysql://localhost:3306/demo?useSSL=false";
-    private String jdbcUserName = "root";
-    private String jdbcPassword ="12345678";
+    BaseRepository repository = new BaseRepository();
 
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES " +
@@ -29,21 +27,11 @@ public class UserReponsitory {
     public UserReponsitory() {
     }
 
-    protected Connection getConnection(){
-        Connection connection =null;
-
-        try{
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(jdbcURL,jdbcUserName,jdbcPassword);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return connection;
-    }
    public void insertUser(User user) throws SQLException{
-        try(Connection connection = getConnection(); PreparedStatement preparedStatement =connection.prepareStatement(INSERT_USERS_SQL)) {
+        Connection connection = repository.getConnection();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement=connection.prepareStatement(INSERT_USERS_SQL);
             preparedStatement.setString(1,user.getName());
             preparedStatement.setString(2,user.getEmail());
             preparedStatement.setString(3,user.getCountry());
@@ -52,12 +40,18 @@ public class UserReponsitory {
 
         }catch (SQLException e){
             printSQLException(e);
+        }finally {
+            preparedStatement.close();
+            connection.close();
         }
     }
 
    public User selectUser(int id){
+        Connection connection =repository.getConnection();
+       PreparedStatement preparedStatement = null;
         User user = null;
-        try(Connection connection = getConnection(); PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID)) {
+        try {
+            preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID);
             preparedStatement.setInt(1,id);
             ResultSet rs =preparedStatement.executeQuery();
 
@@ -69,13 +63,24 @@ public class UserReponsitory {
             }
         } catch (SQLException e) {
             printSQLException(e);
+        }finally {
+            try {
+                preparedStatement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return user;
     }
 
    public List<User> selectAllUser(){
-        List<User> user = new ArrayList<>();
-        try(Connection connection =getConnection() ; PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_USERS)) {
+       Connection connection =repository.getConnection();
+       PreparedStatement preparedStatement = null;
+       List<User> user = new ArrayList<>();
+        try {
+            preparedStatement  = connection.prepareStatement(SELECT_ALL_USERS);
             ResultSet rs= preparedStatement.executeQuery();
             while(rs.next()){
                 int id = rs.getInt("id");
@@ -87,35 +92,70 @@ public class UserReponsitory {
 
         } catch (SQLException e) {
             printSQLException(e);
+        }finally {
+            try {
+                preparedStatement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return user;
     }
 
-  public   boolean deleteUser(int id) throws SQLException{
-        boolean rowDeleted;
-        try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(DELETE_USERS_SQL);) {
+  public boolean deleteUser(int id){
+        Connection connection =repository.getConnection();
+        PreparedStatement statement = null;
+        boolean rowDeleted = false;
+        try  {
+            statement  = connection.prepareStatement(DELETE_USERS_SQL);
             statement.setInt(1, id);
             rowDeleted = statement.executeUpdate() > 0;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return rowDeleted;
     }
 
-  public   boolean updateUser(User user) throws SQLException{
-        boolean rowUpdated;
-        try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
+  public boolean updateUser(User user){
+        Connection connection = repository.getConnection();
+      PreparedStatement statement = null;
+        boolean rowUpdated = false;
+        try{
+            statement = connection.prepareStatement(UPDATE_USERS_SQL);
             statement.setString(1, user.getName());
             statement.setString(2, user.getEmail());
             statement.setString(3, user.getCountry());
             statement.setInt(4, user.getId());
 
             rowUpdated = statement.executeUpdate() > 0;
+        }catch (SQLException e){
+            e.printStackTrace();
+        }finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return rowUpdated;
     }
 
   public List<User> searchByCountry(String search){
-        List<User> usersList = new ArrayList<>();
-        try(Connection connection = getConnection() ; PreparedStatement statement = connection.prepareStatement(SEARCH_USER_BY_COUNTRY)){
+      Connection connection = repository.getConnection();
+      PreparedStatement statement = null;
+      List<User> usersList = new ArrayList<>();
+        try{
+            statement  = connection.prepareStatement(SEARCH_USER_BY_COUNTRY);
             statement.setString(1,search);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
@@ -128,13 +168,24 @@ public class UserReponsitory {
             }
         } catch (SQLException e) {
             printSQLException(e);
+        }finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
         }
         return usersList;
     }
 
   public List<User> sortByName(){
+      Connection connection = repository.getConnection();
         List<User> usersList = new ArrayList<>();
-        try(Connection connection = getConnection() ; PreparedStatement statement = connection.prepareStatement(SORT_USER_BY_NAME)){
+      PreparedStatement statement = null;
+        try{
+            statement = connection.prepareStatement(SORT_USER_BY_NAME);
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
@@ -146,6 +197,13 @@ public class UserReponsitory {
             }
         } catch (SQLException e) {
             printSQLException(e);
+        }finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
         return usersList;
     }

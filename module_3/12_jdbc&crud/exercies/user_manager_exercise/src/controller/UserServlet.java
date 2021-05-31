@@ -37,11 +37,18 @@ public class UserServlet extends HttpServlet {
                 case "edit":
                     updateUser(request, response);
                     break;
+                case "search" :
+                    searchUserByCountry(request,response);
+                    break;
+                case "sort" :
+                    sortUserByName(request,response);
+                    break;
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }
     }
+
 
 
 
@@ -128,7 +135,17 @@ public class UserServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-
+    private void searchUserByCountry(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("name");
+        List<User> userList = userService.searchByCountry(name);
+        request.setAttribute("listUser",userList);
+        request.getRequestDispatcher("view/user/list.jsp").forward(request,response);
+    }
+    private void sortUserByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<User> userList = userService.sortByName();
+        request.setAttribute("listUser",userList);
+        request.getRequestDispatcher("view/user/list.jsp").forward(request,response);
+    }
 
 }
 

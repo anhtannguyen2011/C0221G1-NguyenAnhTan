@@ -20,7 +20,6 @@
     </h2>
 </center>
 <div align="center">
-    <a href="list.jsp">Back to list.jsp</a>
     <form method="post">
         <table border="1" cellpadding="5">
             <caption>

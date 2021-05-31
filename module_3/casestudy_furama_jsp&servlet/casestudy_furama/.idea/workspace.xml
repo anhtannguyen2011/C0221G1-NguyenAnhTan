@@ -6,7 +6,33 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="325fee83-1f91-413a-80fe-c4d3e221c1b3" name="Default Changelist" comment="" />
+    <list default="true" id="325fee83-1f91-413a-80fe-c4d3e221c1b3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/casestudy_furama_jsp&amp;servlet.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/customers/controller/CustomersServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/customers/model/bean/Customers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/customers/model/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/customers/model/service/ICustomerServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/customers/model/service/Impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/view/customer/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/view/customer/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/artifacts/user_manager_exercise_war_exploded/WEB-INF/classes/controller/SearchControlServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/artifacts/user_manager_exercise_war_exploded/WEB-INF/classes/controller/SearchControlServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/artifacts/user_manager_exercise_war_exploded/WEB-INF/classes/controller/SortControlServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/artifacts/user_manager_exercise_war_exploded/WEB-INF/classes/controller/SortControlServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/artifacts/user_manager_exercise_war_exploded/WEB-INF/classes/controller/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/artifacts/user_manager_exercise_war_exploded/WEB-INF/classes/controller/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/artifacts/user_manager_exercise_war_exploded/view/user/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/artifacts/user_manager_exercise_war_exploded/view/user/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/artifacts/user_manager_exercise_war_exploded/view/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/artifacts/user_manager_exercise_war_exploded/view/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/production/user_manager_exercise/META-INF/user_manager_exercise.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/production/user_manager_exercise/controller/SearchControlServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/production/user_manager_exercise/controller/SearchControlServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/production/user_manager_exercise/controller/SortControlServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/production/user_manager_exercise/controller/SortControlServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/production/user_manager_exercise/controller/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/out/production/user_manager_exercise/controller/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/src/controller/SearchControlServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/src/controller/SearchControlServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/src/controller/SortControlServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/src/controller/SortControlServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/src/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/src/controller/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/web/view/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise/web/view/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,8 +42,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -27,6 +58,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1t9q4Dd8madqkFezOYkNXQ5K2Wb" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -34,9 +66,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../12_jdbc&amp;crud/exercies/user_manager_exercise" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -55,7 +88,7 @@
       <deployment>
         <artifact name="casestudy_furama:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/casestudy_furama_war_exploded" />
+            <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
@@ -67,6 +100,39 @@
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52666" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -103,7 +169,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -124,6 +190,8 @@
       <updated>1622191459634</updated>
       <workItem from="1622191463211" duration="1813000" />
       <workItem from="1622276199125" duration="7281000" />
+      <workItem from="1622376927626" duration="4676000" />
+      <workItem from="1622422925673" duration="644000" />
     </task>
     <servers />
   </component>
@@ -131,57 +199,69 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1622193287138">
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622379834402">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1622193287138" />
-    <state width="1024" height="210" key="GridCell.Tab.0.bottom" timestamp="1622292388818">
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1622379834402" />
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1622379470486">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
-    <state width="1024" height="210" key="GridCell.Tab.0.center" timestamp="1622292388818">
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1622379470486" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1622423015027">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
-    <state width="1024" height="210" key="GridCell.Tab.0.left" timestamp="1622292388818">
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1622423015027" />
+    <state width="1014" height="607" key="GridCell.Tab.0.bottom" timestamp="1622383942704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
-    <state width="1024" height="210" key="GridCell.Tab.0.right" timestamp="1622292388818">
+    <state width="1014" height="607" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state width="1014" height="607" key="GridCell.Tab.0.center" timestamp="1622383942704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
-    <state width="1024" height="210" key="GridCell.Tab.1.bottom" timestamp="1622292388818">
+    <state width="1014" height="607" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state width="1014" height="607" key="GridCell.Tab.0.left" timestamp="1622383942704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
-    <state width="1024" height="210" key="GridCell.Tab.1.center" timestamp="1622292388818">
+    <state width="1014" height="607" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state width="1014" height="607" key="GridCell.Tab.0.right" timestamp="1622383942704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
-    <state width="1024" height="210" key="GridCell.Tab.1.left" timestamp="1622292388818">
+    <state width="1014" height="607" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state width="1014" height="607" key="GridCell.Tab.1.bottom" timestamp="1622383942704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
-    <state width="1024" height="210" key="GridCell.Tab.1.right" timestamp="1622292388818">
+    <state width="1014" height="607" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state width="1014" height="607" key="GridCell.Tab.1.center" timestamp="1622383942704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
-    <state width="1024" height="210" key="GridCell.Tab.2.bottom" timestamp="1622292388818">
+    <state width="1014" height="607" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state width="1014" height="607" key="GridCell.Tab.1.left" timestamp="1622383942704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
-    <state width="1024" height="210" key="GridCell.Tab.2.center" timestamp="1622292388818">
+    <state width="1014" height="607" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state width="1014" height="607" key="GridCell.Tab.1.right" timestamp="1622383942704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
-    <state width="1024" height="210" key="GridCell.Tab.2.left" timestamp="1622292388818">
+    <state width="1014" height="607" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state width="1014" height="607" key="GridCell.Tab.2.bottom" timestamp="1622383942704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
-    <state width="1024" height="210" key="GridCell.Tab.2.right" timestamp="1622292388818">
+    <state width="1014" height="607" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state width="1014" height="607" key="GridCell.Tab.2.center" timestamp="1622383942704">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1024" height="210" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1622292388818" />
+    <state width="1014" height="607" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state width="1014" height="607" key="GridCell.Tab.2.left" timestamp="1622383942704">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1014" height="607" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state width="1014" height="607" key="GridCell.Tab.2.right" timestamp="1622383942704">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1014" height="607" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1622383942704" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1622422930204">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1622422930204" />
   </component>
 </project>

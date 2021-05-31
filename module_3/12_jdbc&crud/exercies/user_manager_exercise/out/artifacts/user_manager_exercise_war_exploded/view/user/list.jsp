@@ -20,11 +20,11 @@
     </h2>
 </center>
 <div align="center">
-    <form method="post" action="search">
+    <form method="post" action="users?action=search">
         <input type="text" name="name">
         <button type="submit">Search</button>
     </form>
-    <form method="post" action="sort">
+    <form method="post" action="users?action=sort">
         <button type="submit">Sort</button>
     </form>
     <table border="1" cellpadding="5">

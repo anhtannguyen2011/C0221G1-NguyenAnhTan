@@ -6,7 +6,32 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e8243d0-fa1c-4e23-8f7b-cb4b1135ba13" name="Default Changelist" comment="" />
+    <list default="true" id="9e8243d0-fa1c-4e23-8f7b-cb4b1135ba13" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/.idea/casestudy_furama_jsp&amp;servlet.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/controller/CustomersServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/bean/Customers.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/service/ICustomerServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/service/Impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/web/view/customer/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/web/view/customer/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/user_manager_exercise_war_exploded/WEB-INF/classes/controller/SearchControlServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/user_manager_exercise_war_exploded/WEB-INF/classes/controller/SortControlServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/user_manager_exercise_war_exploded/WEB-INF/classes/controller/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/user_manager_exercise_war_exploded/WEB-INF/classes/controller/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/user_manager_exercise_war_exploded/view/user/edit.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/user_manager_exercise_war_exploded/view/user/edit.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/user_manager_exercise_war_exploded/view/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/user_manager_exercise_war_exploded/view/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/user_manager_exercise/controller/SearchControlServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/user_manager_exercise/controller/SortControlServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/user_manager_exercise/controller/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/user_manager_exercise/controller/UserServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/SearchControlServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/SortControlServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/view/user/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/view/user/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +46,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -29,6 +57,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1tEwTiLlm6TLw3PKR5Crhcp7Pua" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -36,9 +65,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../user_manager" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -136,7 +166,7 @@
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Tomcat Server" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-                <item name="Finished" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="Running" type="7427dc5b:ServiceModel$ServiceGroupNode" />
               </path>
             </expand>
             <select />
@@ -158,6 +188,7 @@
       <workItem from="1622347569764" duration="1970000" />
       <workItem from="1622361077653" duration="5121000" />
       <workItem from="1622366315315" duration="2433000" />
+      <workItem from="1622423021032" duration="676000" />
     </task>
     <servers />
   </component>
@@ -177,54 +208,54 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1622362073884" />
-    <state width="1014" height="398" key="GridCell.Tab.0.bottom" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.0.bottom" timestamp="1622423698928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
-    <state width="1014" height="398" key="GridCell.Tab.0.center" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622423698928" />
+    <state width="1014" height="398" key="GridCell.Tab.0.center" timestamp="1622423698928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
-    <state width="1014" height="398" key="GridCell.Tab.0.left" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1622423698928" />
+    <state width="1014" height="398" key="GridCell.Tab.0.left" timestamp="1622423698928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
-    <state width="1014" height="398" key="GridCell.Tab.0.right" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1622423698928" />
+    <state width="1014" height="398" key="GridCell.Tab.0.right" timestamp="1622423698928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
-    <state width="1014" height="398" key="GridCell.Tab.1.bottom" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1622423698928" />
+    <state width="1014" height="398" key="GridCell.Tab.1.bottom" timestamp="1622423698928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
-    <state width="1014" height="398" key="GridCell.Tab.1.center" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622423698928" />
+    <state width="1014" height="398" key="GridCell.Tab.1.center" timestamp="1622423698928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
-    <state width="1014" height="398" key="GridCell.Tab.1.left" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1622423698928" />
+    <state width="1014" height="398" key="GridCell.Tab.1.left" timestamp="1622423698928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
-    <state width="1014" height="398" key="GridCell.Tab.1.right" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1622423698928" />
+    <state width="1014" height="398" key="GridCell.Tab.1.right" timestamp="1622423698928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
-    <state width="1014" height="398" key="GridCell.Tab.2.bottom" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1622423698928" />
+    <state width="1014" height="398" key="GridCell.Tab.2.bottom" timestamp="1622423698931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
-    <state width="1014" height="398" key="GridCell.Tab.2.center" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1622423698931" />
+    <state width="1014" height="398" key="GridCell.Tab.2.center" timestamp="1622423698931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
-    <state width="1014" height="398" key="GridCell.Tab.2.left" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1622423698931" />
+    <state width="1014" height="398" key="GridCell.Tab.2.left" timestamp="1622423698928">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
-    <state width="1014" height="398" key="GridCell.Tab.2.right" timestamp="1622375823618">
+    <state width="1014" height="398" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1622423698928" />
+    <state width="1014" height="398" key="GridCell.Tab.2.right" timestamp="1622423698931">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1014" height="398" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1622375823618" />
+    <state width="1014" height="398" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1622423698931" />
     <state width="1014" height="398" key="GridCell.Tab.3.bottom" timestamp="1622367047538">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -277,11 +308,6 @@
           <url>file://$PROJECT_DIR$/src/model/repository/UserReponsitory.java</url>
           <line>122</line>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/controller/SearchControlServlet.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="13" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-field">
           <url>file://$PROJECT_DIR$/src/model/repository/UserReponsitory.java</url>

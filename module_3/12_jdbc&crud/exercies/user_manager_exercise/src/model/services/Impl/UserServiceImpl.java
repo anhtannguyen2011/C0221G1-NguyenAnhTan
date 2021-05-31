@@ -1,14 +1,14 @@
 package model.services.Impl;
 
 import model.bean.User;
-import model.repository.UserReponsitory;
+import model.repository.UserRepository;
 import model.services.IUserService;
 
 import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements IUserService {
-    UserReponsitory reponsitory = new UserReponsitory();
+    UserRepository reponsitory = new UserRepository();
 
     @Override
     public void insertUser(User user) throws SQLException {

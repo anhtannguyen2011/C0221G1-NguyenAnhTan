@@ -7,8 +7,8 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserReponsitory {
-    BaseRepository repository = new BaseRepository();
+public class UserRepository {
+    BaseRepository baseRepository = new BaseRepository();
 
 
     private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES " +
@@ -24,11 +24,11 @@ public class UserReponsitory {
     private static final String SORT_USER_BY_NAME = "SELECT * FROM users\n" +
             "ORDER BY `name` ASC;";
 
-    public UserReponsitory() {
+    public UserRepository() {
     }
 
    public void insertUser(User user) throws SQLException{
-        Connection connection = repository.getConnection();
+        Connection connection = baseRepository.getConnection();
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement=connection.prepareStatement(INSERT_USERS_SQL);
@@ -47,7 +47,7 @@ public class UserReponsitory {
     }
 
    public User selectUser(int id){
-        Connection connection =repository.getConnection();
+        Connection connection =baseRepository.getConnection();
        PreparedStatement preparedStatement = null;
         User user = null;
         try {
@@ -76,7 +76,7 @@ public class UserReponsitory {
     }
 
    public List<User> selectAllUser(){
-       Connection connection =repository.getConnection();
+       Connection connection =baseRepository.getConnection();
        PreparedStatement preparedStatement = null;
        List<User> user = new ArrayList<>();
         try {
@@ -104,7 +104,7 @@ public class UserReponsitory {
     }
 
   public boolean deleteUser(int id){
-        Connection connection =repository.getConnection();
+        Connection connection =baseRepository.getConnection();
         PreparedStatement statement = null;
         boolean rowDeleted = false;
         try  {
@@ -125,7 +125,7 @@ public class UserReponsitory {
     }
 
   public boolean updateUser(User user){
-        Connection connection = repository.getConnection();
+        Connection connection = baseRepository.getConnection();
       PreparedStatement statement = null;
         boolean rowUpdated = false;
         try{
@@ -151,7 +151,7 @@ public class UserReponsitory {
     }
 
   public List<User> searchByCountry(String search){
-      Connection connection = repository.getConnection();
+      Connection connection = baseRepository.getConnection();
       PreparedStatement statement = null;
       List<User> usersList = new ArrayList<>();
         try{
@@ -181,7 +181,7 @@ public class UserReponsitory {
     }
 
   public List<User> sortByName(){
-      Connection connection = repository.getConnection();
+      Connection connection = baseRepository.getConnection();
         List<User> usersList = new ArrayList<>();
       PreparedStatement statement = null;
         try{

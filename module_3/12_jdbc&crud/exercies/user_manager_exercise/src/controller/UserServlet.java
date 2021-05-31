@@ -57,7 +57,6 @@ public class UserServlet extends HttpServlet {
         if (action == null) {
             action = "";
         }
-
         try {
             switch (action) {
                 case "create":

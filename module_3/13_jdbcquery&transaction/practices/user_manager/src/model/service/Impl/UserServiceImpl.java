@@ -67,6 +67,6 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public void insertUpdateUseTransaction() {
-        reponsitory.insertUpdateWithoutTransaction();
+        reponsitory.insertUpdateUseTransaction();
     }
 }

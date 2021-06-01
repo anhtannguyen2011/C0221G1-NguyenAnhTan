@@ -72,6 +72,9 @@ public class UserServlet extends HttpServlet {
                 case "permision" :
                     addUserPermision(request, response);
                     break;
+                case "test-without-tran":
+                    testWithoutTran(request, response);
+                    break;
                 default:
                     listUser(request, response);
                     break;
@@ -112,7 +115,9 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
         User newUser = new User(name, email, country);
         userService.insertUser(newUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/create.jsp");
+        List<User> listUser = userService.viewUserStore();
+        request.setAttribute("listUser",listUser);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/list.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -125,7 +130,7 @@ public class UserServlet extends HttpServlet {
 
         User book = new User(id, name, email, country);
 //        userService.updateUser(book);
-        userService.updateUserStrore(book);
+        userService.updateUserStore(book);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/edit.jsp");
         dispatcher.forward(request, response);
     }
@@ -134,7 +139,7 @@ public class UserServlet extends HttpServlet {
             throws SQLException, IOException, ServletException {
         int id = Integer.parseInt(request.getParameter("id"));
 //        userService.deleteUser(id);
-        userService.deleteUserStrore(id);
+        userService.deleteUserStore(id);
         List<User> listUser = userService.viewUserStore();
         request.setAttribute("listUser", listUser);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/list.jsp");
@@ -159,6 +164,9 @@ public class UserServlet extends HttpServlet {
         int[] permision = {1, 2, 4};
         userService.addUserTransaction(user, permision);
 
+    }
+    private void testWithoutTran(HttpServletRequest request, HttpServletResponse response) {
+        userService.insertUpdateUseTransaction();
     }
 }
 

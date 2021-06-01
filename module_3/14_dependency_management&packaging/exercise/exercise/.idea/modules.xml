@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/practice_mysql_jdbc_transaction.iml" filepath="$PROJECT_DIR$/practice_mysql_jdbc_transaction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/quadratic.iml" filepath="$PROJECT_DIR$/quadratic.iml" />
     </modules>
   </component>
 </project>

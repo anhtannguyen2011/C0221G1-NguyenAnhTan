@@ -10,8 +10,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Furama Resort</title>
-    <link href="view_css/furama_css.css" rel="stylesheet" type="text/css">
-    <link href="view_css/base.css" rel="stylesheet" type="text/css">
+    <link href="../css/furama_css.css" rel="stylesheet" type="text/css">
+    <link href="../css/base.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -22,10 +22,10 @@
 <div class="header">
     <div class="row">
         <div class="col-lg-4">
-            <img src="view_img/logo@2x.png" height="150">
+            <img src="../img/logo@2x.png" height="150">
         </div>
         <div class="col-lg-4">
-            <img src="view_img/logo-chinh-thuc.png" width="100%">
+            <img src="../img/logo-chinh-thuc.png" width="100%">
         </div>
         <div class="col-lg-4">
             <form class="form-login">
@@ -40,7 +40,7 @@
         <ul class="nav__link">
             <li><a href="list.jsp" class="link-control">Home</a></li>
             <li><a href="" class="link-control">Employee</a></li>
-            <li><a href="" class="link-control">Customer</a></li>
+            <li><a href="/customer" class="link-control">Customer</a></li>
             <li><a href="" class="link-control">Services</a></li>
             <li><a href="" class="link-control">Contact</a></li>
         </ul>
@@ -111,7 +111,7 @@
             <div class="row-2">
                 <div class="col-in-row">
                     <div class="picture-service">
-                        <img src="view_img/300px-Một_biệt_thự_xây_1937.jpg" >
+                        <img src="../img/300px-Một_biệt_thự_xây_1937.jpg" >
                     </div>
                     <div class="content-picture">
                         <h3>Residencial Sausalito</h3>

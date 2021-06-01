@@ -22,9 +22,11 @@ public interface IUserService {
 
     List<User> viewUserStore();
 
-    boolean updateUserStrore(User user);
+    boolean updateUserStore(User user);
 
-    void deleteUserStrore(int id);
+    boolean deleteUserStore(int id);
 
     void addUserTransaction(User user, int[] permision);
+
+    public void insertUpdateUseTransaction();
 }

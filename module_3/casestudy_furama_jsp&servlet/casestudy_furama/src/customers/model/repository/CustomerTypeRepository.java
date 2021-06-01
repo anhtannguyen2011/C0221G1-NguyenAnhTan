@@ -11,7 +11,7 @@ public class CustomerTypeRepository {
    static BaseRepository baseRepository = new BaseRepository();
     private static final String SELECT_CUSTOMER_TYPE = "select ten_loai_khach from loai_khach where id_loai_khach = ?";
 
-    public static CustomerType selectCustomerType(int id){
+    public CustomerType selectCustomerType(int id){
         Connection connection = baseRepository.getConnection();
         PreparedStatement preparedStatement = null;
         CustomerType customerType = null;

@@ -3,7 +3,9 @@ package model.repository;
 import model.bean.User;
 import sun.dc.pr.PRError;
 
+import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -19,10 +21,33 @@ public class UserRepository {
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
 
-    private static final String SEARCH_USER_BY_COUNTRY = "select id,name,email,country from users where country =?";
+    private static final String SEARCH_USER_BY_COUNTRY = "select id,name,email,country from users where country like ?";
 
     private static final String SORT_USER_BY_NAME = "SELECT * FROM users\n" +
             "ORDER BY `name` ASC;";
+
+    private static final String SQL_INSERT = "INSERT INTO EMPLOYEE (NAME, SALARY, CREATED_DATE) VALUES (?,?,?)";
+
+    private static final String SQL_UPDATE = "UPDATE EMPLOYEE SET SALARY=? WHERE NAME=?";
+
+    private static final String SQL_TABLE_CREATE = "CREATE TABLE EMPLOYEE"
+
+            + "("
+
+            + " ID serial,"
+
+            + " NAME varchar(100) NOT NULL,"
+
+            + " SALARY numeric(15, 2) NOT NULL,"
+
+            + " CREATED_DATE timestamp,"
+
+            + " PRIMARY KEY (ID)"
+
+            + ")";
+
+    private static final String SQL_TABLE_DROP = "DROP TABLE IF EXISTS EMPLOYEE";
+
 
     public UserRepository() {
     }
@@ -156,7 +181,7 @@ public class UserRepository {
         List<User> usersList = new ArrayList<>();
         try{
             statement  = connection.prepareStatement(SEARCH_USER_BY_COUNTRY);
-            statement.setString(1,search);
+            statement.setString(1,"%"+search+"%");
             ResultSet resultSet = statement.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
@@ -251,7 +276,7 @@ public class UserRepository {
     }
 
 
-    public boolean updateUserStrore(User user) {
+    public boolean updateUserStore(User user) {
         Connection connection = baseRepository.getConnection();
         String query = "{CALL update_user_procedure(?,?,?,?)}";
         boolean check = false;
@@ -274,17 +299,18 @@ public class UserRepository {
     }
 
 
-    public void deleteUserStrore(int id) {
+    public boolean deleteUserStore(int id) {
         Connection connection =baseRepository.getConnection();
         String query = "{CALL delete_user_procedure(?)}";
         boolean check = false;
         try  {
             CallableStatement callableStatement = connection.prepareCall(query);
             callableStatement.setInt(1, id);
-            callableStatement.executeUpdate();
+            check = callableStatement.executeUpdate() > 0;
         }catch (SQLException e){
             e.printStackTrace();
         }
+        return check;
     }
 
 
@@ -351,6 +377,57 @@ public class UserRepository {
                 System.out.println(e.getMessage());
             }
         }
+
+    }
+    public void insertUpdateUseTransaction() {
+        Connection connection = baseRepository.getConnection();
+        PreparedStatement preparedStatement = null;
+        String INSERT_CUSTOMERS = "insert into customers(id_cus,cus_name)" +
+                                    "values (?,?) ";
+        String INSERT_CUSTOMERS_TYPE = "insert into customers_type(id_cus,type_name)" +
+                                            "values (?,?) ";
+//        ResultSet rs =null;
+
+            try {
+                connection.setAutoCommit(false);
+                preparedStatement = connection.prepareStatement(INSERT_CUSTOMERS);
+                preparedStatement.setInt(1,3);
+                preparedStatement.setString(2,"Long");
+
+                int row = preparedStatement.executeUpdate();
+
+                connection.setAutoCommit(false);
+                preparedStatement = connection.prepareStatement(INSERT_CUSTOMERS_TYPE);
+                preparedStatement.setInt(1,3);
+                preparedStatement.setString(2,"Minh");
+
+                row += preparedStatement.executeUpdate();
+
+                if(row == 2){
+                    System.out.println("Commit thanh công");
+                    connection.commit();
+                }else {
+                    connection.rollback();
+                }
+
+
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+                try {
+                    System.out.println("Thât Bại");
+                    connection.rollback();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }finally {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+
 
     }
 }

@@ -319,30 +319,23 @@ public class UserRepository {
     public void addUserTransaction(User user, int[] permision) {
         Connection conn = null;
 
-        // for insert a new user
 
         PreparedStatement pstmt = null;
 
-        // for assign permision to user
-
         PreparedStatement pstmtAssignment = null;
 
-        // for getting user id
+
 
         ResultSet rs = null;
         try {
 
             conn = baseRepository.getConnection();
 
-            // set auto commit to false
+
 
             conn.setAutoCommit(false);
 
-            //
 
-            // Insert user
-
-            //
 
             pstmt = conn.prepareStatement(INSERT_USERS_SQL, Statement.RETURN_GENERATED_KEYS);
 
@@ -354,7 +347,7 @@ public class UserRepository {
 
             int rowAffected = pstmt.executeUpdate();
 
-            // get user id
+
 
             rs = pstmt.getGeneratedKeys();
 
@@ -364,11 +357,6 @@ public class UserRepository {
 
                 userId = rs.getInt(1);
 
-            //
-
-            // in case the insert operation successes, assign permision to user
-
-            //
 
             if (rowAffected == 1) {
 
@@ -401,7 +389,6 @@ public class UserRepository {
 
         } catch (SQLException ex) {
 
-            // roll back the transaction
 
             try {
 
@@ -455,7 +442,7 @@ public class UserRepository {
 
 
 
-            // Run list of insert commands
+
 
             psInsert.setString(1, "Quynh");
 
@@ -477,19 +464,12 @@ public class UserRepository {
 
 
 
-            // Run list of update commands
-
-
-
-            // below line caused error, test transaction
-
-            // org.postgresql.util.PSQLException: No value specified for parameter 1.
 
             psUpdate.setBigDecimal(2, new BigDecimal(999.99));
 
 
 
-            //psUpdate.setBigDecimal(1, new BigDecimal(999.99));
+
 
             psUpdate.setString(2, "Quynh");
 
@@ -518,11 +498,11 @@ public class UserRepository {
 
             statement.execute(SQL_TABLE_CREATE);
 
-            // start transaction block
+
 
             conn.setAutoCommit(false); // default true
 
-            // Run list of insert commands
+
 
             psInsert.setString(1, "Quynh");
 
@@ -544,19 +524,16 @@ public class UserRepository {
 
 
 
-            // Run list of update commands
 
 
 
-            // below line caused error, test transaction
 
-            // org.postgresql.util.PSQLException: No value specified for parameter 1.
 
             psUpdate.setBigDecimal(1, new BigDecimal(999.99));
 
 
 
-            //psUpdate.setBigDecimal(1, new BigDecimal(999.99));
+
 
             psUpdate.setString(2, "Quynh");
 
@@ -564,11 +541,11 @@ public class UserRepository {
 
 
 
-            // end transaction block, commit changes
+
 
             conn.commit();
 
-            // good practice to set it back to default true
+
 
             conn.setAutoCommit(true);
 

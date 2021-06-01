@@ -52,17 +52,21 @@ public class UserServiceImpl implements IUserService {
     }
 
     @Override
-    public boolean updateUserStrore(User user) {
-        return reponsitory.updateUserStrore(user);
+    public boolean updateUserStore(User user) {
+        return reponsitory.updateUserStore(user);
     }
 
     @Override
-    public void deleteUserStrore(int id) {
-        reponsitory.deleteUserStrore(id);
+    public boolean deleteUserStore(int id) {
+      return   reponsitory.deleteUserStore(id);
     }
 
     @Override
     public void addUserTransaction(User user, int[] permision) {
         reponsitory.addUserTransaction(user,permision);
+    }
+    @Override
+    public void insertUpdateUseTransaction() {
+        reponsitory.insertUpdateUseTransaction();
     }
 }

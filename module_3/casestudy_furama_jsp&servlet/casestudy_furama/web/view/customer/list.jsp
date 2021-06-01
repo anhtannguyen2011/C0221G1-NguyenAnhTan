@@ -81,7 +81,7 @@
             <th>Email</th>
             <th>Địa Chỉ</th>
             <th>Loại Khách</th>
-            <td><a href="" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
+            <td><a href="/customer?action=create" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
         </tr>
         </thead>
         <tbody>
@@ -96,46 +96,58 @@
             <th>${customers.address}</th>
             <th>${customers.customerType.customerTypeName}</th>
             <td>
-                <a href="edit.jsp" class="edit" ><i class="far fa-edit" style="font-size: 30px;color: red" ></i></a>
-                <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i data-toggle="tooltip" class="fas fa-trash-alt mb-1 style=" style="font-size: 30px; color: red" title="Delete">&#xE872;</i></a>
+                <a href="/customer?action=edit&id=${customers.id} "
+                   class="btn btn-outline-info">Edit</a>
+                <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
+                    Delete
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">DELETE</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                Are you sure you want to delete it?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <a type="button" href="/customer?action=delete&id=${customers.id}" class="btn btn-outline-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </td>
 
         </tr>
         </c:forEach>
         </tbody>
     </table>
-<%--    <nav aria-label="Page navigation example">--%>
-<%--        <ul class="pagination justify-content-end">--%>
-<%--            <li class="page-item disabled">--%>
-<%--                <a class="page-link" href="#" tabindex="-1">Previous</a>--%>
-<%--            </li>--%>
-<%--            <li class="page-item"><a class="page-link" href="#">1</a></li>--%>
-<%--            <li class="page-item">--%>
-<%--                <a class="page-link" href="#">Next</a>--%>
-<%--            </li>--%>
-<%--        </ul>--%>
-<%--    </nav>--%>
 </div>
-<div id="deleteEmployeeModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form>
-                <div class="modal-header">
-                    <h4 class="modal-title">Delete</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure you want to delete these Records?</p>
-                    <p class="text-warning"><small>This action cannot be undone.</small></p>
-                </div>
-                <div class="modal-footer">
-                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-                    <input type="submit" class="btn btn-danger" value="Delete">
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
+<%--<div id="deleteEmployeeModal" class="modal fade">--%>
+<%--    <div class="modal-dialog">--%>
+<%--        <div class="modal-content">--%>
+<%--            <form>--%>
+<%--                <div class="modal-header">--%>
+<%--                    <h4 class="modal-title">Delete</h4>--%>
+<%--                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>--%>
+<%--                </div>--%>
+<%--                <div class="modal-body">--%>
+<%--                    <p>Are you sure you want to delete these Records?</p>--%>
+<%--                    <p class="text-warning"><small>This action cannot be undone.</small></p>--%>
+<%--                </div>--%>
+<%--                <div class="modal-footer">--%>
+<%--                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">--%>
+<%--                    <input type="submit" class="btn btn-danger" value="Delete">--%>
+<%--                </div>--%>
+<%--            </form>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
 
 <script src="../../jquery/jquery-3.5.1.min.js"></script>
 <script src="../../datatables/js/jquery.dataTables.min.js"></script>

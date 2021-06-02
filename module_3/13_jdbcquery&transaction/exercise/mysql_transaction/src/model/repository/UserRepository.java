@@ -386,7 +386,6 @@ public class UserRepository {
                                     "values (?,?) ";
         String INSERT_CUSTOMERS_TYPE = "insert into customers_type(id_cus,type_name)" +
                                             "values (?,?) ";
-//        ResultSet rs =null;
 
             try {
                 connection.setAutoCommit(false);
@@ -398,7 +397,7 @@ public class UserRepository {
 
                 connection.setAutoCommit(false);
                 preparedStatement = connection.prepareStatement(INSERT_CUSTOMERS_TYPE);
-                preparedStatement.setInt(1,3);
+                preparedStatement.setInt(1,6);
                 preparedStatement.setString(2,"Minh");
 
                 row += preparedStatement.executeUpdate();

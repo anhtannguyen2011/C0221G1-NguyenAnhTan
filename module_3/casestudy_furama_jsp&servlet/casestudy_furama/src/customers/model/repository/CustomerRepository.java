@@ -14,6 +14,7 @@ public class CustomerRepository {
     private static final String SELECT_ALL_CUSTOMERS = "select * from khach_hang";
     private static final String INSERT_CUSTOMERS_SQL = "insert into khach_hang" + "(id_khach_hang,ho_ten,ngay_sinh,cmnd,so_dien_thoai,email,dia_chi,id_loai_khach) values" +
             "(?,?,?,?,?,?,?,?);";
+    private static final String DELETE_CUSTOMER = "delete from khach_hang where id_khach_hang = ?";
 
     public List<Customers> selectAllCustomers() {
         Connection connection = baseRepository.getConnection();
@@ -65,5 +66,27 @@ public class CustomerRepository {
             preparedStatement.close();
             connection.close();
         }
+    }
+
+    public boolean deleteCustomer(int id) {
+        Connection connection = baseRepository.getConnection();
+        PreparedStatement preparedStatement = null;
+        boolean check = false;
+            try {
+                preparedStatement = connection.prepareStatement(DELETE_CUSTOMER);
+                preparedStatement.setInt(1,id);
+                check = preparedStatement.executeUpdate() > 0;
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }finally {
+                try {
+                    preparedStatement.close();
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        return check;
     }
 }

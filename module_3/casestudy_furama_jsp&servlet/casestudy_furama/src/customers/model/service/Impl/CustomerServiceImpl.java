@@ -27,4 +27,9 @@ public class CustomerServiceImpl implements ICustomerServices {
     public CustomerType selectCustomerType(int id) {
       return customerTypeRepository.selectCustomerType(id);
     }
+
+    @Override
+    public boolean deleteCustomer(int id) {
+        return customerRepository.deleteCustomer(id);
+    }
 }

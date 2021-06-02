@@ -35,6 +35,9 @@ public class CustomersServlet extends HttpServlet {
             case "create" :
                 createNewCustomer(request,response);
                 break;
+            default:
+                listCustomer(request,response);
+                break;
         }
 
     }
@@ -46,16 +49,19 @@ public class CustomersServlet extends HttpServlet {
         if(action == null){
             action ="";
         }
-
         switch (action){
             case "create" :
                 showCreateForm(request,response);
                 break;
+            case "delete" :
+                deleteCustomer(request,response);
             default:
                 listCustomer(request,response);
                 break;
         }
     }
+
+
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
             Customers customers = new Customers();
@@ -69,7 +75,6 @@ public class CustomersServlet extends HttpServlet {
         List<Customers> customersList = customerServices.selectAllCustomers();
         request.setAttribute("listCustomers",customersList);
         request.getRequestDispatcher("view/customer/list.jsp").forward(request,response);
-
     }
     private void createNewCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
@@ -96,5 +101,16 @@ public class CustomersServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        customerServices.deleteCustomer(id);
+        List<Customers> customersList = customerServices.selectAllCustomers();
+        request.setAttribute("listCustomers",customersList);
+            try {
+                request.getRequestDispatcher("view/customer/list.jsp").forward(request,response);
+            } catch (ServletException | IOException e) {
+                e.printStackTrace();
+            }
     }
 }

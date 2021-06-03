@@ -93,7 +93,7 @@
             <img src="../../img/logo@2x.png" height="150">
         </div>
         <div class="col-lg-4">
-            <img src="../../img/logo-chinh-thuc.png" width="100%">
+            <img src="../../img//logo-chinh-thuc.png" width="100%">
         </div>
         <div class="col-lg-4">
             <form class="form-login">

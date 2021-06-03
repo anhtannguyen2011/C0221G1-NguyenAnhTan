@@ -16,7 +16,24 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <style>
+        .nav-link{
+            color: black;
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+        .dropdown-toggle::after {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            content: "";
+            border-top: .3em solid;
+            border-right: .3em solid transparent;
+            border-bottom: 0;
+            border-left: .3em solid transparent;
+            margin-left: 34px;
+        }
+    </style>
 </head>
 <body>
 <div class="header">
@@ -41,7 +58,14 @@
             <li><a href="list.jsp" class="link-control">Home</a></li>
             <li><a href="" class="link-control">Employee</a></li>
             <li><a href="/customer" class="link-control">Customer</a></li>
-            <li><a href="" class="link-control">Services</a></li>
+            <li>    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Service
+                    </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/services?action=create&id=1">Villa</a>
+                    <a class="dropdown-item" href="/services?action=create&id=2">House</a>
+                    <a class="dropdown-item" href="/services?action=create&id=3">Room</a>
+                </div></li>
             <li><a href="" class="link-control">Contact</a></li>
         </ul>
     </div>

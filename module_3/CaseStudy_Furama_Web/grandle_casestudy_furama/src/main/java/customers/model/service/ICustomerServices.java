@@ -9,6 +9,7 @@ import java.util.List;
 public interface ICustomerServices {
     public List<Customers> selectAllCustomers();
     void insertCustomer(Customers customers) throws SQLException;
+
     CustomerType selectCustomerType(int id);
 
     boolean deleteCustomer(int id);

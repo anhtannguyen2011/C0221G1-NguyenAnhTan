@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2a95cb6c-cde9-4653-858a-18aa99d9e3ae" name="Default Changelist" comment="" />
+    <list default="true" id="2a95cb6c-cde9-4653-858a-18aa99d9e3ae" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/controller/ServiceServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/model/repository/RentTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/services/model/repository/ServiceTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/customers/model/service/ICustomerServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/customers/model/service/ICustomerServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/model/repository/ServiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/model/repository/ServiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/model/service/IServiceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/model/service/IServiceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/model/service/Impl/ServiceServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/model/service/Impl/ServiceServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +62,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -59,6 +73,7 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectId" id="1tQBivxUEEfkuUTkDAWurKwY8bA" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -66,9 +81,10 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -196,6 +212,7 @@
       <updated>1622691563483</updated>
       <workItem from="1622691568237" duration="1407000" />
       <workItem from="1622693691066" duration="12835000" />
+      <workItem from="1622716275307" duration="3626000" />
     </task>
     <servers />
   </component>
@@ -207,10 +224,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1622694308014" />
-    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1622715374230">
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser" timestamp="1622720971734">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1622715374230" />
+    <state x="574" y="129" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1622720971734" />
     <state x="523" y="129" key="DetectedRootsChooserDialog" timestamp="1622693881560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -271,9 +288,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1622693903155" />
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1622693715139">
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1622716277801">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1622693715139" />
+    <state x="465" y="238" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1622716277801" />
   </component>
 </project>

@@ -20,13 +20,13 @@ public class ServiceRepository {
             statement.setInt(2,service.getServiceAre());
             statement.setDouble(3,service.getServiceCost());
             statement.setInt(4,service.getServiceMaxPeople());
-            statement.setInt(5,service.getServiceTypeId().getServiceTypeId());
+            statement.setInt(5,service.getServiceRentTypeId().getRentTypeId());
             statement.setInt(6,service.getServiceTypeId().getServiceTypeId());
             statement.setString(7,service.getStandardRoom());
             statement.setString(8,service.getDescription());
             statement.setDouble(9,service.getPoolArea());
             statement.setInt(10,service.getNumberOfFloor());
-            statement.executeQuery();
+            statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         }finally {

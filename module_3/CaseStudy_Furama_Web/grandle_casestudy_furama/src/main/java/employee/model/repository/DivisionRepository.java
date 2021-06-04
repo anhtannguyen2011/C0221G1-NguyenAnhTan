@@ -1,28 +1,30 @@
-package services.model.repository;
+package employee.model.repository;
 
-import services.model.bean.ServiceType;
+import customers.model.bean.CustomerType;
+import employee.model.bean.Division;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ServiceTypeRepository {
+public class DivisionRepository {
     BaseRepository baseRepository = new BaseRepository();
-    private static final String SELECT_BY_TYPE_SERVICEID = "select * from service_type where service_type_id =?";
+    private static final String SELECT_DIVISION = "select division_name from division where division_id =?";
 
-    public ServiceType findByIdType(int id){
+    public Division selectDivision(int id){
         Connection connection = baseRepository.getConnection();
-        ServiceType serviceType = null;
-        PreparedStatement statement = null;
+        PreparedStatement statement =null;
+        Division division = null;
 
         try {
-            statement = connection.prepareStatement(SELECT_BY_TYPE_SERVICEID);
+            statement = connection.prepareStatement(SELECT_DIVISION);
             statement.setInt(1,id);
             ResultSet rs = statement.executeQuery();
             while (rs.next()){
-                String name = rs.getString("service_type_name");
-                serviceType = new ServiceType(id,name);
+                String name = rs.getString("division_name");
+                division = new Division(id,name);
+
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -33,8 +35,7 @@ public class ServiceTypeRepository {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
         }
-        return serviceType;
+        return division;
     }
 }

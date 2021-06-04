@@ -56,7 +56,7 @@
     <div class="link-left">
         <ul class="nav__link">
             <li><a href="list.jsp" class="link-control">Home</a></li>
-            <li><a href="" class="link-control">Employee</a></li>
+            <li><a href="/employee" class="link-control">Employee</a></li>
             <li><a href="/customer" class="link-control">Customer</a></li>
             <li>    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Service

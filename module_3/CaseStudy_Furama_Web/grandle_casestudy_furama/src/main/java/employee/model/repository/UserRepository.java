@@ -1,28 +1,29 @@
-package services.model.repository;
+package employee.model.repository;
 
-import services.model.bean.ServiceType;
+import employee.model.bean.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ServiceTypeRepository {
+public class UserRepository {
     BaseRepository baseRepository = new BaseRepository();
-    private static final String SELECT_BY_TYPE_SERVICEID = "select * from service_type where service_type_id =?";
+    private  static final String SELECT_USER = "select * from `user` where username =?";
 
-    public ServiceType findByIdType(int id){
+    public User selectUser(String name){
         Connection connection = baseRepository.getConnection();
-        ServiceType serviceType = null;
         PreparedStatement statement = null;
+        User user = null;
 
         try {
-            statement = connection.prepareStatement(SELECT_BY_TYPE_SERVICEID);
-            statement.setInt(1,id);
+            statement = connection.prepareStatement(SELECT_USER);
+            statement.setString(1,name);
             ResultSet rs = statement.executeQuery();
+
             while (rs.next()){
-                String name = rs.getString("service_type_name");
-                serviceType = new ServiceType(id,name);
+                String pass = rs.getString("password");
+                user = new User(name,pass);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -35,6 +36,7 @@ public class ServiceTypeRepository {
             }
 
         }
-        return serviceType;
+        return user;
     }
+
 }

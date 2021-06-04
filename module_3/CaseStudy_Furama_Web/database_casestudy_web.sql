@@ -70,3 +70,61 @@ CREATE TABLE service(
 
 insert into service(service_name,service_area,service_cost,service_max_people,rent_type_id,service_type_id,strandard_room,description_other_convenience,pool_area,number_of_floor)
 VALUES ("VIP",200,500000,20,1,2,"Mat Me","Tra Dao",300,2);
+
+
+CREATE table `position`(
+	position_id int primary key,
+    position_name varchar(45)
+);
+
+create table education_degree(
+	education_degree_id int PRIMARY key,
+    education_degree_name varchar(45)
+);
+
+create table division(
+	division_id int PRIMARY key,
+    division_name varchar(45)
+);	
+
+create table employee(
+	employee_id int PRIMARY key AUTO_INCREMENT,
+    employee_name varchar(45),
+    employee_birthday date,
+    employee_id_card varchar(45),
+    employee_salary double,
+    employee_phone varchar(45),
+    employee_email varchar(45),
+    employee_address varchar(45),
+    position_id int,
+    education_degree_id int,
+    division_id int,
+	username varchar(255),
+	FOREIGN KEY (position_id) REFERENCES `position`(position_id),
+	FOREIGN KEY (education_degree_id) REFERENCES education_degree(education_degree_id),
+	FOREIGN KEY (division_id) REFERENCES division(division_id),
+	FOREIGN KEY (username) REFERENCES `user`(username)
+    on DELETE CASCADE
+);
+
+create table `role` (
+	role_id int PRIMARY key,
+    role_name varchar(45)
+
+);
+
+create table user_role(
+	role_id int,
+    username varchar(255),
+    FOREIGN KEY (role_id) REFERENCES `role`(role_id),
+    FOREIGN KEY (username) REFERENCES `user`(username)
+    on delete CASCADE
+);
+
+create table `user`(
+	username varchar(255) PRIMARY KEY,
+    `password` varchar(255)
+);
+
+
+

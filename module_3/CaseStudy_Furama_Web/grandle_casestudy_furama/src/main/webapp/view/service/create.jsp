@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -10,10 +11,17 @@
     <title>Title</title>
     <link href="../../css/base.css" rel="stylesheet" type="text/css">
     <link href="../../css/furama_css.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
 
     <style>
         body {
@@ -24,20 +32,25 @@
             position: relative;
             height: 100%;
         }
-        label{
+
+        label {
             font-size: 20px;
         }
-        .row__start{
+
+        .row__start {
             text-align: start;
         }
+
         .account-settings .user-profile {
             margin: 0 0 1rem 0;
             padding-bottom: 1rem;
             text-align: center;
         }
+
         .account-settings .user-profile .user-avatar {
             margin: 0 0 1rem 0;
         }
+
         .account-settings .user-profile .user-avatar img {
             width: 90px;
             height: 90px;
@@ -45,26 +58,32 @@
             -moz-border-radius: 100px;
             border-radius: 100px;
         }
+
         .account-settings .user-profile h5.user-name {
             margin: 0 0 0.5rem 0;
         }
+
         .account-settings .user-profile h6.user-email {
             margin: 0;
             font-size: 3rem;
             font-weight: 400;
             color: #9fa8b9;
         }
+
         .account-settings .about {
             margin: 2rem 0 0 0;
             text-align: center;
         }
+
         .account-settings .about h5 {
             margin: 0 0 15px 0;
             color: #007ae1;
         }
+
         .account-settings .about p {
             font-size: 1rem;
         }
+
         .form-control {
             border: 1px solid #cfd1d8;
             -webkit-border-radius: 2px;
@@ -93,7 +112,7 @@
             <img src="../../img/logo@2x.png" height="150">
         </div>
         <div class="col-lg-4">
-            <img src="../../img//logo-chinh-thuc.png" width="100%">
+            <img src="../../img/logo-chinh-thuc.png" width="100%">
         </div>
         <div class="col-lg-4">
             <form class="form-login">
@@ -104,96 +123,334 @@
     </div>
 </div>
 
-<div class="container mt-5">
-    <div class="row gutters row__start">
-        <div class="col-xl-12">
-            <h1>
-                Create Customers
-            </h1>
-        </div>
-        <div class="col-xl-12 col-lg-9 col-md-12 col-sm-12 col-12">
-            <div class="card h-100">
-                <form method="post">
-                <div class="card-body">
-                    <div class="row gutters row__start">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <h3 class="mb-2 text-primary">Customers Details</h3>
-                        </div>
-
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label >Customer Type</label>
-                                <select class="custom-select" id="inputGroupSelect01" name="customer_type_id" style="font-size: 2rem;height: 40px">
-                                    <option value="1">Diamond</option>
-                                    <option value="2">Platinium</option>
-                                    <option value="3">Gold</option>
-                                    <option value="4">Silver</option>
-                                    <option value="5">Member</option>
-                                </select>
+<c:if test="${id_type == 1}">
+    <div class="container mt-5">
+        <div class="row gutters row__start">
+            <div class="col-xl-12">
+                <h1>
+                    Create Villa
+                </h1>
+            </div>
+            <div class="col-xl-12 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <form method="post">
+                        <div class="card-body">
+                            <div class="row gutters row__start">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h3 class="mb-2 text-primary">Villa Details</h3>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Name Services</label>
+                                        <input name="service_name" type="text" class="form-control"
+                                               placeholder="Name Services">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Service Area</label>
+                                        <input name="service_area" type="text" class="form-control"
+                                               placeholder="Service Area">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Service Cost</label>
+                                        <input name="service_cost" type="text" class="form-control"
+                                               placeholder="Service Cost">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Max People</label>
+                                        <input name="service_max_people" type="text" class="form-control"
+                                               placeholder="Max People">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Rent Type</label>
+                                        <select class="custom-select" name="rent_type_id"
+                                                style="font-size: 2rem;height: 40px">
+                                            <option value="1">DAY</option>
+                                            <option value="2">WEEK</option>
+                                            <option value="3">MONTH</option>
+                                            <option value="4">YEAR</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <input hidden type="text" name="service_type_id" value="1">
+                            <div class="row gutters row__start">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Standard Room</label>
+                                        <input name="strandard_room" type="text" class="form-control"
+                                               placeholder="Enter Standard Room">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <input name="description_other_convenience" type="text" class="form-control"
+                                               placeholder="Enter Description">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Pool Area</label>
+                                        <input name="pool_area" type="text" class="form-control"
+                                               placeholder="Enter Pool Area">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Number of Floor</label>
+                                        <input name="number_of_floors" type="text" class="form-control"
+                                               placeholder="Enter Number of Floor">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gutters row__start">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-center">
+                                        <a type="button" href="customer?action=customers"
+                                           class="btn btn-outline-secondary">Close</a>
+                                        <input type="submit" value="Save" class="btn btn-outline-success"/>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="eMail">Name</label>
-                                <input name="customer_name" type="text" class="form-control" id="eMail" placeholder="Name">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="phone">Day Of Birth</label>
-                                <input name="customer_birthday" type="text" class="form-control" id="phone" placeholder="Enter Day Of Birth">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label >Customer Type</label>
-                                <select class="custom-select" id="inputGroupSelect02" name="customer_gender" style="font-size: 2rem;height: 40px">
-                                    <option value="Male">Male</option>
-                                    <option value="Famale">Famale</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row gutters row__start">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="website">ID Card</label>
-                                <input name="customer_id_card" type="text" class="form-control" id="website" placeholder="ID Card">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="Street">Phone</label>
-                                <input name="customer_phone" type="text" class="form-control" id="Street" placeholder="Phone">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="ciTy">Email</label>
-                                <input name="customer_email" type="text" class="form-control" id="ciTy" placeholder="Enter Email">
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label for="sTate">Address</label>
-                                <input name="customer_address" type="text" class="form-control" id="sTate" placeholder="Enter Address">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row gutters row__start">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                            <div class="text-right">
-                                <a type="button" href="customer?action=customers" class="btn btn-outline-secondary">Close</a>
-                                <input type="submit" value="Save" class="btn btn-outline-success"/>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
-                </form>
             </div>
         </div>
     </div>
-</div>
+</c:if>
+
+<c:if test="${id_type == 2}">
+    <div class="container mt-5">
+        <div class="row gutters row__start">
+            <div class="col-xl-12">
+                <h1>
+                    Create House
+                </h1>
+            </div>
+            <div class="col-xl-12 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <form method="post">
+                        <div class="card-body">
+                            <div class="row gutters row__start">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h3 class="mb-2 text-primary">House Details</h3>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Name Services</label>
+                                        <input name="service_name" type="text" class="form-control"
+                                               placeholder="Name Services">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Service Area</label>
+                                        <input name="service_area" type="text" class="form-control"
+                                               placeholder="Service Area">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Service Cost</label>
+                                        <input name="service_cost" type="text" class="form-control"
+                                               placeholder="Service Cost">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Max People</label>
+                                        <input name="service_max_people" type="text"
+                                               class="form-control"
+                                               placeholder="Max People">
+                                    </div>
+                                </div>
+                                <input hidden type="text" name="pool_area" value="0">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Service Type</label>
+                                        <select class="custom-select" name="rent_type_id"
+                                                style="font-size: 2rem;height: 40px">
+                                            <option value="1">DAY</option>
+                                            <option value="2">WEEK</option>
+                                            <option value="3">MONTH</option>
+                                            <option value="4">YEAR</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Standard Room</label>
+                                        <input name="strandard_room" type="text"
+                                               class="form-control"
+                                               placeholder="Enter Standard Room">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gutters row__start">
+                            <input hidden type="text" name="service_type_id" value="2">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <input name="description_other_convenience" type="text"
+                                               class="form-control"
+                                               placeholder="Description">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Number of Floor</label>
+                                        <input name="number_of_floors" type="text"
+                                               class="form-control"
+                                               placeholder="Number of Floor">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gutters row__start">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-center">
+                                        <a type="button" href="customer?action=customers"
+                                           class="btn btn-outline-secondary">Close</a>
+                                        <input type="submit" value="Save"
+                                               class="btn btn-outline-success"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</c:if>
+<c:if test="${id_type == 3}">
+    <div class="container mt-5">
+        <div class="row gutters row__start">
+            <div class="col-xl-12">
+                <h1>
+                    Create Room
+                </h1>
+            </div>
+            <div class="col-xl-12 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <form method="post">
+                        <div class="card-body">
+                            <div class="row gutters row__start">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <h3 class="mb-2 text-primary">Room
+                                        Details</h3>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Name Services</label>
+                                        <input name="service_name" type="text"
+                                               class="form-control"
+                                               placeholder="Name Services">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Service Area</label>
+                                        <input name="service_area" type="text"
+                                               class="form-control"
+                                               placeholder="Service Area">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Service Cost</label>
+                                        <input name="service_cost" type="text"
+                                               class="form-control"
+                                               placeholder="Service Cost">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Max People</label>
+                                        <input name="service_max_people" type="text"
+                                               class="form-control"
+                                               placeholder="Enter Max People">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Service Type</label>
+                                        <select class="custom-select"
+                                                id="inputGroupSelect02"
+                                                name="rent_type_id"
+                                                style="font-size: 2rem;height: 40px">
+                                            <option value="1">DAY</option>
+                                            <option value="2">WEEK</option>
+                                            <option value="3">MONTH</option>
+                                            <option value="4">YEAR</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <input hidden type="text" name="service_type_id"
+                                   value="3">
+                            <div class="row gutters row__start">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Standard Room</label>
+                                        <input name="strandard_room" type="text"
+                                               class="form-control"
+                                               placeholder="Standard Room">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Description</label>
+                                        <input name="description_other_convenience"
+                                               type="text" class="form-control"
+                                               placeholder="Enter Description">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Pool Area</label>
+                                        <input name="pool_area" type="text"
+                                               class="form-control"
+                                               placeholder="Enter Pool Area">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Number of Floor</label>
+                                        <input name="number_of_floors" type="text"
+                                               class="form-control"
+                                               placeholder="Enter Number of Floor">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row gutters row__start">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                    <div class="text-center">
+                                        <a type="button"
+                                           href="customer?action=customers"
+                                           class="btn btn-outline-secondary">Close</a>
+                                        <input type="submit" value="Save"
+                                               class="btn btn-outline-success"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</c:if>
+
 </body>
 </html>
 

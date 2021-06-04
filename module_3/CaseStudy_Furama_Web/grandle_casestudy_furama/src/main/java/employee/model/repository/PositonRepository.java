@@ -1,28 +1,29 @@
-package services.model.repository;
+package employee.model.repository;
 
-import services.model.bean.ServiceType;
+import employee.model.bean.Position;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ServiceTypeRepository {
+public class PositonRepository {
     BaseRepository baseRepository = new BaseRepository();
-    private static final String SELECT_BY_TYPE_SERVICEID = "select * from service_type where service_type_id =?";
+    private static final String SELECT_POSITION = "select position_name from `position` where position_id =?";
 
-    public ServiceType findByIdType(int id){
+    public Position selectPosition(int id){
         Connection connection = baseRepository.getConnection();
-        ServiceType serviceType = null;
         PreparedStatement statement = null;
+        Position position = null;
 
         try {
-            statement = connection.prepareStatement(SELECT_BY_TYPE_SERVICEID);
+            statement = connection.prepareStatement(SELECT_POSITION);
             statement.setInt(1,id);
             ResultSet rs = statement.executeQuery();
+
             while (rs.next()){
-                String name = rs.getString("service_type_name");
-                serviceType = new ServiceType(id,name);
+                String name = rs.getString("position_name");
+                position = new Position(id,name);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -33,8 +34,7 @@ public class ServiceTypeRepository {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-
         }
-        return serviceType;
+        return position;
     }
 }

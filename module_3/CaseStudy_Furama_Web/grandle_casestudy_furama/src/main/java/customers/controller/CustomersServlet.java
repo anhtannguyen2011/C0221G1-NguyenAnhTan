@@ -73,8 +73,6 @@ public class CustomersServlet extends HttpServlet {
 
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-            Customers customers = new Customers();
-            request.setAttribute("customer",customers);
             RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create.jsp");
             dispatcher.forward(request,response);
 

@@ -18,6 +18,6 @@ public interface ICustomerServices {
 
     Customers selectCustomer(int id);
 
- List<Customers> searchByName(String name);
+    List<Customers> searchByName(String name);
 
 }

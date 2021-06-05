@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -167,11 +168,9 @@
                             <div class="form-group">
                                 <label for="sTate">Position</label>
                                 <select class="custom-select"  name="position_id" style="font-size: 2rem;height: 40px">
-                                    <option value="1">Giam Doc</option>
-                                    <option value="2">Truong Phong</option>
-                                    <option value="3">Van Phong</option>
-                                    <option value="4">Sell</option>
-                                    <option value="5">Nhan Vien</option>
+                                    <c:forEach items="${positionList}" var="postion">
+                                        <option value="${postion.positionId}">${postion.positionName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>
@@ -179,11 +178,9 @@
                             <div class="form-group">
                                 <label for="sTate">Education</label>
                                 <select class="custom-select"  name="education_degree_id" style="font-size: 2rem;height: 40px">
-                                    <option value="1">Cao Hoc</option>
-                                    <option value="2">Dai Hoc</option>
-                                    <option value="3">Cao Dang</option>
-                                    <option value="4">Trung Cap</option>
-                                    <option value="5">12/12</option>
+                                    <c:forEach items="${eduList}" var="education">
+                                        <option value="${education.educationDegreeId}">${education.educationDegreeName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>
@@ -191,11 +188,9 @@
                         <div class="form-group">
                             <label for="sTate">Division</label>
                             <select class="custom-select"  name="division_id" style="font-size: 2rem;height: 40px">
-                                <option value="1">Le Tan</option>
-                                <option value="2">Buong Phong</option>
-                                <option value="3">Bell</option>
-                                <option value="4">Ky Thuat</option>
-                                <option value="5">Bao Ve</option>
+                                <c:forEach items="${divitionList}" var="division">
+                                    <option value="${division.divisionId}">${division.divisionName}</option>
+                                </c:forEach>
                             </select>
                         </div>
                     </div>
@@ -203,10 +198,9 @@
                             <div class="form-group">
                                 <label for="sTate">UserName</label>
                                 <select class="custom-select"  name="username" style="font-size: 2rem;height: 40px">
-                                    <option value="anhdung">Anh Dung</option>
-                                    <option value="anhtan">Anh Tan</option>
-                                    <option value="quanteo">Quan Teo</option>
-                                    <option value="vanlong">Van Long</option>
+                                    <c:forEach items="${userList}" var="user">
+                                        <option value="${user.userName}">${user.userName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>

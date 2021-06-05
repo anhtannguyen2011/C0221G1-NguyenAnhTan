@@ -19,5 +19,5 @@ public interface ICustomerServices {
     Customers selectCustomer(int id);
 
     List<Customers> searchByName(String name);
-
+    public List<CustomerType> selectAllCustomerType();
 }

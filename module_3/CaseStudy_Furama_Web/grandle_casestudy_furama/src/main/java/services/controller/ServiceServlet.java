@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "ServiceServlet",urlPatterns = "/services")
 public class ServiceServlet extends HttpServlet {
@@ -43,9 +44,9 @@ public class ServiceServlet extends HttpServlet {
     }
 
     private void showcreateServices(HttpServletRequest request, HttpServletResponse response) {
-        int typeId = Integer.parseInt(request.getParameter("id"));
+        List<ServiceType> serviceTypeList = serviceService.selectAllTypeService();
+        request.setAttribute("serviceList",serviceTypeList);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/view/service/create.jsp");
-        request.setAttribute("id_type",typeId);
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {
@@ -66,8 +67,26 @@ public class ServiceServlet extends HttpServlet {
         ServiceType serviceTypeID =serviceService.findByIdType(Integer.parseInt(request.getParameter("service_type_id")));
         String strandardRoom = request.getParameter("strandard_room");
         String des = request.getParameter("description_other_convenience");
-        double poolArea = Double.parseDouble(request.getParameter("pool_area"));
-        int numberFloor = Integer.parseInt(request.getParameter("number_of_floors"));
+        String pool = request.getParameter("pool_area");
+        String number = request.getParameter("number_of_floors");
+        double poolArea = 0;
+        int numberFloor= 0;
+        if(strandardRoom == ""){
+            strandardRoom = null;
+        }
+        if(des == ""){
+            des = null;
+        }
+        if(pool == ""){
+            poolArea =0;
+        }else {
+            poolArea =  Double.parseDouble(request.getParameter("pool_area"));
+        }
+        if(number == ""){
+            numberFloor = 0;
+        }else {
+            numberFloor =Integer.parseInt(request.getParameter("number_of_floors"));
+        }
         Service service = new Service(name,serviceArea,serviceCost,serviceMaxPeople,rentTypeId,serviceTypeID,strandardRoom,des,poolArea,numberFloor);
         serviceService.insertService(service);
 

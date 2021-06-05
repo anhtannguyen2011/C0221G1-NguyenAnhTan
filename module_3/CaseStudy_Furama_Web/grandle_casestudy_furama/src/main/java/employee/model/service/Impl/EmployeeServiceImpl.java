@@ -62,4 +62,24 @@ public class EmployeeServiceImpl implements IEmployeeService {
     public boolean deleteEmployee(int id) {
         return employeeRepository.deleteEmployee(id);
     }
+
+    @Override
+    public List<Division> selectAllDivision() {
+        return divisionRepository.selectAllDivision();
+    }
+
+    @Override
+    public List<EducationDegree> selectAllEducation() {
+        return educationDegreeRepository.selectAllEducation();
+    }
+
+    @Override
+    public List<Position> selectAllPosition() {
+        return positonRepository.selectAllPosition();
+    }
+
+    @Override
+    public List<User> selectAllUser() {
+        return userRepository.selecAlltUser();
+    }
 }

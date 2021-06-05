@@ -20,6 +20,7 @@ public class ServiceRepository {
             + " (?,?,?,?,?,?,?,?,?,?);";
 
     private static final String SELECT_ALL_SERVICES = "select * from service";
+    private static final String SELECT_SERVICE = "select * from service where service_id = ?";
 
     public void insertService(Service service) {
         Connection connection = baseRepository.getConnection();
@@ -75,6 +76,37 @@ public class ServiceRepository {
             e.printStackTrace();
         }
         return serviceList;
+    }
+
+    public Service selectService(int id){
+        Connection connection = baseRepository.getConnection();
+        PreparedStatement statement = null;
+        Service service = null;
+
+        try {
+            statement = connection.prepareStatement(SELECT_SERVICE);
+            statement.setInt(1,id);
+            ResultSet rs = statement.executeQuery();
+
+            while (rs.next()){
+                String name = rs.getString("service_name");
+                int area = rs.getInt("service_area");
+                double cost = rs.getDouble("service_cost");
+                int maxPeople = rs.getInt("service_max_people");
+                RentType idRent = rentTypeRepository.findByRentType(rs.getInt("rent_type_id"));
+                ServiceType idServiceType = serviceTypeRepository.findByIdType(rs.getInt("service_type_id"));
+                String standard = rs.getString("strandard_room");
+                String des = rs.getString("description_other_convenience");
+                double poolArea = rs.getDouble("pool_area");
+                int numberOfFloor = rs.getInt("number_of_floor");
+                service = new Service(id,name,area,cost,maxPeople,idRent,idServiceType,standard,des,poolArea,numberOfFloor);
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return service;
     }
 
 }

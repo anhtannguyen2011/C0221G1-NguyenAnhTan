@@ -13,4 +13,6 @@ public interface IServiceService {
 
     public RentType findByRentType(int id);
      List<Service> selectAllService();
+    public Service selectService(int id);
+    public List<ServiceType> selectAllTypeService();
 }

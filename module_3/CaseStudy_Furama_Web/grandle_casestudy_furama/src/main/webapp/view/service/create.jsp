@@ -123,7 +123,7 @@
     </div>
 </div>
 
-<c:if test="${id_type == 1}">
+
     <div class="container mt-5">
         <div class="row gutters row__start">
             <div class="col-xl-12">
@@ -137,7 +137,18 @@
                         <div class="card-body">
                             <div class="row gutters row__start">
                                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h3 class="mb-2 text-primary">Villa Details</h3>
+                                    <h3 class="mb-2 text-primary">ADD SERVICES</h3>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Name Type Services</label>
+                                        <select class="custom-select" name="service_type_id" onchange="createFromService(this.value)" style="font-size: 2rem;height: 40px">
+                                            <c:forEach items="${serviceList}" var="serviceList">
+                                                <option value="${serviceList.serviceTypeId}">${serviceList.serviceTypeName}</option>
+                                            </c:forEach>
+                                        </select>
+
+                                    </div>
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
@@ -180,30 +191,30 @@
                                     </div>
                                 </div>
                             </div>
-                            <input hidden type="text" name="service_type_id" value="1">
+
                             <div class="row gutters row__start">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" id="standard_room">
                                     <div class="form-group">
                                         <label>Standard Room</label>
-                                        <input name="strandard_room" type="text" class="form-control"
+                                        <input  name="strandard_room" type="text" class="form-control"
                                                placeholder="Enter Standard Room">
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" id="description_other_convenience">
                                     <div class="form-group">
                                         <label>Description</label>
-                                        <input name="description_other_convenience" type="text" class="form-control"
+                                        <input  name="description_other_convenience" type="text" class="form-control"
                                                placeholder="Enter Description">
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" id="pool_area" >
                                     <div class="form-group">
                                         <label>Pool Area</label>
                                         <input name="pool_area" type="text" class="form-control"
                                                placeholder="Enter Pool Area">
                                     </div>
                                 </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" id="number_of_floors" >
                                     <div class="form-group">
                                         <label>Number of Floor</label>
                                         <input name="number_of_floors" type="text" class="form-control"
@@ -226,230 +237,26 @@
             </div>
         </div>
     </div>
-</c:if>
 
-<c:if test="${id_type == 2}">
-    <div class="container mt-5">
-        <div class="row gutters row__start">
-            <div class="col-xl-12">
-                <h1>
-                    Create House
-                </h1>
-            </div>
-            <div class="col-xl-12 col-lg-9 col-md-12 col-sm-12 col-12">
-                <div class="card h-100">
-                    <form method="post">
-                        <div class="card-body">
-                            <div class="row gutters row__start">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h3 class="mb-2 text-primary">House Details</h3>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Name Services</label>
-                                        <input name="service_name" type="text" class="form-control"
-                                               placeholder="Name Services">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Service Area</label>
-                                        <input name="service_area" type="text" class="form-control"
-                                               placeholder="Service Area">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Service Cost</label>
-                                        <input name="service_cost" type="text" class="form-control"
-                                               placeholder="Service Cost">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Max People</label>
-                                        <input name="service_max_people" type="text"
-                                               class="form-control"
-                                               placeholder="Max People">
-                                    </div>
-                                </div>
-                                <input hidden type="text" name="pool_area" value="0">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Service Type</label>
-                                        <select class="custom-select" name="rent_type_id"
-                                                style="font-size: 2rem;height: 40px">
-                                            <option value="1">DAY</option>
-                                            <option value="2">WEEK</option>
-                                            <option value="3">MONTH</option>
-                                            <option value="4">YEAR</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Standard Room</label>
-                                        <input name="strandard_room" type="text"
-                                               class="form-control"
-                                               placeholder="Enter Standard Room">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row gutters row__start">
-                            <input hidden type="text" name="service_type_id" value="2">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <input name="description_other_convenience" type="text"
-                                               class="form-control"
-                                               placeholder="Description">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Number of Floor</label>
-                                        <input name="number_of_floors" type="text"
-                                               class="form-control"
-                                               placeholder="Number of Floor">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row gutters row__start">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <div class="text-center">
-                                        <a type="button" href="customer?action=customers"
-                                           class="btn btn-outline-secondary">Close</a>
-                                        <input type="submit" value="Save"
-                                               class="btn btn-outline-success"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-</c:if>
-<c:if test="${id_type == 3}">
-    <div class="container mt-5">
-        <div class="row gutters row__start">
-            <div class="col-xl-12">
-                <h1>
-                    Create Room
-                </h1>
-            </div>
-            <div class="col-xl-12 col-lg-9 col-md-12 col-sm-12 col-12">
-                <div class="card h-100">
-                    <form method="post">
-                        <div class="card-body">
-                            <div class="row gutters row__start">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <h3 class="mb-2 text-primary">Room
-                                        Details</h3>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Name Services</label>
-                                        <input name="service_name" type="text"
-                                               class="form-control"
-                                               placeholder="Name Services">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Service Area</label>
-                                        <input name="service_area" type="text"
-                                               class="form-control"
-                                               placeholder="Service Area">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Service Cost</label>
-                                        <input name="service_cost" type="text"
-                                               class="form-control"
-                                               placeholder="Service Cost">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Max People</label>
-                                        <input name="service_max_people" type="text"
-                                               class="form-control"
-                                               placeholder="Enter Max People">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Service Type</label>
-                                        <select class="custom-select"
-                                                id="inputGroupSelect02"
-                                                name="rent_type_id"
-                                                style="font-size: 2rem;height: 40px">
-                                            <option value="1">DAY</option>
-                                            <option value="2">WEEK</option>
-                                            <option value="3">MONTH</option>
-                                            <option value="4">YEAR</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-                            <input hidden type="text" name="service_type_id"
-                                   value="3">
-                            <div class="row gutters row__start">
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Standard Room</label>
-                                        <input name="strandard_room" type="text"
-                                               class="form-control"
-                                               placeholder="Standard Room">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Description</label>
-                                        <input name="description_other_convenience"
-                                               type="text" class="form-control"
-                                               placeholder="Enter Description">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Pool Area</label>
-                                        <input name="pool_area" type="text"
-                                               class="form-control"
-                                               placeholder="Enter Pool Area">
-                                    </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                    <div class="form-group">
-                                        <label>Number of Floor</label>
-                                        <input name="number_of_floors" type="text"
-                                               class="form-control"
-                                               placeholder="Enter Number of Floor">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row gutters row__start">
-                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                    <div class="text-center">
-                                        <a type="button"
-                                           href="customer?action=customers"
-                                           class="btn btn-outline-secondary">Close</a>
-                                        <input type="submit" value="Save"
-                                               class="btn btn-outline-success"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</c:if>
+<script>
+    function createFromService(x) {
+        if(x==1){
+            document.getElementById("standard_room").style.display = "block";
+            document.getElementById("description_other_convenience").style.display = "block";
+            document.getElementById("pool_area").style.display = "block";
+            document.getElementById("number_of_floors").style.display = "block";
+        }
+        if(x == 2){
+            document.getElementById("pool_area").style.display = "none";
+        }
+        if(x == 3){
+            document.getElementById("standard_room").style.display = "none";
+            document.getElementById("description_other_convenience").style.display = "none";
+            document.getElementById("pool_area").style.display = "none";
+            document.getElementById("number_of_floors").style.display = "none";
+        }
+    }
+</script>
 
 </body>
 </html>

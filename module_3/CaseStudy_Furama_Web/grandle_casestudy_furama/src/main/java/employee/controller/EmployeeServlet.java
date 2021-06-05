@@ -60,6 +60,15 @@ public class EmployeeServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         Employee employee = employeeService.selectEmployee(id);
         request.setAttribute("employee",employee);
+        List<Division> divisionList = employeeService.selectAllDivision();
+        List<EducationDegree> educationDegreeList = employeeService.selectAllEducation();
+        List<Position> positionList = employeeService.selectAllPosition();
+        List<User> userList = employeeService.selectAllUser();
+
+        request.setAttribute("divisionList",divisionList);
+        request.setAttribute("educationDegreeList",educationDegreeList);
+        request.setAttribute("positionList",positionList);
+        request.setAttribute("userList",userList);
         try {
             request.getRequestDispatcher("view/employee/edit.jsp").forward(request,response);
         } catch (ServletException e) {
@@ -70,6 +79,15 @@ public class EmployeeServlet extends HttpServlet {
     }
 
     private void showCreateEmployeeForm(HttpServletRequest request, HttpServletResponse response) {
+        List<Division> listDivion = employeeService.selectAllDivision();
+        List<EducationDegree> educationDegreeList = employeeService.selectAllEducation();
+        List<Position> positions = employeeService.selectAllPosition();
+        List<User> userList = employeeService.selectAllUser();
+        request.setAttribute("divitionList",listDivion);
+        request.setAttribute("eduList",educationDegreeList);
+        request.setAttribute("positionList",positions);
+        request.setAttribute("userList",userList);
+
         try {
             request.getRequestDispatcher("view/employee/create.jsp").forward(request,response);
         } catch (ServletException e) {

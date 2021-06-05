@@ -35,5 +35,15 @@ public class ServiceServiceImpl implements IServiceService {
         return serviceRepository.selectAllService();
     }
 
+    @Override
+    public Service selectService(int id) {
+        return serviceRepository.selectService(id);
+    }
+
+    @Override
+    public List<ServiceType> selectAllTypeService() {
+        return serviceTypeRepository.selectAllServiceTyype();
+    }
+
 
 }

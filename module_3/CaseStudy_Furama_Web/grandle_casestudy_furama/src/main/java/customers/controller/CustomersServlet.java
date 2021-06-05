@@ -73,6 +73,8 @@ public class CustomersServlet extends HttpServlet {
 
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            List<CustomerType> customerTypeList = customerServices.selectAllCustomerType();
+            request.setAttribute("typeList",customerTypeList);
             RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create.jsp");
             dispatcher.forward(request,response);
 
@@ -134,9 +136,11 @@ public class CustomersServlet extends HttpServlet {
 
     private void showEditPageCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
+        List<CustomerType> list = customerServices.selectAllCustomerType();
         Customers customers =  customerServices.selectCustomer(id);
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("view/customer/edit.jsp");
         request.setAttribute("customers",customers);
+        request.setAttribute("typeList",list);
         try {
             requestDispatcher.forward(request,response);
         } catch (ServletException e) {

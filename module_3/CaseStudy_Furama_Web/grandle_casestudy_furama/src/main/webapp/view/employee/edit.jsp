@@ -184,27 +184,9 @@
                             <div class="form-group">
                                 <label >Position</label>
                                 <select class="custom-select" id="inputGroupSelect01" name="position_id" style="font-size: 2rem;height: 40px">
-                                    <option value="1"
-                                        <c:if test="${employee.positionId.positionId == 1}">
-                                            selected
-                                        </c:if>
-                                    >Giam Doc</option>
-                                    <option value="2"
-                                            <c:if test="${employee.positionId.positionId == 2}">
-                                                selected
-                                            </c:if>>Truong Phong</option>
-                                    <option value="3"
-                                            <c:if test="${employee.positionId.positionId == 3}">
-                                                selected
-                                            </c:if>>Van Phong</option>
-                                    <option value="4"
-                                            <c:if test="${employee.positionId.positionId == 4}">
-                                                selected
-                                            </c:if>>Sell</option>
-                                    <option value="5"
-                                            <c:if test="${employee.positionId.positionId == 5}">
-                                                selected
-                                            </c:if>>Nhan Vien</option>
+                                    <c:forEach items="${positionList}" var="position">
+                                        <option value="${position.positionId}" ${position.positionId == employee.positionId.positionId? "selected":""}>${position.positionName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                             </div>
@@ -212,68 +194,31 @@
                                 <div class="form-group">
                                     <label >Education</label>
                                     <select class="custom-select" id="inputGroupSelect02" name="education_degree_id" style="font-size: 2rem;height: 40px">
-                                        <option value="1" <c:if test="${employee.educationDegreeId.educationDegreeId == 1}">
-                                                selected
-                                            </c:if> >Cao Hoc</option>
-                                        <option value="2" <c:if test="${employee.educationDegreeId.educationDegreeId == 2}">
-                                            selected
-                                        </c:if> >Dai Hoc</option>
-                                        <option value="3" <c:if test="${employee.educationDegreeId.educationDegreeId == 3}">
-                                            selected
-                                        </c:if> >Cao Dang</option>
-                                        <option value="4" <c:if test="${employee.educationDegreeId.educationDegreeId == 4}">
-                                            selected
-                                        </c:if> >Trung Cap</option>
-                                        <option value="5" <c:if test="${employee.educationDegreeId.educationDegreeId == 5}">
-                                            selected
-                                        </c:if> >12/12</option>
+                                        <c:forEach items="${educationDegreeList}" var="education">
+                                            <option value="${education.educationDegreeId}" ${education.educationDegreeId == employee.educationDegreeId.educationDegreeId? "selected":""}>${education.educationDegreeName}</option>
+                                        </c:forEach>
 
                                     </select>
                                 </div>
                             </div>
                         <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
-                                <label >Education</label>
+                                <label >Division</label>
                                 <select class="custom-select" name="division_id" style="font-size: 2rem;height: 40px">
-                                    <option value="1" <c:if test="${employee.divisionId.divisionId == 1}">
-                                        selected
-                                    </c:if> >Le Tan</option>
-                                    <option value="2" <c:if test="${employee.divisionId.divisionId == 2}">
-                                        selected
-                                    </c:if> >Buong Phong</option>
-                                    <option value="3" <c:if test="${employee.divisionId.divisionId == 3}">
-                                        selected
-                                    </c:if> >Bell</option>
-                                    <option value="4" <c:if test="${employee.divisionId.divisionId == 4}">
-                                        selected
-                                    </c:if> >Ky Thuat</option>
-                                    <option value="5" <c:if test="${employee.divisionId.divisionId == 5}">
-                                        selected
-                                    </c:if> >Bao Ve</option>
+                                    <c:forEach items="${divisionList}" var="division">
+                                        <option value="${division.divisionId}" ${division.divisionId == employee.divisionId.divisionId? "selected":""}>${division.divisionName}</option>
+                                    </c:forEach>
+
 
                                 </select>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label >Position</label>
+                            <label >User</label>
                             <select class="custom-select" name="username" style="font-size: 2rem;height: 40px">
-                                <option value="anhdung"
-                                        <c:if test="${employee.userName.userName == 'anhdung' }">
-                                            selected
-                                        </c:if>
-                                >Giam Doc</option>
-                                <option value="anhtan"
-                                        <c:if test="${employee.userName.userName == 'anhtan'}">
-                                            selected
-                                        </c:if>>Truong Phong</option>
-                                <option value="quanteo"
-                                        <c:if test="${employee.userName.userName == 'quanteo'}">
-                                            selected
-                                        </c:if>>Van Phong</option>
-                                <option value="vanlong"
-                                        <c:if test="${employee.userName.userName == 'vanlong'}">
-                                            selected
-                                        </c:if>>Sell</option>
+                                <c:forEach items="${userList}" var="user">
+                                    <option value="${user.userName}" ${user.userName == employee.userName.userName? "selected":""}>${user.userName}</option>
+                                </c:forEach>
                             </select>
                         </div>
                         <div class="row gutters row__start">

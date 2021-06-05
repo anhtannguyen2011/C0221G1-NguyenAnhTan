@@ -124,47 +124,55 @@
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label for="eMail">Contract Start Date</label>
-                                    <input name="contract_start_date" type="text" class="form-control" id="eMail" placeholder="Name">
+                                    <input name="contract_start_date" type="text" class="form-control" id="eMail" >
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label for="phone">Contract End Date</label>
-                                    <input name="contract_end_date" type="text" class="form-control" id="phone" placeholder="Enter Day Of Birth">
+                                    <input name="contract_end_date" type="text" class="form-control" id="phone" >
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label>Contract Deposit</label>
+                                        <input name="contract_deposit" type="text" class="form-control">
+                                    </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
-                                    <label >Contract Deposit</label>
-                                    <select class="custom-select" id="inputGroupSelect02" name="customer_gender" style="font-size: 2rem;height: 40px">
-                                        <option value="Male">Male</option>
-                                        <option value="Famale">Famale</option>
-                                    </select>
+                                    <label for="website">Contract Total Money</label>
+                                    <input name="contract_total_money" type="text" class="form-control" id="website">
                                 </div>
                             </div>
                         </div>
                         <div class="row gutters row__start">
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label for="website">Contract Total Money</label>
-                                    <input name="customer_id_card" type="text" class="form-control" id="website" placeholder="ID Card">
-                                </div>
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label >Employee</label>
-                                <select class="employee_id" name="customer_type_id" style="font-size: 2rem;height: 40px">
+                                <select  class="form-control" name="employee_id" style="font-size: 2rem;height: 40px">
                                     <c:forEach var="employee" items="${employeeList}">
-                                        <option value="${employee.employeeId}">${employee.employeeName}</option>
+                                        <option  value="${employee.employeeId}">${employee.employeeName}</option>
                                     </c:forEach>
                                 </select>
                             </div>
+                            </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
-                                        <label >Employee</label>
-                                        <select class="employee_id" name="customer_type_id" style="font-size: 2rem;height: 40px">
+                                        <label >Customer</label>
+                                        <select class="form-control" name="customer_id" style="font-size: 2rem;height: 40px">
                                             <c:forEach var="customers" items="${customersList}">
-                                                <option value="${customers.employeeId}">${employee.employeeName}</option>
+                                                <option value="${customers.customerId}">${customers.customerName}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label >Service</label>
+                                        <select class="form-control" name="service_id" style="font-size: 2rem;height: 40px">
+                                            <c:forEach var="service" items="${serviceList}">
+                                                <option value="${service.serviceId}">${service.serviceName}</option>
                                             </c:forEach>
                                         </select>
                                     </div>
@@ -180,7 +188,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+
                 </form>
             </div>
         </div>

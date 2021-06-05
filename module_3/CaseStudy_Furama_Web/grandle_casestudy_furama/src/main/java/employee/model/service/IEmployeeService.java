@@ -16,4 +16,8 @@ public interface IEmployeeService {
     Employee selectEmployee(int id);
      boolean editEmployee(Employee employee);
      boolean deleteEmployee(int id);
+    public List<Division> selectAllDivision();
+    public List<EducationDegree> selectAllEducation();
+    public List<Position> selectAllPosition();
+    public List<User> selectAllUser();
 }

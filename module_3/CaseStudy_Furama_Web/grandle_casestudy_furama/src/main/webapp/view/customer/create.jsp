@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -124,11 +125,9 @@
                             <div class="form-group">
                                 <label >Customer Type</label>
                                 <select class="custom-select" id="inputGroupSelect01" name="customer_type_id" style="font-size: 2rem;height: 40px">
-                                    <option value="1">Diamond</option>
-                                    <option value="2">Platinium</option>
-                                    <option value="3">Gold</option>
-                                    <option value="4">Silver</option>
-                                    <option value="5">Member</option>
+                                    <c:forEach items="${typeList}" var="typeId">
+                                        <option value="${typeId.customerTypeId}">${typeId.customerTypeName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>
@@ -146,7 +145,7 @@
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
-                                <label >Customer Type</label>
+                                <label >Gender</label>
                                 <select class="custom-select" id="inputGroupSelect02" name="customer_gender" style="font-size: 2rem;height: 40px">
                                     <option value="Male">Male</option>
                                     <option value="Famale">Famale</option>

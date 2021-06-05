@@ -112,7 +112,6 @@ public class CustomerRepository {
                     String phone = resultSet.getString("customer_phone");
                     String email = resultSet.getString("customer_email");
                     String address = resultSet.getString("customer_address");
-
                     customers = new Customers(id,id_typer,name,dayOfBirth,gender,idCard,phone,email,address);
                 }
             } catch (SQLException e) {

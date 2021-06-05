@@ -58,15 +58,8 @@
             <li><a href="list.jsp" class="link-control">Home</a></li>
             <li><a href="/employee" class="link-control">Employee</a></li>
             <li><a href="/customer" class="link-control">Customer</a></li>
-            <li>    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Service
-                    </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="/services?action=create&id=1">Villa</a>
-                    <a class="dropdown-item" href="/services?action=create&id=2">House</a>
-                    <a class="dropdown-item" href="/services?action=create&id=3">Room</a>
-                </div></li>
-            <li><a href="" class="link-control">Contact</a></li>
+            <li><a href="/services?action=create" class="link-control">Services</a></li>
+            <li><a href="/contract?action=create" class="link-control">Contact</a></li>
         </ul>
     </div>
     <nav class="navbar navbar-light bg-light">

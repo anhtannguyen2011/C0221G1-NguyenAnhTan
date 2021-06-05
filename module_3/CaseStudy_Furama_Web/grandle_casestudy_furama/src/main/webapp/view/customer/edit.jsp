@@ -129,27 +129,9 @@
                             <div class="form-group">
                                 <label >Customer Type</label>
                                 <select class="custom-select" id="inputGroupSelect01" name="customer_type_id" style="font-size: 2rem;height: 40px">
-                                    <option value="1"
-                                        <c:if test="${customers.customerTypeId.customerTypeId == 1}">
-                                            selected
-                                        </c:if>
-                                    >Diamond</option>
-                                    <option value="2"
-                                            <c:if test="${customers.customerTypeId.customerTypeId == 2}">
-                                                selected
-                                            </c:if>>Platinium</option>
-                                    <option value="3"
-                                            <c:if test="${customers.customerTypeId.customerTypeId == 3}">
-                                                selected
-                                            </c:if>>Gold</option>
-                                    <option value="4"
-                                            <c:if test="${customers.customerTypeId.customerTypeId == 4}">
-                                                selected
-                                            </c:if>>Silver</option>
-                                    <option value="5"
-                                            <c:if test="${customers.customerTypeId.customerTypeId == 5}">
-                                                selected
-                                            </c:if>>Member</option>
+                                    <c:forEach items="${typeList}" var="typeId">
+                                        <option value="${typeId.customerTypeId}"  ${typeId.customerTypeId == customers.customerTypeId.customerTypeId?"selected" :""}>${typeId.customerTypeName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                             </div>

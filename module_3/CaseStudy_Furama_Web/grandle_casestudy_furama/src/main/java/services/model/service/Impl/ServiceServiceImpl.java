@@ -8,6 +8,8 @@ import services.model.repository.ServiceRepository;
 import services.model.repository.ServiceTypeRepository;
 import services.model.service.IServiceService;
 
+import java.util.List;
+
 public class ServiceServiceImpl implements IServiceService {
     ServiceRepository serviceRepository = new ServiceRepository();
     RentTypeRepository rentTypeRepository = new RentTypeRepository();
@@ -26,6 +28,11 @@ public class ServiceServiceImpl implements IServiceService {
     @Override
     public RentType findByRentType(int id) {
         return rentTypeRepository.findByRentType(id);
+    }
+
+    @Override
+    public List<Service> selectAllService() {
+        return serviceRepository.selectAllService();
     }
 
 

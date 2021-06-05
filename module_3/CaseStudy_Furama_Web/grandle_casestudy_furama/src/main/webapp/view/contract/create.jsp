@@ -94,7 +94,7 @@
             <img src="../../img/logo@2x.png" height="150">
         </div>
         <div class="col-lg-4">
-            <img src="../../img//logo-chinh-thuc.png" width="100%">
+            <img src="../../img/logo-chinh-thuc.png" width="100%">
         </div>
         <div class="col-lg-4">
             <form class="form-login">
@@ -109,7 +109,7 @@
     <div class="row gutters row__start">
         <div class="col-xl-12">
             <h1>
-                Edit Customers
+                Create Contract
             </h1>
         </div>
         <div class="col-xl-12 col-lg-9 col-md-12 col-sm-12 col-12">
@@ -118,100 +118,63 @@
                     <div class="card-body">
                         <div class="row gutters row__start">
                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                                <h3 class="mb-2 text-primary">Customers Details</h3>
-                            </div>
-                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <c:if test="${customers != null}">
-                                    <input type="hidden" name="customers_id" value="${customers.customerId}"/>
-                                </c:if>
-                            </div>
-                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
-                            <div class="form-group">
-                                <label >Customer Type</label>
-                                <select class="custom-select" id="inputGroupSelect01" name="customer_type_id" style="font-size: 2rem;height: 40px">
-                                    <option value="1"
-                                        <c:if test="${customers.customerTypeId.customerTypeId == 1}">
-                                            selected
-                                        </c:if>
-                                    >Diamond</option>
-                                    <option value="2"
-                                            <c:if test="${customers.customerTypeId.customerTypeId == 2}">
-                                                selected
-                                            </c:if>>Platinium</option>
-                                    <option value="3"
-                                            <c:if test="${customers.customerTypeId.customerTypeId == 3}">
-                                                selected
-                                            </c:if>>Gold</option>
-                                    <option value="4"
-                                            <c:if test="${customers.customerTypeId.customerTypeId == 4}">
-                                                selected
-                                            </c:if>>Silver</option>
-                                    <option value="5"
-                                            <c:if test="${customers.customerTypeId.customerTypeId == 5}">
-                                                selected
-                                            </c:if>>Member</option>
-                                </select>
-                            </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
-
-                                <div class="form-group">
-                                    <label>Name</label>
-                                    <input name="customer_name" value="${customers.customerName}" type="text" class="form-control"  placeholder="Name">
-                                </div>
+                                <h3 class="mb-2 text-primary">Contract Details</h3>
                             </div>
 
-                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
-                                    <label >Day Of Birth</label>
-                                    <input  value="${customers.customerBirthday}" name="customer_birthday" type="text" class="form-control"  placeholder="Enter Day Of Birth">
+                                    <label for="eMail">Contract Start Date</label>
+                                    <input name="contract_start_date" type="text" class="form-control" id="eMail" placeholder="Name">
                                 </div>
                             </div>
-                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
-                                    <label >Customer Type</label>
+                                    <label for="phone">Contract End Date</label>
+                                    <input name="contract_end_date" type="text" class="form-control" id="phone" placeholder="Enter Day Of Birth">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label >Contract Deposit</label>
                                     <select class="custom-select" id="inputGroupSelect02" name="customer_gender" style="font-size: 2rem;height: 40px">
-                                        <option value="Male" <c:if test="${customers.customerGender == 'Male'}">
-                                                selected
-                                            </c:if> >Male</option>
-                                        <option value="Famale"
-                                                <c:if test="${customers.customerGender == 'Famale'}">
-                                                    selected
-                                                </c:if> >Famale</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Famale">Famale</option>
                                     </select>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row gutters row__start">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="website">Contract Total Money</label>
+                                    <input name="customer_id_card" type="text" class="form-control" id="website" placeholder="ID Card">
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
+                                <label >Employee</label>
+                                <select class="employee_id" name="customer_type_id" style="font-size: 2rem;height: 40px">
+                                    <c:forEach var="employee" items="${employeeList}">
+                                        <option value="${employee.employeeId}">${employee.employeeName}</option>
+                                    </c:forEach>
+                                </select>
+                            </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
+                                        <label >Employee</label>
+                                        <select class="employee_id" name="customer_type_id" style="font-size: 2rem;height: 40px">
+                                            <c:forEach var="customers" items="${customersList}">
+                                                <option value="${customers.employeeId}">${employee.employeeName}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+                                </div>
+                             </div>
 
-                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label>ID Card</label>
-                                    <input value="${customers.customerIdCard}" name="customer_id_card" type="text" class="form-control"  placeholder="ID Card">
-                                </div>
-                            </div>
                         </div>
                         <div class="row gutters row__start">
-                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label>Phone</label>
-                                    <input value="${customers.customerPhone}" name="customer_phone" type="text" class="form-control"  placeholder="Phone">
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input value="${customers.customerEmail}" name="customer_email" type="text" class="form-control"  placeholder="Enter Email">
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
-                                <div class="form-group">
-                                    <label>Address</label>
-                                    <input value="${customers.customerAddress}" name="customer_address" type="text" class="form-control" placeholder="Enter Address">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row gutters row__start">
-                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 ">
-                                <div class="text-center">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="text-right">
                                     <a type="button" href="customer?action=customers" class="btn btn-outline-secondary">Close</a>
                                     <input type="submit" value="Save" class="btn btn-outline-success"/>
                                 </div>

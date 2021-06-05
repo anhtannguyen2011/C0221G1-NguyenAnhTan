@@ -176,8 +176,6 @@ public class CustomersServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 
 }

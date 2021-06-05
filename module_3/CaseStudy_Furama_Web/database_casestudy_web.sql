@@ -127,4 +127,38 @@ create table `user`(
 );
 
 
+create table contract(
+	contract_id int primary key AUTO_INCREMENT,
+    contract_start_date date,
+    contract_end_date date,
+    contract_deposit double,
+    contract_total_money double,
+    employee_id int,
+    customer_id int,
+    service_id int,
+    foreign key (employee_id) references employee(employee_id),
+    foreign key (customer_id) references customer(customer_id),
+    foreign key (service_id) references service(service_id)
+    on delete CASCADE
+);
 
+create table attach_service(
+	attach_service_id int primary key,
+    attach_service_name varchar(45),
+    attach_service_cost double,
+    attach_service_unit int,
+    attach_service_status varchar(45)
+    
+	
+);
+
+
+create table contract_detail(
+	contract_detail int primary key AUTO_INCREMENT,
+    contract_id int,
+    attach_service_id int,
+    quantity int,
+    foreign key (contract_id) references contract(contract_id),
+    foreign key (attach_service_id) references attach_service(attach_service_id)
+    on delete CASCADE   
+);

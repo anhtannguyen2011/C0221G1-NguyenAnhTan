@@ -56,14 +56,14 @@ public class CustomerRepository {
         PreparedStatement preparedStatement = null;
         try{
             preparedStatement = connection.prepareStatement(INSERT_CUSTOMERS_SQL);
-            preparedStatement.setInt(1,customers.getCustomerType_id().getCustomerTypeId());
-            preparedStatement.setString(2,customers.getCustomer_name());
-            preparedStatement.setString(3,customers.getCustomer_birthday());
-            preparedStatement.setString(4,customers.getCustomer_gender());
-            preparedStatement.setString(5,customers.getCustomer_id_card());
-            preparedStatement.setString(6,customers.getCustomer_phone());
-            preparedStatement.setString(7,customers.getCustomer_email());
-            preparedStatement.setString(8,customers.getCustomer_address());
+            preparedStatement.setInt(1,customers.getCustomerTypeId().getCustomerTypeId());
+            preparedStatement.setString(2,customers.getCustomerName());
+            preparedStatement.setString(3,customers.getCustomerBirthday());
+            preparedStatement.setString(4,customers.getCustomerGender());
+            preparedStatement.setString(5,customers.getCustomerIdCard());
+            preparedStatement.setString(6,customers.getCustomerPhone());
+            preparedStatement.setString(7,customers.getCustomerEmail());
+            preparedStatement.setString(8,customers.getCustomerAddress());
             preparedStatement.executeUpdate();
         }catch (SQLException e){
             e.printStackTrace();
@@ -136,15 +136,15 @@ public class CustomerRepository {
         boolean check = false;
             try {
                 preparedStatement = connection.prepareStatement(UPDATE_CUSTOMER);
-                preparedStatement.setInt(1,customer.getCustomerType_id().getCustomerTypeId());
-                preparedStatement.setString(2,customer.getCustomer_name());
-                preparedStatement.setString(3,customer.getCustomer_birthday());
-                preparedStatement.setString(4,customer.getCustomer_gender());
-                preparedStatement.setString(5,customer.getCustomer_id_card());
-                preparedStatement.setString(6,customer.getCustomer_phone());
-                preparedStatement.setString(7,customer.getCustomer_email());
-                preparedStatement.setString(8,customer.getCustomer_address());
-                preparedStatement.setInt(9,customer.getCustomer_id());
+                preparedStatement.setInt(1,customer.getCustomerTypeId().getCustomerTypeId());
+                preparedStatement.setString(2,customer.getCustomerName());
+                preparedStatement.setString(3,customer.getCustomerBirthday());
+                preparedStatement.setString(4,customer.getCustomerGender());
+                preparedStatement.setString(5,customer.getCustomerIdCard());
+                preparedStatement.setString(6,customer.getCustomerPhone());
+                preparedStatement.setString(7,customer.getCustomerEmail());
+                preparedStatement.setString(8,customer.getCustomerAddress());
+                preparedStatement.setInt(9,customer.getCustomerId());
                 check = preparedStatement.executeUpdate() >0;
             } catch (SQLException e) {
                 e.printStackTrace();

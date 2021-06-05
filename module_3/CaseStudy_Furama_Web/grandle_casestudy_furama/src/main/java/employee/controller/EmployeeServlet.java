@@ -2,21 +2,19 @@ package employee.controller;
 
 import employee.model.bean.*;
 import employee.model.service.IEmployeeService;
-import employee.model.service.Impl.EmployeeService;
+import employee.model.service.Impl.EmployeeServiceImpl;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.List;
 
 @WebServlet(name = "EmployeeServlet",urlPatterns = "/employee")
 public class EmployeeServlet extends HttpServlet {
-    IEmployeeService employeeService = new EmployeeService();
+    IEmployeeService employeeService = new EmployeeServiceImpl();
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {

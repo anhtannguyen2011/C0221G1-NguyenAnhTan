@@ -6,7 +6,7 @@ import employee.model.service.IEmployeeService;
 
 import java.util.List;
 
-public class EmployeeService implements IEmployeeService {
+public class EmployeeServiceImpl implements IEmployeeService {
     EmployeeRepository employeeRepository = new EmployeeRepository();
     DivisionRepository divisionRepository = new DivisionRepository();
     EducationDegreeRepository educationDegreeRepository = new EducationDegreeRepository();

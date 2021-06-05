@@ -106,19 +106,19 @@
         <tbody>
         <c:forEach items="${listCustomers}" var="customers">
             <tr>
-                <th>${customers.customer_id}</th>
-                <th>${customers.customerType_id.customerTypeName}</th>
-                <th>${customers.customer_name}</th>
-                <th>${customers.customer_birthday}</th>
-                <th>${customers.customer_gender}</th>
-                <th>${customers.customer_id_card}</th>
-                <th>${customers.customer_phone}</th>
-                <th>${customers.customer_email}</th>
-                <th>${customers.customer_address}</th>
+                <th>${customers.customerId}</th>
+                <th>${customers.customerTypeId.customerTypeName}</th>
+                <th>${customers.customerName}</th>
+                <th>${customers.customerBirthday}</th>
+                <th>${customers.customerGender}</th>
+                <th>${customers.customerIdCard}</th>
+                <th>${customers.customerPhone}</th>
+                <th>${customers.customerEmail}</th>
+                <th>${customers.customerAddress}</th>
                 <td>
-                    <a href="/customer?action=edit&id=${customers.customer_id}"
+                    <a href="/customer?action=edit&id=${customers.customerId}"
                        class="btn btn-outline-info">Edit</a>
-                    <button onclick="setIdDelete(${customers.customer_id})" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
+                    <button onclick="setIdDelete(${customers.customerId})" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
                         Delete
                     </button>
                     <div class="modal fade" id="exampleModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

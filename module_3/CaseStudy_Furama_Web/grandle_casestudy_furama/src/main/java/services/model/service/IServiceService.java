@@ -15,4 +15,7 @@ public interface IServiceService {
      List<Service> selectAllService();
     public Service selectService(int id);
     public List<ServiceType> selectAllTypeService();
+    boolean updateService(Service service);
+    List<RentType> selectAllRentType();
+    boolean deleteService(int id);
 }

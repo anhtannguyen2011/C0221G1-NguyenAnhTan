@@ -45,5 +45,20 @@ public class ServiceServiceImpl implements IServiceService {
         return serviceTypeRepository.selectAllServiceTyype();
     }
 
+    @Override
+    public boolean updateService(Service service) {
+        return serviceRepository.updateService(service);
+    }
+
+    @Override
+    public List<RentType> selectAllRentType() {
+        return rentTypeRepository.selectAllRentType();
+    }
+
+    @Override
+    public boolean deleteService(int id) {
+        return serviceRepository.deleteService(id);
+    }
+
 
 }

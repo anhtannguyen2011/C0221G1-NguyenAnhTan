@@ -120,13 +120,6 @@ public class CustomersServlet extends HttpServlet {
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("customer_id"));
         customerServices.deleteCustomer(id);
-//        List<Customers> customersList = customerServices.selectAllCustomers();
-//        request.setAttribute("listCustomers",customersList);
-//            try {
-//                request.getRequestDispatcher("view/customer/list.jsp").forward(request,response);
-//            } catch (ServletException | IOException e) {
-//                e.printStackTrace();
-//            }
         try {
             response.sendRedirect("/customer");
         } catch (IOException e) {

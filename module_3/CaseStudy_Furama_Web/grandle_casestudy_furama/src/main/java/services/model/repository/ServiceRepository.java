@@ -22,6 +22,8 @@ public class ServiceRepository {
     private static final String SELECT_ALL_SERVICES = "select * from service";
     private static final String SELECT_SERVICE = "select * from service where service_id = ?";
 
+    private static final String UPDATE_SERVICE = "update service set service_name=?,service_area=?,service_cost=?,service_max_people=?,rent_type_id=?,service_type_id=?,strandard_room=?,description_other_convenience=?,pool_area=?,number_of_floor=? where service_id=? ";
+    private static final String DELETE_SERVICE = "delete from service where service_id=?";
     public void insertService(Service service) {
         Connection connection = baseRepository.getConnection();
         PreparedStatement statement = null;
@@ -107,6 +109,59 @@ public class ServiceRepository {
             e.printStackTrace();
         }
         return service;
+    }
+
+    public boolean updateService(Service service){
+        Connection connection = baseRepository.getConnection();
+        PreparedStatement statement = null;
+        boolean check = false;
+        try {
+            statement = connection.prepareStatement(UPDATE_SERVICE);
+            statement.setString(1,service.getServiceName());
+            statement.setInt(2,service.getServiceAre());
+            statement.setDouble(3,service.getServiceCost());
+            statement.setInt(4,service.getServiceMaxPeople());
+            statement.setInt(5,service.getServiceRentTypeId().getRentTypeId());
+            statement.setInt(6,service.getServiceTypeId().getServiceTypeId());
+            statement.setString(7,service.getStandardRoom());
+            statement.setString(8,service.getDescription());
+            statement.setDouble(9,service.getPoolArea());
+            statement.setInt(10,service.getNumberOfFloor());
+            statement.setInt(11,service.getServiceId());
+             check = statement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+        return check;
+    }
+
+    public boolean deleteService(int id){
+        Connection connection = baseRepository.getConnection();
+        PreparedStatement statement = null;
+        boolean check = false;
+        try {
+            statement = connection.prepareStatement(DELETE_SERVICE);
+            statement.setInt(1,id);
+            check = statement.executeUpdate() >0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                statement.close();
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+        return check;
     }
 
 }

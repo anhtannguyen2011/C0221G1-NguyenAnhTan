@@ -23,6 +23,8 @@ public class ContractServlet extends HttpServlet {
     EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
     CustomerServiceImpl customerService = new CustomerServiceImpl();
     ServiceServiceImpl serviceService = new ServiceServiceImpl();
+
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
@@ -36,7 +38,6 @@ public class ContractServlet extends HttpServlet {
     }
 
 
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {
@@ -46,8 +47,17 @@ public class ContractServlet extends HttpServlet {
             case "create":
                 showCreateContract(request, response);
                 break;
+            case "customerUse":
+                showCustomerUseService(request,response);
+                break;
+            case "list" :
+                showListContract(request,response);
+                break;
         }
     }
+
+
+
 
     private void showCreateContract(HttpServletRequest request, HttpServletResponse response) {
         List<Employee> employeeList = employeeService.selectAllEmployee();
@@ -82,4 +92,32 @@ public class ContractServlet extends HttpServlet {
         }
 
     }
+    private void showListContract(HttpServletRequest request, HttpServletResponse response) {
+        List<Contract> contractList = contractService.selectAllContract();
+        request.setAttribute("contractList",contractList);
+        try {
+            request.getRequestDispatcher("view/contract/list.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    private void showCustomerUseService(HttpServletRequest request, HttpServletResponse response) {
+        List<Contract> contractList = contractService.selectAllCustomersUseService();
+        request.setAttribute("contractList",contractList);
+        try {
+            request.getRequestDispatcher("view/contract/customer_use_services.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
 }

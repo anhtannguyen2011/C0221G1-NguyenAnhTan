@@ -1,5 +1,7 @@
 package contract.model.bean;
 
+import contract_detail.model.bean.AttachService;
+import contract_detail.model.bean.ContractDetails;
 import customers.model.bean.Customers;
 import employee.model.bean.Employee;
 import services.model.bean.Service;
@@ -13,6 +15,24 @@ public class Contract {
     private Employee employeeId;
     private Customers customersId;
     private Service serviceId;
+    private AttachService attachServiceid;
+
+    public Contract(int contractId, String contractStartDate, String contractEndDate, Customers customersId, AttachService attachServiceid) {
+        this.contractId = contractId;
+        this.contractStartDate = contractStartDate;
+        this.contractEndDate = contractEndDate;
+        this.customersId = customersId;
+        this.attachServiceid = attachServiceid;
+
+    }
+
+    public AttachService getAttachServiceid() {
+        return attachServiceid;
+    }
+
+    public void setAttachServiceid(AttachService attachServiceid) {
+        this.attachServiceid = attachServiceid;
+    }
 
     public Contract() {
     }

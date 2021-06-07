@@ -69,6 +69,7 @@
     <div class="link-left">
         <ul class="nav__link">
             <li><a href="/contract?action=customerUse" class="link-control">Customer Use Service</a></li>
+            <li><a href="/contractdetail?action=create" class="link-control">Create Contract Detail</a></li>
         </ul>
     </div>
 

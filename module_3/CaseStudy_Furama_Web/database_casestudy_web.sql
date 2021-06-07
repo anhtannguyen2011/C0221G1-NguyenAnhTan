@@ -162,3 +162,9 @@ create table contract_detail(
     foreign key (attach_service_id) references attach_service(attach_service_id)
     on delete CASCADE   
 );
+
+
+select c.contract_id,cus.customer_id,c.contract_start_date,c.contract_end_date,att.attach_service_id
+from customer cus join  contract c on cus.customer_id = c.customer_id
+join contract_detail cd on c.contract_id = cd.contract_id
+join attach_service att on att.attach_service_id = cd.attach_service_id;

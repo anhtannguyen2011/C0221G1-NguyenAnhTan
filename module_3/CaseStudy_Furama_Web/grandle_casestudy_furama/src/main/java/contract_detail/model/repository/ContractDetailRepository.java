@@ -17,9 +17,9 @@ import java.util.List;
 
 public class ContractDetailRepository {
     BaseRepository baseRepository = new BaseRepository();
-    ContractServiceImpl contract = new ContractServiceImpl();
+//    ContractServiceImpl contract = new ContractServiceImpl();
     private static final String INSERT_CONTRACT_DETAIL = "insert into contract_detail(contract_id,attach_service_id,quantity) values (?,?,?)";
-    private static final String SELECT_ALL_CONTRACT_DETAIL = "select * form contract_detail";
+//    private static final String SELECT_ALL_CONTRACT_DETAIL = "select * form contract_detail";
 
     public void insertContactDetail(ContractDetails contractDetails){
         Connection connection = baseRepository.getConnection();

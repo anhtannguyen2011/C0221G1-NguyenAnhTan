@@ -91,21 +91,23 @@
     <table class="table table-striped table-bordered" style="width:100%" id="tableStudent">
         <thead class="header">
         <tr>
-            <th>ID Contract</th>
+            <th>ID Customer</th>
+            <th>Customer Name</th>
             <th>Start Date</th>
             <th>End Date</th>
-            <th>Customer Name</th>
             <th>Attach Name</th>
+            <th>Quantity</th>
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${contractList}" var="contract">
+        <c:forEach items="${customerUseServiceList}" var="customer">
             <tr>
-                <th>${contract.contractId}</th>
-                <th>${contract.contractStartDate}</th>
-                <th>${contract.contractEndDate}</th>
-                <th>${contract.customersId.customerName}</th>
-                <th>${contract.attachServiceid.attachServiceName}</th>
+                <th>${customer.customerId}</th>
+                <th>${customer.customerName}</th>
+                <th>${customer.contractStartDate}</th>
+                <th>${customer.contractEndDate}</th>
+                <th>${customer.attachServiceName}</th>
+                <th>${customer.quantity}</th>
             </tr>
         </c:forEach>
         </tbody>

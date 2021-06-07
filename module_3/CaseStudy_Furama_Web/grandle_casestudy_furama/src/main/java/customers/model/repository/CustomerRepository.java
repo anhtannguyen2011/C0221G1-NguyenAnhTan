@@ -1,6 +1,7 @@
 package customers.model.repository;
 
 import customers.model.bean.CustomerType;
+import contract.model.bean.CustomerUseService;
 import customers.model.bean.Customers;
 
 import java.sql.Connection;
@@ -14,13 +15,15 @@ public class CustomerRepository {
     BaseRepository baseRepository = new BaseRepository();
     CustomerTypeRepository customerTypeRepository = new CustomerTypeRepository();
     private static final String SELECT_ALL_CUSTOMERS = "select * from customer";
-    private static final String INSERT_CUSTOMERS_SQL = "insert into customer" + "(customer_type_id,customer_name,customer_birthday,customer_gender,customer_id_card,customer_phone,customer_email,customer_address) values" +
-            "(?,?,?,?,?,?,?,?);";
+    private static final String INSERT_CUSTOMERS_SQL = "insert into customer" + "(customer_type_id,customer_name,customer_birthday,customer_gender,customer_id_card,customer_phone,customer_email,customer_address,customer_code) values" +
+            "(?,?,?,?,?,?,?,?,?);";
     private static final String DELETE_CUSTOMER = "delete from customer where customer_id = ?";
     private static final String SELECT_CUSTOMER = "select * from customer where customer_id = ?";
     private static final String SEARCH_NAME_CUSTOMER = "select * from customer where customer_name like ?";
 
-    private static final String UPDATE_CUSTOMER = "update customer set customer_type_id =?,customer_name =?,customer_birthday=?,customer_gender=?,customer_id_card=?,customer_phone=?,customer_email=?,customer_address=? where customer_id=?";
+    private static final String UPDATE_CUSTOMER = "update customer set customer_type_id =?,customer_name =?,customer_birthday=?,customer_gender=?,customer_id_card=?,customer_phone=?,customer_email=?,customer_address=?,customer_code=? where customer_id=?";
+
+
     public List<Customers> selectAllCustomers() {
         Connection connection = baseRepository.getConnection();
         PreparedStatement preparedStatement = null;
@@ -38,7 +41,8 @@ public class CustomerRepository {
                 String phone = rs.getString("customer_phone");
                 String email = rs.getString("customer_email");
                 String address = rs.getString("customer_address");
-                customers.add(new Customers(id,id_type,name,dayOfBirth,gender,idCard,phone,email,address));
+                String cusCode = rs.getString("customer_code");
+                customers.add(new Customers(id,id_type,name,dayOfBirth,gender,idCard,phone,email,address,cusCode));
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -51,9 +55,10 @@ public class CustomerRepository {
         }
         return customers;
     }
-    public void insertCustomer(Customers customers) throws SQLException {
+    public boolean insertCustomer(Customers customers) throws SQLException {
         Connection connection = baseRepository.getConnection();
         PreparedStatement preparedStatement = null;
+        boolean check = false;
         try{
             preparedStatement = connection.prepareStatement(INSERT_CUSTOMERS_SQL);
             preparedStatement.setInt(1,customers.getCustomerTypeId().getCustomerTypeId());
@@ -64,13 +69,15 @@ public class CustomerRepository {
             preparedStatement.setString(6,customers.getCustomerPhone());
             preparedStatement.setString(7,customers.getCustomerEmail());
             preparedStatement.setString(8,customers.getCustomerAddress());
-            preparedStatement.executeUpdate();
+            preparedStatement.setString(9,customers.getCustomerCode());
+            check = preparedStatement.executeUpdate() >0;
         }catch (SQLException e){
             e.printStackTrace();
         }finally {
             preparedStatement.close();
             connection.close();
         }
+        return check;
     }
 
     public boolean deleteCustomer(int id) {
@@ -112,7 +119,8 @@ public class CustomerRepository {
                     String phone = resultSet.getString("customer_phone");
                     String email = resultSet.getString("customer_email");
                     String address = resultSet.getString("customer_address");
-                    customers = new Customers(id,id_typer,name,dayOfBirth,gender,idCard,phone,email,address);
+                    String code = resultSet.getString("customer_code");
+                    customers = new Customers(id,id_typer,name,dayOfBirth,gender,idCard,phone,email,address,code);
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -143,7 +151,8 @@ public class CustomerRepository {
                 preparedStatement.setString(6,customer.getCustomerPhone());
                 preparedStatement.setString(7,customer.getCustomerEmail());
                 preparedStatement.setString(8,customer.getCustomerAddress());
-                preparedStatement.setInt(9,customer.getCustomerId());
+                preparedStatement.setString(9,customer.getCustomerCode());
+                preparedStatement.setInt(10,customer.getCustomerId());
                 check = preparedStatement.executeUpdate() >0;
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -176,7 +185,8 @@ public class CustomerRepository {
                     String phone = rs.getString("customer_phone");
                     String email = rs.getString("customer_email");
                     String address = rs.getString("customer_address");
-                    customersList.add(new Customers(id,id_type,nameCus,dayOfBirth,gender,idCard,phone,email,address));
+                    String code = rs.getString("customer_code");
+                    customersList.add(new Customers(id,id_type,nameCus,dayOfBirth,gender,idCard,phone,email,address,code));
 
                 }
             } catch (SQLException e) {
@@ -192,5 +202,6 @@ public class CustomerRepository {
             }
         return customersList;
     }
+
 
 }

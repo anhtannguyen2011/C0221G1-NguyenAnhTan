@@ -104,7 +104,8 @@ public class ServiceServlet extends HttpServlet {
         }else {
             numberFloor =Integer.parseInt(request.getParameter("number_of_floors"));
         }
-        Service service = new Service(name,serviceArea,serviceCost,serviceMaxPeople,rentTypeId,serviceTypeID,strandardRoom,des,poolArea,numberFloor);
+        String serviceCode = request.getParameter("service_code");
+        Service service = new Service(name,serviceArea,serviceCost,serviceMaxPeople,rentTypeId,serviceTypeID,strandardRoom,des,poolArea,numberFloor,serviceCode);
         serviceService.insertService(service);
 
         try {
@@ -176,9 +177,9 @@ public class ServiceServlet extends HttpServlet {
         }else {
             numberFloor =Integer.parseInt(request.getParameter("number_of_floors"));
         }
-        Service service = new Service(id,name,serviceArea,serviceCost,serviceMaxPeople,rentTypeId,serviceTypeID,strandardRoom,des,poolArea,numberFloor);
+        String serviceCode = request.getParameter("service_code");
+        Service service = new Service(id,name,serviceArea,serviceCost,serviceMaxPeople,rentTypeId,serviceTypeID,strandardRoom,des,poolArea,numberFloor,serviceCode);
         serviceService.updateService(service);
-
         try {
             response.sendRedirect("/services");
         } catch (IOException e) {

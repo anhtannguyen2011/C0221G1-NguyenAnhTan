@@ -12,11 +12,13 @@ public class Service {
     private String description;
     private double poolArea;
     private int numberOfFloor;
+    private String serviceCode;
 
     public Service() {
     }
 
-    public Service(int serviceId, String serviceName, int serviceAre, double serviceCost, int serviceMaxPeople, RentType serviceRentTypeId, ServiceType serviceTypeId, String standardRoom, String description, double poolArea, int numberOfFloor) {
+
+    public Service(int serviceId, String serviceName, int serviceAre, double serviceCost, int serviceMaxPeople, RentType serviceRentTypeId, ServiceType serviceTypeId, String standardRoom, String description, double poolArea, int numberOfFloor, String serviceCode) {
         this.serviceId = serviceId;
         this.serviceName = serviceName;
         this.serviceAre = serviceAre;
@@ -28,9 +30,10 @@ public class Service {
         this.description = description;
         this.poolArea = poolArea;
         this.numberOfFloor = numberOfFloor;
+        this.serviceCode = serviceCode;
     }
 
-    public Service(String serviceName, int serviceAre, double serviceCost, int serviceMaxPeople, RentType serviceRentTypeId, ServiceType serviceTypeId, String standardRoom, String description, double poolArea, int numberOfFloor) {
+    public Service(String serviceName, int serviceAre, double serviceCost, int serviceMaxPeople, RentType serviceRentTypeId, ServiceType serviceTypeId, String standardRoom, String description, double poolArea, int numberOfFloor, String serviceCode) {
         this.serviceName = serviceName;
         this.serviceAre = serviceAre;
         this.serviceCost = serviceCost;
@@ -41,6 +44,15 @@ public class Service {
         this.description = description;
         this.poolArea = poolArea;
         this.numberOfFloor = numberOfFloor;
+        this.serviceCode = serviceCode;
+    }
+
+    public String getServiceCode() {
+        return serviceCode;
+    }
+
+    public void setServiceCode(String serviceCode) {
+        this.serviceCode = serviceCode;
     }
 
     public int getServiceId() {

@@ -125,12 +125,18 @@
                                 <div class="form-group">
                                     <label for="eMail">Contract Start Date</label>
                                     <input name="contract_start_date" type="text" class="form-control" id="eMail" >
+                                    <c:if test="${messageStart != null}">
+                                        <p style="font-size: 20px" class="text-danger">${messageStart}</p>
+                                    </c:if>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label for="phone">Contract End Date</label>
                                     <input name="contract_end_date" type="text" class="form-control" id="phone" >
+                                    <c:if test="${messageEnd != null}">
+                                        <p style="font-size: 20px" class="text-danger">${messageEnd}</p>
+                                    </c:if>
                                 </div>
                             </div>
                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

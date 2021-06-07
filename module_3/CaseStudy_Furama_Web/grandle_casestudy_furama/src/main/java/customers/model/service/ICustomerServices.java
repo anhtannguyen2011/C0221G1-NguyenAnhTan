@@ -1,6 +1,7 @@
 package customers.model.service;
 
 import customers.model.bean.CustomerType;
+import contract.model.bean.CustomerUseService;
 import customers.model.bean.Customers;
 
 import java.sql.SQLException;
@@ -8,7 +9,7 @@ import java.util.List;
 
 public interface ICustomerServices {
     public List<Customers> selectAllCustomers();
-    void insertCustomer(Customers customers) throws SQLException;
+    boolean insertCustomer(Customers customers) throws SQLException;
 
     CustomerType selectCustomerType(int id);
 
@@ -20,5 +21,6 @@ public interface ICustomerServices {
 
     List<Customers> searchByName(String name);
     public List<CustomerType> selectAllCustomerType();
+
 
 }

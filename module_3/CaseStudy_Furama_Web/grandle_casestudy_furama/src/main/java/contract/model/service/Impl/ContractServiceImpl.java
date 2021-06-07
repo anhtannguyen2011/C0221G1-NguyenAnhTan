@@ -1,6 +1,7 @@
 package contract.model.service.Impl;
 
 import contract.model.bean.Contract;
+import contract.model.bean.CustomerUseService;
 import contract.model.repository.ContractRepository;
 import contract.model.service.IContractService;
 import contract_detail.model.bean.AttachService;
@@ -29,10 +30,6 @@ public class ContractServiceImpl implements IContractService {
         return contractRepository.selectAllContract();
     }
 
-    @Override
-    public List<Contract> selectAllCustomersUseService() {
-        return contractRepository.selectAllCustomersUseService();
-    }
 
     @Override
     public List<AttachService> selectAllAttach() {
@@ -42,5 +39,10 @@ public class ContractServiceImpl implements IContractService {
     @Override
     public List<Customers> selectAllCustomers() {
         return customerService.selectAllCustomers();
+    }
+
+    @Override
+    public List<CustomerUseService> selectAllCustomersUseService() {
+        return contractRepository.selectAllCustomersUseService();
     }
 }

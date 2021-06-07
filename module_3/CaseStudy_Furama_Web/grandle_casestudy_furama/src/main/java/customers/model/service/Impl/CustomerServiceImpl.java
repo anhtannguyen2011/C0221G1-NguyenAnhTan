@@ -1,6 +1,7 @@
 package customers.model.service.Impl;
 
 import customers.model.bean.CustomerType;
+import contract.model.bean.CustomerUseService;
 import customers.model.bean.Customers;
 import customers.model.repository.CustomerRepository;
 import customers.model.repository.CustomerTypeRepository;
@@ -19,8 +20,8 @@ public class CustomerServiceImpl implements ICustomerServices {
     }
 
     @Override
-    public void insertCustomer(Customers customers) throws SQLException {
-        customerRepository.insertCustomer(customers);
+    public boolean insertCustomer(Customers customers) throws SQLException {
+       return customerRepository.insertCustomer(customers);
     }
 
     @Override
@@ -52,4 +53,6 @@ public class CustomerServiceImpl implements ICustomerServices {
     public List<CustomerType> selectAllCustomerType() {
         return customerTypeRepository.selectAllCustomerType();
     }
+
+
 }

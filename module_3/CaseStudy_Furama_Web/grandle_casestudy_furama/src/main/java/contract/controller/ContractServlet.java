@@ -1,6 +1,8 @@
 package contract.controller;
 
+import common.Validate;
 import contract.model.bean.Contract;
+import contract.model.bean.CustomerUseService;
 import contract.model.service.Impl.ContractServiceImpl;
 import customers.model.bean.Customers;
 import customers.model.service.Impl.CustomerServiceImpl;
@@ -77,19 +79,37 @@ public class ContractServlet extends HttpServlet {
     }
     private void createContract(HttpServletRequest request, HttpServletResponse response) {
         String contactStart = request.getParameter("contract_start_date");
+        String messageStartDate = Validate.regexDate(contactStart);
         String contactEnd = request.getParameter("contract_end_date");
+        String messageEndDate = Validate.regexDate(contactEnd);
         double deposit = Double.parseDouble(request.getParameter("contract_deposit"));
         double total = Double.parseDouble(request.getParameter("contract_total_money"));
         Employee employeeId = employeeService.selectEmployee(Integer.parseInt(request.getParameter("employee_id")));
         Customers customersId = customerService.selectCustomer(Integer.parseInt(request.getParameter("customer_id")));
         Service serviceId = serviceService.selectService(Integer.parseInt(request.getParameter("service_id")));
         Contract contract = new Contract(contactStart,contactEnd,deposit,total,employeeId,customersId,serviceId);
-        contractService.insertContract(contract);
-        try {
-            response.sendRedirect("/view/main_page.jsp");
-        } catch (IOException e) {
-            e.printStackTrace();
+
+        if(messageStartDate == null && messageEndDate == null){
+            contractService.insertContract(contract);
+            try {
+                response.sendRedirect("/view/main_page.jsp");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }else {
+            request.setAttribute("messageStart",messageStartDate);
+            request.setAttribute("messageEnd",messageEndDate);
+            try {
+                request.getRequestDispatcher("/view/contract/create.jsp").forward(request,response);
+            } catch (ServletException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
+
 
     }
     private void showListContract(HttpServletRequest request, HttpServletResponse response) {
@@ -107,8 +127,8 @@ public class ContractServlet extends HttpServlet {
     }
 
     private void showCustomerUseService(HttpServletRequest request, HttpServletResponse response) {
-        List<Contract> contractList = contractService.selectAllCustomersUseService();
-        request.setAttribute("contractList",contractList);
+        List<CustomerUseService> customerUseServiceList = contractService.selectAllCustomersUseService();
+        request.setAttribute("customerUseServiceList",customerUseServiceList);
         try {
             request.getRequestDispatcher("view/contract/customer_use_services.jsp").forward(request,response);
         } catch (ServletException e) {

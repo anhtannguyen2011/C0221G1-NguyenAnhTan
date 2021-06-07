@@ -138,6 +138,13 @@
                             <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
 
                                 <div class="form-group">
+                                    <label>Customer Code</label>
+                                    <input name="customer_code" value="${customers.customerCode}" type="text" class="form-control"  placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
+
+                                <div class="form-group">
                                     <label>Name</label>
                                     <input name="customer_name" value="${customers.customerName}" type="text" class="form-control"  placeholder="Name">
                                 </div>

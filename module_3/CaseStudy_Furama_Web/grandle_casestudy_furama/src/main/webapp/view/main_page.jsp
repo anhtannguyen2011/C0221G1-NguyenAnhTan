@@ -46,8 +46,8 @@
         </div>
         <div class="col-lg-4">
             <form class="form-login">
-                <button class="btn btn-outline-success" type="button">Login</button>
-                <button class="btn btn-outline-secondary" type="button">Sign up</button>
+                <a href="login.jsp" class="btn btn-outline-success" type="button">Login</a>
+                <a class="btn btn-outline-secondary" type="button">Sign up</a>
             </form>
         </div>
     </div>

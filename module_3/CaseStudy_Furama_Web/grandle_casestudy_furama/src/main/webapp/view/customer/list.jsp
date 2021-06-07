@@ -91,30 +91,27 @@
     <table class="table table-striped table-bordered" style="width:100%" id="tableStudent">
         <thead class="header">
         <tr>
-            <th>ID</th>
-            <th>Loại Khách</th>
-            <th>Họ Tên</th>
-            <th>Ngày Sinh</th>
-            <th>Giới Tính</th>
-            <th>CMND</th>
-            <th>Điện Thoại</th>
-            <th>Email</th>
-            <th>Địa Chỉ</th>
+            <th>No ID</th>
+            <th>ID Customer</th>
+            <th>Customer Type</th>
+            <th>Customer Code</th>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Gender</th>
+            <th>ID Card</th>
             <td class="text-center"><a href="/customer?action=create" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${listCustomers}" var="customers">
-            <tr>
+        <c:forEach items="${listCustomers}" var="customers" varStatus="count">
+            <tr><th>${count.index+1}</th>
                 <th>${customers.customerId}</th>
                 <th>${customers.customerTypeId.customerTypeName}</th>
+                <th>${customers.customerCode}</th>
                 <th>${customers.customerName}</th>
                 <th>${customers.customerBirthday}</th>
                 <th>${customers.customerGender}</th>
                 <th>${customers.customerIdCard}</th>
-                <th>${customers.customerPhone}</th>
-                <th>${customers.customerEmail}</th>
-                <th>${customers.customerAddress}</th>
                 <td>
                     <a href="/customer?action=edit&id=${customers.customerId}"
                        class="btn btn-outline-info">Edit</a>

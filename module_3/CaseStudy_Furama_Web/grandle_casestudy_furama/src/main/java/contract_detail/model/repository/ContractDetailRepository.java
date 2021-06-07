@@ -1,23 +1,18 @@
 package contract_detail.model.repository;
 
-import contract.model.bean.Contract;
-import contract.model.service.Impl.ContractServiceImpl;
-import contract_detail.model.bean.AttachService;
+import contract.model.repository.ContractRepository;
 import contract_detail.model.bean.ContractDetails;
-import customers.model.bean.Customers;
-import employee.model.bean.Employee;
-import services.model.bean.Service;
+import customers.model.repository.CustomerRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ContractDetailRepository {
     BaseRepository baseRepository = new BaseRepository();
-//    ContractServiceImpl contract = new ContractServiceImpl();
+    ContractRepository contractRepository = new ContractRepository();
+    CustomerRepository customerRepository = new CustomerRepository();
+    AttachServiceDetailRepository attachServiceDetailRepository = new AttachServiceDetailRepository();
     private static final String INSERT_CONTRACT_DETAIL = "insert into contract_detail(contract_id,attach_service_id,quantity) values (?,?,?)";
 //    private static final String SELECT_ALL_CONTRACT_DETAIL = "select * form contract_detail";
 

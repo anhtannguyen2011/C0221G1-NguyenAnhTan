@@ -119,7 +119,11 @@
                     <div class="row gutters row__start">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <h3 class="mb-2 text-primary">Customers Details</h3>
+                            <c:if test="${message !=null}">
+                                <p style="font-size: 20px" class="text-danger">${message}</p>
+                            </c:if>
                         </div>
+
 
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
@@ -133,6 +137,12 @@
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
+                                <label for="sTate">Customer Code</label>
+                                <input name="customer_code" type="text" class="form-control" placeholder="Enter Address">
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                            <div class="form-group">
                                 <label for="eMail">Name</label>
                                 <input name="customer_name" type="text" class="form-control" id="eMail" placeholder="Name">
                             </div>
@@ -140,7 +150,10 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="phone">Day Of Birth</label>
-                                <input name="customer_birthday" type="text" class="form-control" id="phone" placeholder="Enter Day Of Birth">
+                                <input name="customer_birthday" type="date" class="form-control" id="phone" placeholder="Enter Day Of Birth">
+                                <c:if test="${messageBirthday !=null}">
+                                    <p style="font-size: 20px" class="text-danger">${messageBirthday}</p>
+                                </c:if>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -158,18 +171,27 @@
                             <div class="form-group">
                                 <label for="website">ID Card</label>
                                 <input name="customer_id_card" type="text" class="form-control" id="website" placeholder="ID Card">
+                                <c:if test="${messageIdCard !=null}">
+                                    <p  style="font-size: 20px" class="text-danger">${messageIdCard}</p>
+                                </c:if>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="Street">Phone</label>
                                 <input name="customer_phone" type="text" class="form-control" id="Street" placeholder="Phone">
+                                <c:if test="${messageBirthday !=null}">
+                                    <p style="font-size: 20px" class="text-danger">${messagePhone}</p>
+                                </c:if>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="ciTy">Email</label>
                                 <input name="customer_email" type="text" class="form-control" id="ciTy" placeholder="Enter Email">
+                                <c:if test="${messageEmail !=null}">
+                                    <p style="font-size: 20px" class="text-danger">${messageEmail}</p>
+                                </c:if>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">

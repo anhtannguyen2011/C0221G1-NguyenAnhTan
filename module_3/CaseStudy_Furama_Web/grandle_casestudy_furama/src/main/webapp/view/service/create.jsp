@@ -159,6 +159,13 @@
                                 </div>
                                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                                     <div class="form-group">
+                                        <label>Service Code</label>
+                                        <input name="service_code" type="text" class="form-control"
+                                               placeholder="Name Services">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                    <div class="form-group">
                                         <label>Service Area</label>
                                         <input name="service_area" type="text" class="form-control"
                                                placeholder="Service Area">

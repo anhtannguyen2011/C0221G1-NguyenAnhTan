@@ -116,10 +116,13 @@ create table `role` (
 create table user_role(
 	role_id int,
     username varchar(255),
+    
     FOREIGN KEY (role_id) REFERENCES `role`(role_id),
     FOREIGN KEY (username) REFERENCES `user`(username)
     on delete CASCADE
 );
+ALTER TABLE user_role
+ADD PRIMARY KEY(role_id,username);
 
 create table `user`(
 	username varchar(255) PRIMARY KEY,
@@ -164,7 +167,17 @@ create table contract_detail(
 );
 
 
-select c.contract_id,cus.customer_id,c.contract_start_date,c.contract_end_date,att.attach_service_id
+select c.contract_id,cus.customer_id,cus.customer_name,c.contract_start_date,c.contract_end_date,att.attach_service_id,cd.quantity,att.attach_service_name
 from customer cus join  contract c on cus.customer_id = c.customer_id
 join contract_detail cd on c.contract_id = cd.contract_id
 join attach_service att on att.attach_service_id = cd.attach_service_id;
+
+CREATE view view_user as
+SELECT u.username,u.`password`, r.role_id from `user` u join user_role ur on u.username = ur.username
+join `role` r on r.role_id = ur.role_id; 
+
+SELECT * from view_user where username = "anhtan" AND `password` = "123";
+
+
+ALTER TABLE customer
+ADD customer_code varchar(45);

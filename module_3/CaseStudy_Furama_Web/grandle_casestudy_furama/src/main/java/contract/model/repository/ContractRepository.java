@@ -1,6 +1,7 @@
 package contract.model.repository;
 
 import contract.model.bean.Contract;
+import contract.model.bean.CustomerUseService;
 import contract_detail.model.bean.AttachService;
 import contract_detail.model.bean.ContractDetails;
 import contract_detail.model.service.Impl.ContractDetailImpl;
@@ -23,13 +24,12 @@ public class ContractRepository {
     EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
     CustomerServiceImpl customerService = new CustomerServiceImpl();
     ServiceServiceImpl serviceService = new ServiceServiceImpl();
-    ContractDetailImpl contractDetail = new ContractDetailImpl();
     private static final String INSERT_CONTRACT_SQL = "insert into contract" + "(contract_start_date,contract_end_date,contract_deposit,contract_total_money,employee_id,customer_id,service_id) values"
                                         + "(?,?,?,?,?,?,?)";
     private static final String SELECT_ALL_CONTRACT = "select * from contract";
     private static final String SELECT_CONTRACT = "select * from contract where contract_id =?";
 
-    private static final String SELECT_CUSTOMER_USE_SERVICE = "select c.contract_id,cus.customer_id,c.contract_start_date,c.contract_end_date,att.attach_service_id\n" +
+    private static final String SELECT_CUSTOMER_USE_SERVICE = "select c.contract_id,cus.customer_id,cus.customer_name,c.contract_start_date,c.contract_end_date,att.attach_service_id,cd.quantity,att.attach_service_name\n" +
             "from customer cus join  contract c on cus.customer_id = c.customer_id\n" +
             "join contract_detail cd on c.contract_id = cd.contract_id\n" +
             "join attach_service att on att.attach_service_id = cd.attach_service_id;";
@@ -127,24 +127,28 @@ public class ContractRepository {
         return contract;
     }
 
-    public List<Contract> selectAllCustomersUseService(){
+    public List<CustomerUseService> selectAllCustomersUseService(){
         Connection connection = baseRepository.getConnection();
         PreparedStatement statement = null;
-        List<Contract> contractList = new ArrayList<>();
+        List<CustomerUseService> customerUseServices = new ArrayList<>();
         try {
             statement = connection.prepareStatement(SELECT_CUSTOMER_USE_SERVICE);
             ResultSet rs = statement.executeQuery();
             while (rs.next()){
-                int id = rs.getInt("contract_id");
-                Customers nameCus = customerService.selectCustomer(rs.getInt("customer_id"));
+                int cusId = rs.getInt("customer_id");
+                String cusName = rs.getString("customer_name");
+                int contractId = rs.getInt("contract_id");
                 String startDate = rs.getString("contract_start_date");
                 String endDate = rs.getString("contract_end_date");
-                AttachService attachName = contractDetail.selectAttach(rs.getInt("attach_service_id"));
-                contractList.add(new Contract(id,startDate,endDate,nameCus,attachName));
+                int quantity = rs.getInt("quantity");
+                String attachName = rs.getString("attach_service_name");
+                int attachID = rs.getInt("attach_service_id");
+                CustomerUseService cus = new CustomerUseService(cusId,cusName,contractId,startDate,endDate,quantity,attachID,attachName);
+                customerUseServices.add(cus);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return contractList;
+        return customerUseServices;
     }
 }

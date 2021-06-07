@@ -92,6 +92,7 @@
         <thead class="header">
         <tr>
             <th>Service ID</th>
+            <th>Service Code</th>
             <th>Service Name</th>
             <th>Service Area</th>
             <th>Service Cost</th>
@@ -102,6 +103,7 @@
         <c:forEach items="${serviceList}" var="service">
             <tr>
                 <th>${service.serviceId}</th>
+                <th>${service.serviceCode}</th>
                 <th>${service.serviceName}</th>
                 <th>${service.serviceAre}</th>
                 <th>${service.serviceCost}</th>

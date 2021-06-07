@@ -17,12 +17,12 @@ public class ServiceRepository {
     RentTypeRepository rentTypeRepository = new RentTypeRepository();
     ServiceTypeRepository serviceTypeRepository = new ServiceTypeRepository();
     private static final String INSERT_SERVICES = "insert into service" + "(service_name,service_area,service_cost,service_max_people,rent_type_id,service_type_id,strandard_room,description_other_convenience,pool_area,number_of_floor) values"
-            + " (?,?,?,?,?,?,?,?,?,?);";
+            + " (?,?,?,?,?,?,?,?,?,?,?);";
 
     private static final String SELECT_ALL_SERVICES = "select * from service";
     private static final String SELECT_SERVICE = "select * from service where service_id = ?";
 
-    private static final String UPDATE_SERVICE = "update service set service_name=?,service_area=?,service_cost=?,service_max_people=?,rent_type_id=?,service_type_id=?,strandard_room=?,description_other_convenience=?,pool_area=?,number_of_floor=? where service_id=? ";
+    private static final String UPDATE_SERVICE = "update service set service_name=?,service_area=?,service_cost=?,service_max_people=?,rent_type_id=?,service_type_id=?,strandard_room=?,description_other_convenience=?,pool_area=?,number_of_floor=?,service_code=? where service_id=? ";
     private static final String DELETE_SERVICE = "delete from service where service_id=?";
     public void insertService(Service service) {
         Connection connection = baseRepository.getConnection();
@@ -39,6 +39,7 @@ public class ServiceRepository {
             statement.setString(8, service.getDescription());
             statement.setDouble(9, service.getPoolArea());
             statement.setInt(10, service.getNumberOfFloor());
+            statement.setString(11, service.getServiceCode());
             statement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -72,7 +73,8 @@ public class ServiceRepository {
                 String des = rs.getString("description_other_convenience");
                 double poolArea = rs.getDouble("pool_area");
                 int numberOfFloor = rs.getInt("number_of_floor");
-                serviceList.add(new Service(id,name,area,cost,maxPeople,idRent,idServiceType,standard,des,poolArea,numberOfFloor));
+                String serviceCode = rs.getString("service_code");
+                serviceList.add(new Service(id,name,area,cost,maxPeople,idRent,idServiceType,standard,des,poolArea,numberOfFloor,serviceCode));
             }
         }catch (SQLException e){
             e.printStackTrace();
@@ -84,7 +86,6 @@ public class ServiceRepository {
         Connection connection = baseRepository.getConnection();
         PreparedStatement statement = null;
         Service service = null;
-
         try {
             statement = connection.prepareStatement(SELECT_SERVICE);
             statement.setInt(1,id);
@@ -101,7 +102,8 @@ public class ServiceRepository {
                 String des = rs.getString("description_other_convenience");
                 double poolArea = rs.getDouble("pool_area");
                 int numberOfFloor = rs.getInt("number_of_floor");
-                service = new Service(id,name,area,cost,maxPeople,idRent,idServiceType,standard,des,poolArea,numberOfFloor);
+                String serviceCode = rs.getString("service_code");
+                service = new Service(id,name,area,cost,maxPeople,idRent,idServiceType,standard,des,poolArea,numberOfFloor,serviceCode);
 
             }
 
@@ -127,7 +129,8 @@ public class ServiceRepository {
             statement.setString(8,service.getDescription());
             statement.setDouble(9,service.getPoolArea());
             statement.setInt(10,service.getNumberOfFloor());
-            statement.setInt(11,service.getServiceId());
+            statement.setString(11,service.getServiceCode());
+            statement.setInt(12,service.getServiceId());
              check = statement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();

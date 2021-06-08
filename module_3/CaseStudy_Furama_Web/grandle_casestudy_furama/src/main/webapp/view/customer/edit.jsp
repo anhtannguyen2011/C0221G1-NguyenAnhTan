@@ -140,6 +140,8 @@
                                 <div class="form-group">
                                     <label>Customer Code</label>
                                     <input name="customer_code" value="${customers.customerCode}" type="text" class="form-control"  placeholder="Name">
+
+                                    <p style="font-size: 20px" class="text-danger">${msgCode}</p>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -154,6 +156,7 @@
                                 <div class="form-group">
                                     <label >Day Of Birth</label>
                                     <input  value="${customers.customerBirthday}" name="customer_birthday" type="text" class="form-control"  placeholder="Enter Day Of Birth">
+                                    <p style="font-size: 20px" class="text-danger">${msgBirthday}</p>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
@@ -175,6 +178,7 @@
                                 <div class="form-group">
                                     <label>ID Card</label>
                                     <input value="${customers.customerIdCard}" name="customer_id_card" type="text" class="form-control"  placeholder="ID Card">
+                                    <p style="font-size: 20px" class="text-danger">${msgIdcard}</p>
                                 </div>
                             </div>
                         </div>
@@ -183,12 +187,14 @@
                                 <div class="form-group">
                                     <label>Phone</label>
                                     <input value="${customers.customerPhone}" name="customer_phone" type="text" class="form-control"  placeholder="Phone">
+                                    <p style="font-size: 20px" class="text-danger">${msgPhone}</p>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">
                                 <div class="form-group">
                                     <label>Email</label>
                                     <input value="${customers.customerEmail}" name="customer_email" type="text" class="form-control"  placeholder="Enter Email">
+                                    <p style="font-size: 20px" class="text-danger">${msgEmail}</p>
                                 </div>
                             </div>
                             <div class="col-xl-12 col-lg-6 col-md-6 col-sm-6 col-12">

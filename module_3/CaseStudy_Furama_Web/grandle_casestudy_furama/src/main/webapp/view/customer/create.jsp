@@ -119,18 +119,16 @@
                     <div class="row gutters row__start">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <h3 class="mb-2 text-primary">Customers Details</h3>
-                            <c:if test="${message !=null}">
-                                <p style="font-size: 20px" class="text-danger">${message}</p>
-                            </c:if>
                         </div>
 
 
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label >Customer Type</label>
-                                <select class="custom-select" id="inputGroupSelect01" name="customer_type_id" style="font-size: 2rem;height: 40px">
+                                <select class="custom-select" id="inputGroupSelect01"  name="customer_type_id" style="font-size: 2rem;height: 40px">
                                     <c:forEach items="${typeList}" var="typeId">
-                                        <option value="${typeId.customerTypeId}">${typeId.customerTypeName}</option>
+<%--                                        value="${typeId.customerTypeId}" ${customerInfo.customerTypeId.customerTypeId == typeId.customerTypeId?"selected":""--%>
+                                        <option value="${typeId.customerTypeId}" ${customerInfo.customerTypeId.customerTypeId == typeId.customerTypeId?"selected":""}>${typeId.customerTypeName}</option>
                                     </c:forEach>
                                 </select>
                             </div>
@@ -138,28 +136,31 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="sTate">Customer Code</label>
-                                <input name="customer_code" type="text" class="form-control" placeholder="Enter Address">
+                                <input name="customer_code" type="text" class="form-control" value="${customerInfo.customerCode}">
+
+                                    <p style="font-size: 20px" class="text-danger">${msgCode}</p>
+
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="eMail">Name</label>
-                                <input name="customer_name" type="text" class="form-control" id="eMail" placeholder="Name">
+                                <input name="customer_name" type="text" class="form-control" id="eMail"  value="${customerInfo.customerName}">
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="phone">Day Of Birth</label>
-                                <input name="customer_birthday" type="date" class="form-control" id="phone" placeholder="Enter Day Of Birth">
-                                <c:if test="${messageBirthday !=null}">
-                                    <p style="font-size: 20px" class="text-danger">${messageBirthday}</p>
-                                </c:if>
+                                <input name="customer_birthday" type="date" class="form-control" id="phone"  value="${customerInfo.customerBirthday}">
+
+                                    <p style="font-size: 20px" class="text-danger">${msgBirthday}</p>
+
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label >Gender</label>
-                                <select class="custom-select" id="inputGroupSelect02" name="customer_gender" style="font-size: 2rem;height: 40px">
+                                <select class="custom-select" id="inputGroupSelect02" name="customer_gender" value="${customerInfo.customerGender}" style="font-size: 2rem;height: 40px">
                                     <option value="Male">Male</option>
                                     <option value="Famale">Famale</option>
                                 </select>
@@ -170,34 +171,28 @@
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="website">ID Card</label>
-                                <input name="customer_id_card" type="text" class="form-control" id="website" placeholder="ID Card">
-                                <c:if test="${messageIdCard !=null}">
-                                    <p  style="font-size: 20px" class="text-danger">${messageIdCard}</p>
-                                </c:if>
+                                <input name="customer_id_card" type="text" class="form-control" id="website" value="${customerInfo.customerCode}">
+                                    <p  style="font-size: 20px" class="text-danger">${msgIdcard}</p>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="Street">Phone</label>
-                                <input name="customer_phone" type="text" class="form-control" id="Street" placeholder="Phone">
-                                <c:if test="${messageBirthday !=null}">
-                                    <p style="font-size: 20px" class="text-danger">${messagePhone}</p>
-                                </c:if>
+                                <input name="customer_phone" type="text" class="form-control" id="Street" value="${customerInfo.customerPhone}">
+                                    <p style="font-size: 20px" class="text-danger">${msgPhone}</p>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="ciTy">Email</label>
-                                <input name="customer_email" type="text" class="form-control" id="ciTy" placeholder="Enter Email">
-                                <c:if test="${messageEmail !=null}">
-                                    <p style="font-size: 20px" class="text-danger">${messageEmail}</p>
-                                </c:if>
+                                <input name="customer_email" type="text" class="form-control" id="ciTy" placeholder="Enter Email" value="${customerInfo.customerEmail}">
+                                    <p style="font-size: 20px" class="text-danger">${msgEmail}</p>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                             <div class="form-group">
                                 <label for="sTate">Address</label>
-                                <input name="customer_address" type="text" class="form-control" id="sTate" placeholder="Enter Address">
+                                <input name="customer_address" type="text" class="form-control" id="sTate" placeholder="Enter Address" value="${customerInfo.customerAddress}">
                             </div>
                         </div>
                     </div>

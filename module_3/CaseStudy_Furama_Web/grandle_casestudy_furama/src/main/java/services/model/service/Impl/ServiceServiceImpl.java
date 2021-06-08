@@ -1,5 +1,6 @@
 package services.model.service.Impl;
 
+import common.Validate;
 import services.model.bean.RentType;
 import services.model.bean.Service;
 import services.model.bean.ServiceType;
@@ -8,7 +9,9 @@ import services.model.repository.ServiceRepository;
 import services.model.repository.ServiceTypeRepository;
 import services.model.service.IServiceService;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ServiceServiceImpl implements IServiceService {
     ServiceRepository serviceRepository = new ServiceRepository();
@@ -16,8 +19,17 @@ public class ServiceServiceImpl implements IServiceService {
     ServiceTypeRepository serviceTypeRepository = new ServiceTypeRepository();
 
     @Override
-    public void insertService(Service service) {
-        serviceRepository.insertService(service);
+    public Map<String,String> insertService(Service service) {
+        boolean check = true;
+        Map<String,String> msgMap = new HashMap<>();
+        if(!Validate.regexCodeService(service.getServiceCode())){
+            check = false;
+            msgMap.put("code","Invalid code DV-XXXX ");
+        }
+        if(check){
+            serviceRepository.insertService(service);
+        }
+        return msgMap;
     }
 
     @Override

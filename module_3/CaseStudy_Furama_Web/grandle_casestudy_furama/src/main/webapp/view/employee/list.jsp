@@ -71,8 +71,8 @@
             <li><a href="list.jsp" class="link-control">Home</a></li>
             <li><a href="/employee" class="link-control">Employee</a></li>
             <li><a href="/customer" class="link-control">Customer</a></li>
-            <li><a href="" class="link-control">Services</a></li>
-            <li><a href="" class="link-control">Contact</a></li>
+            <li><a href="/services" class="link-control">Services</a></li>
+            <li><a href="/contract" class="link-control">Contact</a></li>
         </ul>
     </div>
     <nav class="navbar navbar-light bg-light">

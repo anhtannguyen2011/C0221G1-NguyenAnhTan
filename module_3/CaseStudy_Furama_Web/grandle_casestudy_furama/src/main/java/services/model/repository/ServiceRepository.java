@@ -16,7 +16,7 @@ public class ServiceRepository {
     BaseRepository baseRepository = new BaseRepository();
     RentTypeRepository rentTypeRepository = new RentTypeRepository();
     ServiceTypeRepository serviceTypeRepository = new ServiceTypeRepository();
-    private static final String INSERT_SERVICES = "insert into service" + "(service_name,service_area,service_cost,service_max_people,rent_type_id,service_type_id,strandard_room,description_other_convenience,pool_area,number_of_floor) values"
+    private static final String INSERT_SERVICES = "insert into service" + "(service_name,service_area,service_cost,service_max_people,rent_type_id,service_type_id,strandard_room,description_other_convenience,pool_area,number_of_floor,service_code) values"
             + " (?,?,?,?,?,?,?,?,?,?,?);";
 
     private static final String SELECT_ALL_SERVICES = "select * from service";
@@ -24,9 +24,10 @@ public class ServiceRepository {
 
     private static final String UPDATE_SERVICE = "update service set service_name=?,service_area=?,service_cost=?,service_max_people=?,rent_type_id=?,service_type_id=?,strandard_room=?,description_other_convenience=?,pool_area=?,number_of_floor=?,service_code=? where service_id=? ";
     private static final String DELETE_SERVICE = "delete from service where service_id=?";
-    public void insertService(Service service) {
+    public boolean insertService(Service service) {
         Connection connection = baseRepository.getConnection();
         PreparedStatement statement = null;
+        boolean check = false;
         try {
             statement = connection.prepareStatement(INSERT_SERVICES);
             statement.setString(1, service.getServiceName());
@@ -40,7 +41,7 @@ public class ServiceRepository {
             statement.setDouble(9, service.getPoolArea());
             statement.setInt(10, service.getNumberOfFloor());
             statement.setString(11, service.getServiceCode());
-            statement.executeUpdate();
+            check = statement.executeUpdate() > 0;
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -52,6 +53,7 @@ public class ServiceRepository {
             }
 
         }
+        return check;
     }
 
     public List<Service> selectAllService() {

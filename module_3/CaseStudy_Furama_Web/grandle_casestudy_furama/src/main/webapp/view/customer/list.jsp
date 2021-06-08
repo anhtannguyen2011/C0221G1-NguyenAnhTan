@@ -69,10 +69,10 @@
     <div class="link-left">
         <ul class="nav__link">
             <li><a href="list.jsp" class="link-control">Home</a></li>
-            <li><a href="" class="link-control">Employee</a></li>
+            <li><a href="/employee" class="link-control">Employee</a></li>
             <li><a href="/customer" class="link-control">Customer</a></li>
-            <li><a href="" class="link-control">Services</a></li>
-            <li><a href="" class="link-control">Contact</a></li>
+            <li><a href="/services" class="link-control">Services</a></li>
+            <li><a href="/contract" class="link-control">Contact</a></li>
         </ul>
     </div>
     <nav class="navbar navbar-light bg-light">
@@ -87,6 +87,7 @@
 <div class="container-fluid mt-5 border border-body">
     <div class="text-center">
         <h1>List</h1>
+            <p class="text-success">${message}</p>
     </div>
     <table class="table table-striped table-bordered" style="width:100%" id="tableStudent">
         <thead class="header">

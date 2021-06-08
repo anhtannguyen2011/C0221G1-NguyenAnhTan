@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "ServiceServlet",urlPatterns = "/services")
 public class ServiceServlet extends HttpServlet {
@@ -105,14 +106,22 @@ public class ServiceServlet extends HttpServlet {
             numberFloor =Integer.parseInt(request.getParameter("number_of_floors"));
         }
         String serviceCode = request.getParameter("service_code");
-        Service service = new Service(name,serviceArea,serviceCost,serviceMaxPeople,rentTypeId,serviceTypeID,strandardRoom,des,poolArea,numberFloor,serviceCode);
-        serviceService.insertService(service);
 
-        try {
-            response.sendRedirect("view/main_page.jsp");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Service service = new Service(name,serviceArea,serviceCost,serviceMaxPeople,rentTypeId,serviceTypeID,strandardRoom,des,poolArea,numberFloor,serviceCode);
+       Map<String,String> msgMap = serviceService.insertService(service);
+       if(msgMap.isEmpty()){
+           request.setAttribute("message","Message Successfull");
+           showListService(request,response);
+       }else {
+           request.setAttribute("msgCode",msgMap.get("code"));
+           try {
+               request.getRequestDispatcher("view/service/create.jsp").forward(request,response);
+           } catch (ServletException e) {
+               e.printStackTrace();
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+       }
 
     }
 

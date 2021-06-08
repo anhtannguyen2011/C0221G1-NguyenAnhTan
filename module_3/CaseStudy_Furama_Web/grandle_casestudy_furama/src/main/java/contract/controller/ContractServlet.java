@@ -79,27 +79,16 @@ public class ContractServlet extends HttpServlet {
     }
     private void createContract(HttpServletRequest request, HttpServletResponse response) {
         String contactStart = request.getParameter("contract_start_date");
-        String messageStartDate = Validate.regexDate(contactStart);
+//        String messageStartDate = Validate.regexDate(contactStart);
         String contactEnd = request.getParameter("contract_end_date");
-        String messageEndDate = Validate.regexDate(contactEnd);
+//        String messageEndDate = Validate.regexDate(contactEnd);
         double deposit = Double.parseDouble(request.getParameter("contract_deposit"));
         double total = Double.parseDouble(request.getParameter("contract_total_money"));
         Employee employeeId = employeeService.selectEmployee(Integer.parseInt(request.getParameter("employee_id")));
         Customers customersId = customerService.selectCustomer(Integer.parseInt(request.getParameter("customer_id")));
         Service serviceId = serviceService.selectService(Integer.parseInt(request.getParameter("service_id")));
         Contract contract = new Contract(contactStart,contactEnd,deposit,total,employeeId,customersId,serviceId);
-
-        if(messageStartDate == null && messageEndDate == null){
             contractService.insertContract(contract);
-            try {
-                response.sendRedirect("/view/main_page.jsp");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }else {
-            request.setAttribute("messageStart",messageStartDate);
-            request.setAttribute("messageEnd",messageEndDate);
             try {
                 request.getRequestDispatcher("/view/contract/create.jsp").forward(request,response);
             } catch (ServletException e) {
@@ -111,7 +100,7 @@ public class ContractServlet extends HttpServlet {
 
 
 
-    }
+
     private void showListContract(HttpServletRequest request, HttpServletResponse response) {
         List<Contract> contractList = contractService.selectAllContract();
         request.setAttribute("contractList",contractList);

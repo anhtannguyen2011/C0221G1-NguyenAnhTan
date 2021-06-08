@@ -58,7 +58,8 @@ public class CustomerRepository {
     public boolean insertCustomer(Customers customers) throws SQLException {
         Connection connection = baseRepository.getConnection();
         PreparedStatement preparedStatement = null;
-        boolean check = false;
+        boolean check =false;
+
         try{
             preparedStatement = connection.prepareStatement(INSERT_CUSTOMERS_SQL);
             preparedStatement.setInt(1,customers.getCustomerTypeId().getCustomerTypeId());
@@ -70,7 +71,7 @@ public class CustomerRepository {
             preparedStatement.setString(7,customers.getCustomerEmail());
             preparedStatement.setString(8,customers.getCustomerAddress());
             preparedStatement.setString(9,customers.getCustomerCode());
-            check = preparedStatement.executeUpdate() >0;
+            check = preparedStatement.executeUpdate() > 0;
         }catch (SQLException e){
             e.printStackTrace();
         }finally {

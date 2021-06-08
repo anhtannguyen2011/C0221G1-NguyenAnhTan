@@ -69,10 +69,10 @@
     <div class="link-left">
         <ul class="nav__link">
             <li><a href="list.jsp" class="link-control">Home</a></li>
-            <li><a href="" class="link-control">Employee</a></li>
+            <li><a href="/employee" class="link-control">Employee</a></li>
             <li><a href="/customer" class="link-control">Customer</a></li>
-            <li><a href="" class="link-control">Services</a></li>
-            <li><a href="" class="link-control">Contact</a></li>
+            <li><a href="/services" class="link-control">Services</a></li>
+            <li><a href="/contract" class="link-control">Contact</a></li>
         </ul>
     </div>
     <nav class="navbar navbar-light bg-light">
@@ -90,7 +90,7 @@
     </div>
     <table class="table table-striped table-bordered" style="width:100%" id="tableStudent">
         <thead class="header">
-        <tr>
+        <tr><th>No ID</th>
             <th>Service ID</th>
             <th>Service Code</th>
             <th>Service Name</th>
@@ -100,8 +100,9 @@
         </tr>
         </thead>
         <tbody>
-        <c:forEach items="${serviceList}" var="service">
+        <c:forEach items="${serviceList}" var="service" varStatus="count">
             <tr>
+                <th>${count.index}</th>
                 <th>${service.serviceId}</th>
                 <th>${service.serviceCode}</th>
                 <th>${service.serviceName}</th>

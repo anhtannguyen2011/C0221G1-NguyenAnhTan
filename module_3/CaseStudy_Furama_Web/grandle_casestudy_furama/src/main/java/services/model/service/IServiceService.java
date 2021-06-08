@@ -5,9 +5,10 @@ import services.model.bean.Service;
 import services.model.bean.ServiceType;
 
 import java.util.List;
+import java.util.Map;
 
 public interface IServiceService {
-    void insertService(Service service);
+    Map<String,String> insertService(Service service);
 
     public ServiceType findByIdType(int id);
 

@@ -125,15 +125,20 @@
 </head>
 <body>
 <div id="logreg-forms">
-    <form class="form-signin">
+    <form class="form-signin" method="post" action="/login?action=login">
         <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+            <p class="text-danger">${message}</p>
         <div class="social-login">
             <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
             <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
         </div>
         <p style="text-align:center"> OR  </p>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+        <input value="${username}" type="text" id="inputEmail" name="username" class="form-control" placeholder="User Name" required="" autofocus="">
+        <input value="${password}" type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="">
+        <div class="form-group">
+            <input id="remember-me" name="remember" type="checkbox"></span><br>
+            <label for="remember-me" class="text-info"><span>Remember</span></label>
+        </div>
 
         <button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</button>
         <a href="#" id="forgot_pswd">Forgot password?</a>

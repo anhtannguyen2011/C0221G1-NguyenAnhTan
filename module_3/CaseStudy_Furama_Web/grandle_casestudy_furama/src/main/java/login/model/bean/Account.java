@@ -1,27 +1,25 @@
 package login.model.bean;
 
 public class Account {
-    private String userName;
-    private String password;
-    private int idUser;
-    private int idAdmin;
+    public String username;
+    public String password;
+    public int idRole;
 
     public Account() {
     }
 
-    public Account(String userName, String password, int idUser, int idAdmin) {
-        this.userName = userName;
+    public Account(String username, String password, int idRole) {
+        this.username = username;
         this.password = password;
-        this.idUser = idUser;
-        this.idAdmin = idAdmin;
+        this.idRole = idRole;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -32,19 +30,11 @@ public class Account {
         this.password = password;
     }
 
-    public int getIdUser() {
-        return idUser;
+    public int getIdRole() {
+        return idRole;
     }
 
-    public void setIdUser(int idUser) {
-        this.idUser = idUser;
-    }
-
-    public int getIdAdmin() {
-        return idAdmin;
-    }
-
-    public void setIdAdmin(int idAdmin) {
-        this.idAdmin = idAdmin;
+    public void setIdRole(int idRole) {
+        this.idRole = idRole;
     }
 }

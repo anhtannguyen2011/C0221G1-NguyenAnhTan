@@ -113,6 +113,7 @@
                 <th>${customers.customerBirthday}</th>
                 <th>${customers.customerGender}</th>
                 <th>${customers.customerIdCard}</th>
+
                 <td>
                     <a href="/customer?action=edit&id=${customers.customerId}"
                        class="btn btn-outline-info">Edit</a>

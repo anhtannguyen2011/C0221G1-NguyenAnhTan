@@ -172,6 +172,7 @@ from customer cus join  contract c on cus.customer_id = c.customer_id
 join contract_detail cd on c.contract_id = cd.contract_id
 join attach_service att on att.attach_service_id = cd.attach_service_id;
 
+
 CREATE view view_user as
 SELECT u.username,u.`password`, r.role_id from `user` u join user_role ur on u.username = ur.username
 join `role` r on r.role_id = ur.role_id; 
@@ -180,4 +181,18 @@ SELECT * from view_user where username = "anhtan" AND `password` = "123";
 
 
 ALTER TABLE customer
-ADD customer_code varchar(45);
+ADD CONSTRAINT UNIQUE (customer_code);
+
+
+ALTER TABLE service
+ADD CONSTRAINT UNIQUE (service_code);
+
+
+ALTER TABLE customer
+CHANGE customer_birthday  customer_birthday varchar(45);
+
+ALTER TABLE contract
+CHANGE contract_start_date contract_start_date VARCHAR(45);
+
+ALTER TABLE contract
+CHANGE contract_end_date contract_end_date VARCHAR(45);

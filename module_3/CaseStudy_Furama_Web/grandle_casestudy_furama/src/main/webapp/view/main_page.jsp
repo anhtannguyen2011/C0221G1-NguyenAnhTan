@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -45,10 +46,13 @@
             <img src="../img/logo-chinh-thuc.png" width="100%">
         </div>
         <div class="col-lg-4">
-            <form class="form-login">
-                <a href="login.jsp" class="btn btn-outline-success" type="button">Login</a>
-                <a class="btn btn-outline-secondary" type="button">Sign up</a>
-            </form>
+            <c:if test="${sessionScope.account != null}">
+                <a class="btn btn-outline-secondary mt-5"  href="/logout?action=logout" type="button">Log out</a>
+                <h3 class="text-primary">Hello ${sessionScope.account.username}</h3>
+            </c:if>
+            <c:if test="${sessionScope.account == null}">
+            <a href="/login" class="btn btn-outline-success mt-5" type="button">Login</a>
+            </c:if>
         </div>
     </div>
 </div>
@@ -56,7 +60,9 @@
     <div class="link-left">
         <ul class="nav__link">
             <li><a href="" class="link-control">Home</a></li>
+            <c:if test="${sessionScope.account.idRole == 1}">
             <li><a href="/employee" class="link-control">Employee</a></li>
+            </c:if>
             <li><a href="/customer" class="link-control">Customer</a></li>
             <li><a href="/services" class="link-control">Services</a></li>
             <li><a href="/contract?action=list" class="link-control">Contact</a></li>

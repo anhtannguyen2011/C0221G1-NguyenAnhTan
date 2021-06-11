@@ -112,7 +112,6 @@ public class CustomersServlet extends HttpServlet {
             if(mapMsg.isEmpty()){
                 request.setAttribute("message","Successfull");
                 listCustomer(request, response);
-
             }else {
                 request.setAttribute("customerInfo",customers);
                 request.setAttribute("typeList",list);

@@ -116,7 +116,6 @@ create table `role` (
 create table user_role(
 	role_id int,
     username varchar(255),
-    
     FOREIGN KEY (role_id) REFERENCES `role`(role_id),
     FOREIGN KEY (username) REFERENCES `user`(username)
     on delete CASCADE
@@ -174,8 +173,8 @@ join attach_service att on att.attach_service_id = cd.attach_service_id;
 
 
 CREATE view view_user as
-SELECT u.username,u.`password`, r.role_id from `user` u join user_role ur on u.username = ur.username
-join `role` r on r.role_id = ur.role_id; 
+SELECT u.username,u.`password`, r.role_id from `user` u left join user_role ur on u.username = ur.username
+left join `role` r on r.role_id = ur.role_id; 
 
 SELECT * from view_user where username = "anhtan" AND `password` = "123";
 

@@ -12,12 +12,10 @@ public class LetterRepositoryImpl implements ILetterRepository {
 
     static List<String> listLanguage;
     static List<Integer> listPageSize;
-    static List<LetterElectric> electricList;
 
     static {
         listLanguage = new ArrayList<>();
         listPageSize = new ArrayList<>();
-        electricList = new ArrayList<>();
 
 
         listLanguage.add("English");
@@ -45,8 +43,4 @@ public class LetterRepositoryImpl implements ILetterRepository {
         return listPageSize;
     }
 
-    @Override
-    public void update(LetterElectric electric) {
-        electricList.add(electric);
-    }
 }

@@ -23,8 +23,5 @@ public class LetterServiceImpl implements ILetterService {
         return iLetterRepository.getListPageSize();
     }
 
-    @Override
-    public void update(LetterElectric electric) {
-        iLetterRepository.update(electric);
-    }
+
 }

@@ -7,5 +7,5 @@ import java.util.List;
 public interface ILetterRepository {
     List<String> getListLanguage();
     List<Integer> getListPageSize();
-    void update(LetterElectric electric);
+
 }

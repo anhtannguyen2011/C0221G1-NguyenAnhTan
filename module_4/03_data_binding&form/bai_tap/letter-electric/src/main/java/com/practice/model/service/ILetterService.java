@@ -12,6 +12,4 @@ public interface ILetterService extends ILetterRepository {
     @Override
     List<Integer> getListPageSize();
 
-    @Override
-    void update(LetterElectric electric);
 }

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ADMIN
@@ -13,7 +14,7 @@
 <body>
     <h2>Language : ${letter.language}</h2>
     <h2>Pagesize : ${letter.pagesize}</h2>
-    <h2>Filter : ${letter.filter}</h2>
+    <h2>Filter : <c:out value='${letter.filter ? "Enable" : "Disenable"}'/></h2>
     <h2>Signature : ${letter.signature}</h2>
 </body>
 </html>

@@ -13,7 +13,7 @@
 </head>
 <body>
     <h1>Calculator</h1>
-    <form action="/calculatorPage" method="get">
+    <form action="/calculator-page" method="get">
         <div>
             <input type="text" name="numberone" pattern="[0-9-.]+">
             <input type="text" name="numbertwo" pattern="[0-9-.]+">

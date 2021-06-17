@@ -19,7 +19,7 @@ public class CalculatorController {
     }
 
 
-    @GetMapping("/calculatorPage")
+    @GetMapping("/calculator-page")
     public String calculatorSimple(@RequestParam double numberone,
                                    @RequestParam double numbertwo,
                                    @RequestParam String calculator,

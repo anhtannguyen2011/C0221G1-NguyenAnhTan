@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 public interface IBlogReporitory extends JpaRepository<Blog, Integer> {
     Page<Blog> findAll(Pageable pageable);
     Page<Blog> findAllByOrderByDateBlogAsc(Pageable pageable);
-    @Query(value = "select b from Blog b where b.name like %?1% ",nativeQuery = false)
+    @Query(value = "select b from Blog b where b.name like %?1% order by b.dateBlog ASC ",nativeQuery = false)
     Page<Blog> findAllByNameBlogContaining(String name,Pageable pageable);
 //    Page<Blog> findAllByCateloryBlog_ID(Integer cateloryId, Pageable pageable);
 

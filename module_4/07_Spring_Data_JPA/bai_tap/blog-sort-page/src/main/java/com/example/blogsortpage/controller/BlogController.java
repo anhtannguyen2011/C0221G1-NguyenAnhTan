@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -26,27 +27,29 @@ public class BlogController {
     private ICateloryService cateloryService;
 
     @RequestMapping(value = "/")
-    public ModelAndView showListBlog(@RequestParam(name ="page" , required = false, defaultValue = "0") Integer page,
-                               @RequestParam(name="size", required = false,defaultValue = "3") Integer size,
-                               @RequestParam(name="sort",required = false,defaultValue = "ASC") String sort,
+    public ModelAndView showListBlog(@PageableDefault(value = 3) Pageable pageable,
+//                               @RequestParam(name="sort",required = false,defaultValue = "ASC") String sort,
                                @RequestParam(name = "nameSearch")Optional<String>  nameSearch){
+        String keywordValue = "";
+//        Sort sortable = null;
+
+
         Page<Blog> blogPage;
-        Sort sortable = null;
-        Pageable pageable = null;
-        if(sort.equals("ASC")){
-            sortable = Sort.by("dateBlog").ascending();
-        }
-        if(sort.equals("DESC")){
-            sortable = Sort.by("dateBlog").descending();
-        }
-        pageable = PageRequest.of(page,size,sortable);
+//        if(sort.equals("ASC")){
+//            sortable = Sort.by("dateBlog").ascending();
+//        }
+//        if(sort.equals("DESC")){
+//            sortable = Sort.by("dateBlog").descending();
+//        }
+//        pageable = PageRequest.of(page,size,sortable);
         ModelAndView modelAndView = new ModelAndView("/blog/list");
-        modelAndView.addObject("revertSort",sort.equals("ASC") ? "DESC" : "ASC");
+//        modelAndView.addObject("revertSort",sort.equals("ASC") ? "DESC" : "ASC");
         if(nameSearch.isPresent()){
-            blogPage = this.blogService.findAllByNameBlogContaining(nameSearch.get(),pageable);
-        }else {
-            blogPage = this.blogService.findAll(pageable);
+            keywordValue = nameSearch.get();
         }
+//        modelAndView.addObject("sort",sortable);
+        blogPage = this.blogService.findAllByNameBlogContaining(keywordValue,pageable);
+        modelAndView.addObject("keywordValue",keywordValue);
         modelAndView.addObject("blogList",blogPage);
         return modelAndView;
     }

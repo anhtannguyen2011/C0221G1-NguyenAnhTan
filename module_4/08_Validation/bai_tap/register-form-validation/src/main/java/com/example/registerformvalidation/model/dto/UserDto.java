@@ -5,14 +5,10 @@ import lombok.Data;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
+
 @Data
 public class UserDto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @NotEmpty
     @Size(min=5 , max= 45, message = "thấp nhất 5 kí tự, tối đa 45 kí tự,và không đc trống")
@@ -23,6 +19,7 @@ public class UserDto {
     @NotEmpty
     @Pattern(regexp = "^0[0-9]{9}$",message = "Số điện thoại bắt đầu từ số 0 giới hạn 10 số,và không đc trống")
     private String phoneNumber;
+    @NotNull
     @Min(value = 18,message = "Số tuổi phải lớn hơn hoặc bằng 18, và không đc trống")
     private Integer age;
     @NotEmpty

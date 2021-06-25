@@ -360,7 +360,7 @@
 <div id="addProductModal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
-            <form th:action="@{/product/create}" th:object="${product}" method="post">
+            <form th:action="@{/product/create}" th:object="${productDto}" method="post">
                 <div class="modal-header">
                     <h4 class="modal-title">Add Product</h4>
 <!--                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>-->
@@ -370,18 +370,22 @@
                     <div class="form-group">
                         <label>Name</label>
                         <input type="text" class="form-control" th:field="*{nameProduct}"/>
+                        <span th:if="${#fields.hasErrors('nameProduct')}" th:errors="*{nameProduct}" style="color: red">Name Error</span>
                     </div>
                     <div class="form-group">
                         <label>Price</label>
                         <input type="text" class="form-control" th:field="*{price}"/>
+                        <span th:if="${#fields.hasErrors('price')}" th:errors="*{price}" style="color: red">Name Error</span>
                     </div>
                     <div class="form-group">
                         <label>Description</label>
                         <input class="form-control" th:field="*{description}" />
+                        <span th:if="${#fields.hasErrors('description')}" th:errors="*{description}" style="color: red">Name Error</span>
                     </div>
                     <div class="form-group">
                         <label>Manufacture</label>
                         <input type="text" class="form-control" th:field="*{manufacture}">
+                        <span th:if="${#fields.hasErrors('manufacture')}" th:errors="*{manufacture}" style="color: red">Name Error</span>
                     </div>
                 </div>
                 <div class="modal-footer">

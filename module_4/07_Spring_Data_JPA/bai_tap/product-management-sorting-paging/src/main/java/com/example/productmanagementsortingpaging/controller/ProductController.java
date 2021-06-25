@@ -1,18 +1,19 @@
 package com.example.productmanagementsortingpaging.controller;
 
+import com.example.productmanagementsortingpaging.dto.ProductDto;
 import com.example.productmanagementsortingpaging.model.entity.Product;
 import com.example.productmanagementsortingpaging.model.service.IProductService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -35,7 +36,7 @@ public class ProductController {
         ModelAndView modelAndView = new ModelAndView("/list");
         modelAndView.addObject("productList",productPage);
         modelAndView.addObject("keyValue",keyValue);
-        modelAndView.addObject("product",new Product());
+        modelAndView.addObject("productDto",new ProductDto());
         return modelAndView;
     }
     @PostMapping("/product/delete")
@@ -45,10 +46,17 @@ public class ProductController {
         return "redirect:/";
     }
     @PostMapping("/product/create")
-    public String create(Product product,RedirectAttributes redirect){
-        productServiceImpl.save(product);
-        redirect.addFlashAttribute("success","Insert Successfull !");
-        return "redirect:/";
+    public String create(@Validated @ModelAttribute ProductDto productDto, BindingResult bindingResult, RedirectAttributes redirect){
+        Product product = new Product();
+        BeanUtils.copyProperties(productDto,product);
+        if(bindingResult.hasFieldErrors()){
+            return "list";
+        }else {
+            productServiceImpl.save(product);
+            redirect.addFlashAttribute("success","Insert Successfull !");
+            return "redirect:/";
+        }
+
     }
     @GetMapping("product/view")
     public String viewInformation(@RequestParam int id,Model model){

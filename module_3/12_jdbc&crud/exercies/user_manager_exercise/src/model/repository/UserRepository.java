@@ -10,7 +10,6 @@ import java.util.List;
 public class UserRepository {
     BaseRepository baseRepository = new BaseRepository();
 
-
     private static final String INSERT_USERS_SQL = "INSERT INTO users" + "  (name, email, country) VALUES " +
             " (?, ?, ?);";
 

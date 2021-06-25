@@ -7,39 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e8243d0-fa1c-4e23-8f7b-cb4b1135ba13" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/artifacts/mysql_transaction_war_exploded/WEB-INF/classes/controller/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/artifacts/mysql_transaction_war_exploded/WEB-INF/classes/controller/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/artifacts/mysql_transaction_war_exploded/WEB-INF/classes/model/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/artifacts/mysql_transaction_war_exploded/WEB-INF/classes/model/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/artifacts/mysql_transaction_war_exploded/WEB-INF/classes/model/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/artifacts/mysql_transaction_war_exploded/WEB-INF/classes/model/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/artifacts/mysql_transaction_war_exploded/WEB-INF/classes/model/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/artifacts/mysql_transaction_war_exploded/WEB-INF/classes/model/service/Impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/production/mysql_transaction/controller/UserServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/production/mysql_transaction/controller/UserServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/production/mysql_transaction/model/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/production/mysql_transaction/model/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/production/mysql_transaction/model/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/production/mysql_transaction/model/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/production/mysql_transaction/model/service/Impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/out/production/mysql_transaction/model/service/Impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/src/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/src/controller/UserServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/src/model/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/src/model/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/src/model/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/src/model/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/src/model/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/exercise/mysql_transaction/src/model/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/practices/practice_mysql_jdbc_transaction/.idea/artifacts/practice_mysql_jdbc_transaction_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/practices/practice_mysql_jdbc_transaction/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/practices/practice_mysql_jdbc_transaction/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/practices/practice_mysql_jdbc_transaction/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/practices/practice_mysql_jdbc_transaction/practice_mysql_jdbc_transaction.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/practices/practice_mysql_jdbc_transaction/web/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/practices/practice_mysql_jdbc_transaction/web/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/practices/user_manager/src/model/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/practices/user_manager/src/model/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/practices/user_manager/src/model/service/Impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../13_jdbcquery&amp;transaction/practices/user_manager/src/model/service/Impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/controller/CustomersServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/controller/CustomersServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/repository/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/repository/CustomerTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/repository/CustomerTypeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/service/ICustomerServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/service/ICustomerServices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/service/Impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/src/customers/model/service/Impl/CustomerServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/web/view/customer/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/web/view/customer/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/web/view/customer/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/web/view/customer/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/web/view/main_page.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../casestudy_furama_jsp&amp;servlet/casestudy_furama/web/view/main_page.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_4/01_tong_quan_spring_mvc/thuc_hanh/thuc_hanh_customer-management/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_4/01_tong_quan_spring_mvc/thuc_hanh/thuc_hanh_customer-management/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_4/02_spring_controller/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_4/02_spring_controller/thuc_hanh/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../module_4/05_database&amp;orm/thuc_hanh/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../module_4/05_database&amp;orm/thuc_hanh/customer-management" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,10 +41,10 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -184,6 +156,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -202,11 +175,12 @@
       <workItem from="1622435093861" duration="7487000" />
       <workItem from="1622472144620" duration="337000" />
       <workItem from="1622533828549" duration="4069000" />
+      <workItem from="1624605492764" duration="1119000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
     <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622365671288">

@@ -15,6 +15,7 @@
                         Name:
                     </td>
                     <td><input type="text" th:field="*{nameProduct}"></td>
+                    <td th:if="${#fields.hasErrors('nameProduct')}" th:errors="*{nameProduct}">Name Error</td>
                 </tr>
                 <tr>
                 <td>
@@ -27,12 +28,14 @@
                         Description:
                     </td>
                     <td><input type="text" th:field="*{description}"></td>
+                    <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Name Error</td>
                 </tr>
                 <tr>
                 <td>
                     Manufacture:
                 </td>
                 <td><input type="text" th:field="*{manufacture}"></td>
+                    <td th:if="${#fields.hasErrors('manufacture')}" th:errors="*{manufacture}"> Name Error</td>
             </tr>
                 <tr>
                     <td>

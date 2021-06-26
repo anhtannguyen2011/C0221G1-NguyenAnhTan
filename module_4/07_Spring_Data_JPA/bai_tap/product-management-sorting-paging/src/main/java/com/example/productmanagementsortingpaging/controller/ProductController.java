@@ -65,7 +65,9 @@ public class ProductController {
     }
     @GetMapping("/product/edit")
     public String editForm(@RequestParam int id,Model model){
-        model.addAttribute("products",productServiceImpl.findById(id));
+        ProductDto productDto = new ProductDto();
+        BeanUtils.copyProperties(productServiceImpl.findById(id),productDto);
+        model.addAttribute("products",productDto);
         return "edit";
     }
 //    @PostMapping("/product/search")
@@ -75,8 +77,14 @@ public class ProductController {
 //        return "list";
 //    }
     @PostMapping(value = "/product/update")
-    public String save(Product product){
-        productServiceImpl.update(product);
+    public String save(@Validated @ModelAttribute("products") ProductDto products,BindingResult bindingResult){
+        if(bindingResult.hasFieldErrors()){
+//            model.addAttribute("products",products);
+            return  "edit";
+        }
+        Product product1 = new Product();
+        BeanUtils.copyProperties(products,product1);
+        productServiceImpl.update(product1);
         return "redirect:/";
     }
 

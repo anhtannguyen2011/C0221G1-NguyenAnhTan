@@ -15,7 +15,6 @@ import javax.persistence.UniqueConstraint;
         uniqueConstraints = { //
                 @UniqueConstraint(name = "USER_ROLE_UK", columnNames = { "User_Id", "Role_Id" }) })
 public class UserRole {
-
     @Id
     @GeneratedValue
     @Column(name = "Id", nullable = false)
@@ -28,6 +27,15 @@ public class UserRole {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Role_Id", nullable = false)
     private AppRole appRole;
+
+    public UserRole(AppUser appUser, AppRole appRole) {
+        this.appUser = appUser;
+        this.appRole = appRole;
+    }
+
+    public UserRole() {
+
+    }
 
     public Long getId() {
         return id;

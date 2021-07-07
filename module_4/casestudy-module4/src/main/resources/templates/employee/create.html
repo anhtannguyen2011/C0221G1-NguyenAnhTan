@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:insert="~{homePage :: homeHeader}">
+    <style>
+        body{
+            font-size: 20px;
+        }
+        select,input{
+            width: 200px;
+        }
+    </style>
+</head>
+<body id="body">
+<div th:insert="~{homePage :: bodyHeadder}">
+</div>
+<div th:insert="~{homePage :: headerLink}"></div>
+<div class="container mt-5" style="text-align: center">
+    <div class="col-xl-12">
+        <h1>
+            Create Service
+        </h1>
+    </div>
+    <span th:text="${message}" style="color: red"></span>
+    <form method="post" th:object="${employee}" th:action="@{/employee/create}" style="text-align: center">
+        <table style="margin: 0 auto">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                <h3 style="font-size: 2rem;height: 40px;color: red">Customers Details</h3>
+            </div>
+<!--            <tr class="form-group">-->
+<!--                <td><label style="font-size: 2rem;height: 40px;width: 300px">Service Type</label></td>-->
+<!--                <td><select onchange="setIdChange(this.value)" th:field="*{serviceType}" style="font-size: 2rem;height: 40px;width: 300px">-->
+<!--                    <option th:each="type : ${serviceType}"-->
+<!--                            th:value="${type.serviceTypeId}"-->
+<!--                            th:text="${type.serviceTypeName}"></option>-->
+<!--                </select></td>-->
+<!--            </tr>-->
+
+            <tr class="form-group">
+                <td><label style="font-size: 2rem;height: 40px;width: 300px">Employee Name</label></td>
+                <td><input style="font-size: 2rem;height: 40px;width: 300px"  th:field="*{employeeName}"></td>
+
+                <!--                                    <p style="font-size: 20px" class="text-danger">${msgCode}</p>-->
+
+            </tr>
+
+            <tr class="form-group">
+                <div>
+                    <td><label style="font-size: 2rem;height: 40px;width: 300px">Birthday</label></td>
+                    <td><input type="date" style="font-size: 2rem;height: 40px;width: 300px" th:field="*{employeeBirthDay}"></td>
+                </div>
+            </tr>
+            <tr class="form-group" >
+                <td><label style="font-size: 2rem;height: 40px;width: 300px">ID Card</label></td>
+                <td><input  style="font-size: 2rem;height: 40px;width: 300px" th:field="*{employeeIdCard}"></td>
+                <!--                                    <p style="font-size: 20px" class="text-danger">${msgBirthday}</p>-->
+            </tr>
+
+            <tr class="form-group">
+                <td><label style="font-size: 2rem;height: 40px;width: 300px">Division</label></td>
+                <td><select  th:field="*{division}" style="font-size: 2rem;height: 40px;width: 300px">
+                    <option th:each="divisionObj : ${divisionList}"
+                            th:value="${divisionObj.divisionId}"
+                            th:text="${divisionObj.divisionName}"></option>
+                </select>
+                </td>
+            </tr>
+            <tr class="form-group">
+                <td><label style="font-size: 2rem;height: 40px;width: 300px">Education</label></td>
+                <td><select th:field="*{educationDegree}" style="font-size: 2rem;height: 40px;width: 300px">
+                    <option th:each="eduObj : ${educationList}"
+                            th:value="${eduObj.educationDegreeId}"
+                            th:text="${eduObj.educationDegreeName}"></option>
+                </select></td>
+            </tr>
+            <tr class="form-group">
+                <td><label style="font-size: 2rem;height: 40px;width: 300px">Position</label></td>
+                <td><select th:field="*{position}" style="font-size: 2rem;height: 40px;width: 300px">
+                    <option th:each="positionObj : ${positionList}"
+                            th:value="${positionObj.positionId}"
+                            th:text="${positionObj.positionName}"></option>
+                </select></td>
+            </tr>
+            <tr class="form-group">
+                <td><label style="font-size: 2rem;height: 40px;width: 300px">Salari</label></td>
+                <td><input id="standardRoom" style="font-size: 2rem;height: 40px;width: 300px" th:field="*{employeeSalary}"></td>
+                <!--                                    <p  style="font-size: 20px" class="text-danger">${msgIdcard}</p>-->
+            </tr>
+            <tr class="form-group">
+                <td><label style="font-size: 2rem;height: 40px;width: 300px">Phone</label></td>
+                <td><input id="description" style="font-size: 2rem;height: 40px;width: 300px" th:field="*{employeePhone}"></td>
+                <!--                                    <p style="font-size: 20px" class="text-danger">${msgPhone}</p>-->
+            </tr>
+            <tr class="form-group">
+                <td><label style="font-size: 2rem;height: 40px;width: 300px">Email</label></td>
+                <td><input id="poolArea" style="font-size: 2rem;height: 40px;width: 300px" th:field="*{employeeEmail}"></td>
+                <!--                                    <p style="font-size: 20px" class="text-danger">${msgEmail}</p>-->
+            </tr>
+            <tr class="form-group">
+                <td><label style="font-size: 2rem;height: 40px;width: 300px">Address</label></td>
+                <td><input id="numberOfFloor" style="font-size: 2rem;height: 40px;width: 300px" th:field="*{employeeAddress}"></td>
+            </tr>
+            <th:block th:object="${user}">
+                <tr class="form-group">
+                    <td><label style="font-size: 2rem;height: 40px;width: 300px">User Name</label></td>
+                    <td><input style="font-size: 2rem;height: 40px;width: 300px"  th:field="*{userName}"></td>
+
+                    <!--                                    <p style="font-size: 20px" class="text-danger">${msgCode}</p>-->
+
+                </tr>
+                <tr class="form-group">
+                    <td><label style="font-size: 2rem;height: 40px;width: 300px">PassWord</label></td>
+                    <td><input style="font-size: 2rem;height: 40px;width: 300px"  th:field="*{encrytedPassword}"></td>
+
+                    <!--                                    <p style="font-size: 20px" class="text-danger">${msgCode}</p>-->
+
+                </tr>
+                <tr class="form-group">
+                    <td><label style="font-size: 2rem;height: 40px;width: 300px">Role User</label></td>
+                    <td><select name="role" style="font-size: 2rem;height: 40px;width: 300px">
+                        <option th:each="roleObj : ${roleList}"
+                                th:value="${roleObj.roleId}"
+                                th:text="${roleObj.roleName}"></option>
+                    </select></td>
+
+                    <!--                                    <p style="font-size: 20px" class="text-danger">${msgCode}</p>-->
+
+                </tr>
+            </th:block>
+
+            <tr>
+                <td><a type="button" href="customer?action=customers"
+                       class="btn btn-outline-secondary">Close</a></td>
+                <td><input type="submit" value="Save" class="btn btn-outline-success"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</div>
+</div>

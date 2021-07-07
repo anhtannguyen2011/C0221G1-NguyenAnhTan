@@ -1,10 +1,9 @@
-package com.example.casestudymodule4.model.service.Impl;
+package com.example.casestudymodule4.model.service.customer.Impl;
 
 import com.example.casestudymodule4.model.entity.customer.Customer;
-import com.example.casestudymodule4.model.entity.customer.CustomerType;
 import com.example.casestudymodule4.model.repository.customer.ICustomerRepository;
 import com.example.casestudymodule4.model.repository.customer.ICustomerTypeRepository;
-import com.example.casestudymodule4.model.service.ICustomerService;
+import com.example.casestudymodule4.model.service.customer.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -19,7 +18,7 @@ public class CustomerServiceImpl implements ICustomerService {
     private ICustomerRepository customerRepository;
     @Override
     public List<Customer> findAll() {
-        return customerRepository.findAll();
+        return customerRepository.findAllCustomerList();
     }
 
     @Override

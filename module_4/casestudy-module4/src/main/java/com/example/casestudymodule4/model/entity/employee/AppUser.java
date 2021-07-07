@@ -7,7 +7,6 @@ import javax.persistence.*;
         uniqueConstraints = { //
                 @UniqueConstraint(name = "APP_USER_UK", columnNames = "User_Name") })
 public class AppUser {
-
     @Id
     @GeneratedValue
     @Column(name = "User_Id", nullable = false)
@@ -26,6 +25,14 @@ public class AppUser {
     private Employee employee;
 
     public AppUser() {
+    }
+
+    public AppUser(Long userId, String userName, String encrytedPassword, boolean enabled, Employee employee) {
+        this.userId = userId;
+        this.userName = userName;
+        this.encrytedPassword = encrytedPassword;
+        this.enabled = enabled;
+        this.employee = employee;
     }
 
     public Employee getEmployee() {

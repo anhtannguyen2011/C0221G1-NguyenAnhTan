@@ -9,6 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
@@ -18,4 +19,7 @@ public interface ICustomerRepository extends JpaRepository<Customer,Integer> {
     @Transactional
     @Query(value = "update customer set flag = 2 where customer_id = ?1",nativeQuery = true)
     void editCustomer(int id);
+
+    @Query(value = "select * from customer where flag = 1",nativeQuery = true)
+    List<Customer> findAllCustomerList();
 }

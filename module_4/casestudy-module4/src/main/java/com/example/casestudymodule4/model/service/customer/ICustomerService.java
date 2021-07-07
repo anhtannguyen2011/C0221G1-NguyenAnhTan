@@ -1,4 +1,4 @@
-package com.example.casestudymodule4.model.service;
+package com.example.casestudymodule4.model.service.customer;
 
 import com.example.casestudymodule4.model.entity.customer.Customer;
 import com.example.casestudymodule4.model.entity.customer.CustomerType;

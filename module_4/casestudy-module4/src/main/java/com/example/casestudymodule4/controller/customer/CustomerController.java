@@ -1,17 +1,22 @@
 package com.example.casestudymodule4.controller.customer;
 
+import com.example.casestudymodule4.dto.customer.CustomerDto;
 import com.example.casestudymodule4.model.entity.customer.Customer;
 import com.example.casestudymodule4.model.service.customer.ICustomerService;
 import com.example.casestudymodule4.model.service.customer.ICustomerTypeService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
@@ -44,25 +49,44 @@ public class CustomerController {
     @GetMapping("/create-customer")
     public String showListCustomer(Model model){
         model.addAttribute("customerType",this.customerTypeService.findAll());
-        model.addAttribute("customer",new Customer());
+        model.addAttribute("customer",new CustomerDto());
         return "customer/create";
     }
     @PostMapping("/create")
-    public String createCustomer(@ModelAttribute Customer customer){
-        this.customerService.save(customer);
+    public String createCustomer(@Validated @ModelAttribute(name = "customer") CustomerDto customer, BindingResult bindingResult,Model model){
+        new CustomerDto().validate(customer,bindingResult);
+        Customer customer1 = new Customer();
+        BeanUtils.copyProperties(customer,customer1);
+
+        if(bindingResult.hasFieldErrors()) {
+            model.addAttribute("customer",customer);
+            model.addAttribute("customerType",this.customerTypeService.findAll());
+            return "customer/create";
+        }
+        this.customerService.save(customer1);
         return "redirect:/customer/";
     }
 
     @GetMapping("/edit")
     public String showEdit(@RequestParam int id,Model model){
-        model.addAttribute("customer",this.customerService.findById(id));
+        CustomerDto customerDto = new CustomerDto();
+        BeanUtils.copyProperties(this.customerService.findById(id),customerDto);
+        model.addAttribute("customer",customerDto);
         model.addAttribute("customerType",this.customerTypeService.findAll());
         return "customer/edit";
     }
 
     @PostMapping("/edit-customer")
-    public String editCustomer(@ModelAttribute Customer customer){
-        this.customerService.edit(customer);
+    public String editCustomer(@Validated @ModelAttribute(name = "customer") CustomerDto customer,BindingResult bindingResult,Model model){
+        new CustomerDto().validate(customer,bindingResult);
+        if(bindingResult.hasFieldErrors()){
+            model.addAttribute("customerType",this.customerTypeService.findAll());
+            model.addAttribute("customer",customer);
+            return "customer/edit";
+        }
+        Customer customer1 = new Customer();
+        BeanUtils.copyProperties(customer,customer1);
+        this.customerService.edit(customer1);
         return "redirect:/customer/";
     }
 

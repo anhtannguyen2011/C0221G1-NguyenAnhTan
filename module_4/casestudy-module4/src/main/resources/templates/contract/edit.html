@@ -21,7 +21,8 @@
         </h1>
     </div>
     <span th:text="${message}" style="color: red"></span>
-    <form method="post" th:object="${contract}" th:action="@{/contract/create}" style="text-align: center">
+    <form method="post" th:object="${contract}" th:action="@{/contract/edit}" style="text-align: center">
+        <input type="hidden" th:field="*{contractId}">
         <table style="margin: 0 auto">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <h3 style="font-size: 2rem;height: 40px;color: red">Contract Details</h3>
@@ -60,7 +61,8 @@
                 <td><select  th:field="*{employee}" style="font-size: 2rem;height: 40px;width: 300px">
                     <option th:each="employeeObj : ${employeeList}"
                             th:value="${employeeObj.employeeId}"
-                            th:text="${employeeObj.employeeName}"></option>
+                            th:text="${employeeObj.employeeName}"
+                            th:selected="${contract.employee.employeeName}"></option>
                 </select>
                 </td>
             </tr>
@@ -69,7 +71,8 @@
                 <td><select th:field="*{service}" style="font-size: 2rem;height: 40px;width: 300px">
                     <option th:each="serviceObj : ${serviceList}"
                             th:value="${serviceObj.serviceId}"
-                            th:text="${serviceObj.serviceName}"></option>
+                            th:text="${serviceObj.serviceName}"
+                            th:selected="${contract.service.serviceName}"> </option>
                 </select></td>
             </tr>
             <tr class="form-group">
@@ -77,7 +80,8 @@
                 <td><select th:field="*{customer}" style="font-size: 2rem;height: 40px;width: 300px">
                     <option th:each="customerObj : ${customerList}"
                             th:value="${customerObj.customerId}"
-                            th:text="${customerObj.customerName}"></option>
+                            th:text="${customerObj.customerName}"
+                            th:selected="${contract.customer.customerName}"></option>
                 </select></td>
             </tr>
             <tr>

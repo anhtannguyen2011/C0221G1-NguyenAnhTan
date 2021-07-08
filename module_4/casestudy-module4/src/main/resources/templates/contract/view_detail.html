@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>List Contract <span th:text="${contract.contractId}"></span> Details</h1>
+    <table border="1">
+        <tr>
+            <td>No#</td>
+            <td>Contract Detail ID</td>
+            <td>Contract ID</td>
+            <td>Customer Name</td>
+            <td>Attach Service Name</td>
+            <td>Attach Service Cost</td>
+        </tr>
+        <tr th:each="detailObj,loop : ${detailList}">
+            <td th:text="${loop.count}"></td>
+            <td th:text="${detailObj.contractDetailId}"></td>
+            <td th:text="${contract.contractId}"></td>
+            <td th:text="${contract.customer.customerName}"></td>
+            <td th:text="${detailObj.attachService.attachServiceName}"></td>
+            <td th:text="${detailObj.attachService.attachServiceCost}"></td>
+        </tr>
+
+    </table>
+</body>
+</html>

@@ -40,16 +40,19 @@
         <td><label style="font-size: 2rem;height: 40px;width: 300px">Customer Code</label></td>
         <td><input style="font-size: 2rem;height: 40px;width: 300px"  th:field="*{customerCode}"></td>
 
-        <!--                                    <p style="font-size: 20px" class="text-danger">${msgCode}</p>-->
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerCode')}" th:errors="*{customerCode}"></td>
 
       </tr>
       <tr class="form-group">
         <td><label style="font-size: 2rem;height: 40px;width: 300px">Name</label></td>
         <td><input style="font-size: 2rem;height: 40px;width: 300px" th:field="*{customerName}"></td>
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerName')}" th:errors="*{customerName}"></td>
       </tr>
       <tr class="form-group">
         <td><label style="font-size: 2rem;height: 40px;width: 300px">Day Of Birth</label></td>
         <td><input style="font-size: 2rem;height: 40px;width: 300px" type="date" th:field="*{customerBirthday}"></td>
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerBirthday')}" th:errors="*{customerBirthday}"></td>
+
 
         <!--                                    <p style="font-size: 20px" class="text-danger">${msgBirthday}</p>-->
       </tr>
@@ -65,16 +68,19 @@
       <tr class="form-group">
         <td><label style="font-size: 2rem;height: 40px;width: 300px">ID Card</label></td>
         <td><input style="font-size: 2rem;height: 40px;width: 300px" th:field="*{customerIdCard}"></td>
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerIdCard')}" th:errors="*{customerIdCard}"></td>
         <!--                                    <p  style="font-size: 20px" class="text-danger">${msgIdcard}</p>-->
       </tr>
       <tr class="form-group">
         <td><label style="font-size: 2rem;height: 40px;width: 300px">Phone</label></td>
         <td><input style="font-size: 2rem;height: 40px;width: 300px" th:field="*{customerPhone}"></td>
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerPhone')}" th:errors="*{customerPhone}"></td>
         <!--                                    <p style="font-size: 20px" class="text-danger">${msgPhone}</p>-->
       </tr>
       <tr class="form-group">
         <td><label style="font-size: 2rem;height: 40px;width: 300px">Email</label></td>
         <td><input style="font-size: 2rem;height: 40px;width: 300px" th:field="*{customerEmail}"></td>
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{customerEmail}"></td>
         <!--                                    <p style="font-size: 20px" class="text-danger">${msgEmail}</p>-->
       </tr>
       <tr class="form-group">

@@ -37,6 +37,7 @@
             <tr class="form-group">
                 <td><label style="font-size: 2rem;height: 40px;width: 300px">Service Name</label></td>
                 <td><input style="font-size: 2rem;height: 40px;width: 300px"  th:field="*{serviceName}"></td>
+                <td  style="font-size: 20px" class="text-danger" th:field="${#fields.hasErrors('serviceName')}" th:errors="*{serviceName}"></td>
 
                 <!--                                    <p style="font-size: 20px" class="text-danger">${msgCode}</p>-->
 
@@ -46,11 +47,13 @@
                 <div>
                     <td><label style="font-size: 2rem;height: 40px;width: 300px">Area</label></td>
                     <td><input style="font-size: 2rem;height: 40px;width: 300px" th:field="*{serviceArea}"></td>
+                    <td  style="font-size: 20px" class="text-danger" th:field="${#fields.hasErrors('serviceArea')}" th:errors="*{serviceArea}"></td>
                 </div>
             </tr>
             <tr class="form-group" >
                     <td><label style="font-size: 2rem;height: 40px;width: 300px">Code</label></td>
                     <td><input  style="font-size: 2rem;height: 40px;width: 300px" th:field="*{serviceCode}"></td>
+                <td  style="font-size: 20px" class="text-danger" th:field="${#fields.hasErrors('serviceCode')}" th:errors="*{serviceCode}"></td>
                 <!--                                    <p style="font-size: 20px" class="text-danger">${msgBirthday}</p>-->
             </tr>
 
@@ -73,25 +76,28 @@
             <tr class="form-group">
                 <td><label style="font-size: 2rem;height: 40px;width: 300px">Standard Room</label></td>
                 <td><input id="standardRoom" style="font-size: 2rem;height: 40px;width: 300px" th:field="*{standardRoom}"></td>
-                <!--                                    <p  style="font-size: 20px" class="text-danger">${msgIdcard}</p>-->
+<!--                 <td  style="font-size: 20px" class="text-danger" th:field="${#fields.hasErrors('standardRoom')}" th:errors="*{standardRoom}"></td>-->
             </tr>
             <tr class="form-group">
                 <td><label style="font-size: 2rem;height: 40px;width: 300px">Description</label></td>
                 <td><input id="description" style="font-size: 2rem;height: 40px;width: 300px" th:field="*{description}"></td>
-                <!--                                    <p style="font-size: 20px" class="text-danger">${msgPhone}</p>-->
+
             </tr>
             <tr class="form-group">
                 <td><label style="font-size: 2rem;height: 40px;width: 300px">Pool Area</label></td>
                 <td><input id="poolArea" style="font-size: 2rem;height: 40px;width: 300px" th:field="*{poolArea}"></td>
+                <td  style="font-size: 20px" class="text-danger" th:field="${#fields.hasErrors('poolArea')}" th:errors="*{poolArea}"></td>
                 <!--                                    <p style="font-size: 20px" class="text-danger">${msgEmail}</p>-->
             </tr>
             <tr class="form-group">
                 <td><label style="font-size: 2rem;height: 40px;width: 300px">Number Of Floor</label></td>
                 <td><input id="numberOfFloor" style="font-size: 2rem;height: 40px;width: 300px" th:field="*{numberOfFloor}"></td>
+                <td  style="font-size: 20px" class="text-danger" th:field="${#fields.hasErrors('numberOfFloor')}" th:errors="*{numberOfFloor}"></td>
             </tr>
             <tr class="form-group">
                 <td><label style="font-size: 2rem;height: 40px;width: 300px">Service Cost</label></td>
                 <td><input style="font-size: 2rem;height: 40px;width: 300px"  th:field="*{serviceCost}"></td>
+                <td  style="font-size: 20px" class="text-danger" th:field="${#fields.hasErrors('serviceCost')}" th:errors="*{serviceCost}"></td>
 
                 <!--                                    <p style="font-size: 20px" class="text-danger">${msgCode}</p>-->
 

@@ -1,5 +1,6 @@
 package com.example.casestudymodule4.model.repository.employee;
 
+import com.example.casestudymodule4.model.entity.employee.AppUser;
 import com.example.casestudymodule4.model.entity.employee.Employee;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,6 +14,11 @@ import java.util.List;
 
 @Repository
 public interface IEmployeeRepository extends JpaRepository<Employee,Integer> {
+    Employee findByUser(AppUser user);
+
+
+
+
     @Query(value = "select e from Employee e where e.employeeName like %?1% and e.flag = 1")
     Page<Employee> findAllByEmployee(String name,Pageable pageable);
 

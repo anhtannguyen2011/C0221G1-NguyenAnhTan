@@ -70,4 +70,9 @@ public class ContractServiceImpl implements IContractService {
     public void deleleContract(int id) {
         contractRepository.deleleContract(id);
     }
+
+    @Override
+    public Page<Contract> searchEmployeeName(String name, Pageable pageable) {
+        return contractRepository.findByCustomerCustomerNameContaining(name,pageable);
+    }
 }

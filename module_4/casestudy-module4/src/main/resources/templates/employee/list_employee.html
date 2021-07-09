@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:insert="~{homePage :: homeHeader}">
 
     <style>
@@ -38,7 +38,7 @@
             <th>Position</th>
             <th>Education</th>
             <th>Division</th>
-            <td class="text-center"><a th:href="@{/employee/create-employee}" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
+            <td sec:authorize="hasAuthority('ROLE_ADMIN')" class="text-center"><a th:href="@{/employee/create-employee}" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
         </tr>
         </thead>
         <tbody style="font-size: 15px;text-align: center">
@@ -54,9 +54,9 @@
             <th th:text="${employeeObj.division.divisionName}"></th>
             <th th:text="${employeeObj.educationDegree.educationDegreeName}"></th>
             <td>
-                <a th:href="@{/employee/edit(id=${employeeObj.employeeId})}"
+                <a sec:authorize="hasAuthority('ROLE_ADMIN')" th:href="@{/employee/edit(id=${employeeObj.employeeId})}"
                    class="btn btn-outline-info">Edit</a>
-                <button th:onclick="|setIdDelete(${employeeObj.employeeId})|" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
+                <button sec:authorize="hasAuthority('ROLE_ADMIN')" th:onclick="|setIdDelete(${employeeObj.employeeId})|" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">
                     Delete
                 </button>
 

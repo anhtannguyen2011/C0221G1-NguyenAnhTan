@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:insert="~{homePage :: homeHeader}">
 
     <style>
@@ -15,11 +15,46 @@
     </script>
 </head>
 <body>
-
-<div th:insert="~{homePage :: bodyHeadder}">
+<div class="header" th:fragment="bodyHeadder">
+    <div class="row">
+        <div class="col-lg-4">
+            <img src="/img/logo.png" height="150">
+        </div>
+        <div class="col-lg-4">
+            <img src="/img/logo-chinh-thuc.png" width="100%">
+        </div>
+        <div class="col-lg-4">
+            <div th:if="${employeeSession.employeeName != null}" class="row float-right mr-2">
+                <h3 class="text-success mr-3">
+                    Hi , <span th:text="${employeeSession.employeeName}"></span>
+                </h3>
+                <a class="btn btn-outline-secondary mt-5"  th:href="@{/logout}" type="button">Log out</a>
+            </div>
+            <div th:if="${employeeSession.employeeName == null}" class="row float-right mr-2">
+                <a class="btn btn-outline-secondary mt-5"  th:href="@{/login}" type="button">Log In</a>
+            </div>
+        </div>
+    </div>
 </div>
-<div th:insert="~{homePage :: headerLink}"></div>
+</div>
+<div class="header-link" >
+    <div class="link-left">
+        <ul class="nav__link">
+            <li><a href="" class="link-control">Home</a></li>
+            <li><a th:href="@{/employee/}" class="link-control">Employee</a></li>
+            <li><a th:href="@{/customer/}" class="link-control">Customer</a></li>
+            <li><a th:href="@{/service/}" class="link-control">Services</a></li>
+            <li><a th:href="@{/contract/}" class="link-control">Contact</a></li>
+        </ul>
 
+    </div>
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline" style="margin-top: 0px" >
+            <input name="nameSearch" class="form-control mr-sm-2" style="height: 35px" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+</div>
 <div class="container-fluid mt-5 border border-body">
     <div class="text-center">
         <h1>List Customer</h1>
@@ -37,7 +72,7 @@
             <th>Employee</th>
             <th>Customer</th>
             <th>Service</th>
-            <td class="text-center"><a th:href="@{/contract/create-contract}" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
+            <td sec:authorize="hasAuthority('ROLE_ADMIN')" class="text-center"><a th:href="@{/contract/create-contract}" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
         </tr>
         </thead>
         <tbody style="font-size: 15px;text-align: center">
@@ -51,7 +86,7 @@
             <th th:text="${contractObj.employee.employeeName}"></th>
             <th th:text="${contractObj.customer.customerName}"></th>
             <th th:text="${contractObj.service.serviceName}"></th>
-            <td>
+            <td sec:authorize="hasAuthority('ROLE_ADMIN')">
                 <a th:href="@{/contract/view(id=${contractObj.contractId})}"
                    class="btn btn-outline-info">View Detail</a>
                 <a th:href="@{/contract/edit(id=${contractObj.contractId})}"
@@ -90,20 +125,17 @@
         </tbody>
     </table>
     <div style="text-align: center;font-size: 20px">
-        <a th:href="@{'/contract/'(page=${contractList.number - 1})}" th:if="${contractList.hasPrevious()}">Previous</a>
+        <a th:href="@{'/contract/'(page=${contractList.number - 1}, nameSearch =${keywordValue})}" th:if="${contractList.hasPrevious()}">Previous</a>
         <span th:text="${contractList.number + 1}"></span>/<span th:text="${contractList.totalPages}"></span>
-        <a th:href="@{'/contract/'(page=${contractList.number + 1})}" th:if="${contractList.hasNext()}">Next</a>
+        <a th:href="@{'/contract/'(page=${contractList.number + 1}, nameSearch =${keywordValue})}" th:if="${contractList.hasNext()}">Next</a>
     </div>
 </div>
 
 
 <script>
-
-
     function setIdDelete(id) {
         document.getElementById("customer_id").value = id;
     }
-
 </script>
 
 

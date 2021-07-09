@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:insert="~{homePage :: homeHeader}">
 
     <style>
@@ -37,7 +37,7 @@
             <th>Rent Type</th>
             <th>Service Type</th>
             <th>Descrpition</th>
-            <td class="text-center"><a th:href="@{/service/create-service}" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
+            <td sec:authorize="hasAuthority('ROLE_ADMIN')" class="text-center"><a th:href="@{/service/create-service}" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
         </tr>
         </thead>
         <tbody style="font-size: 15px;text-align: center">

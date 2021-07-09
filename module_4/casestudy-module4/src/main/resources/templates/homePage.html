@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:fragment="homeHeader">
   <meta charset="UTF-8">
   <title>Furama Resort</title>
@@ -38,24 +39,28 @@
       <img src="/img/logo-chinh-thuc.png" width="100%">
     </div>
     <div class="col-lg-4">
-<!--      <c:if test="${sessionScope.account != null}">-->
-<!--        <a class="btn btn-outline-secondary mt-5"  href="/logout?action=logout" type="button">Log out</a>-->
-<!--        <h3 class="text-primary">Hello ${sessionScope.account.username}</h3>-->
-<!--      </c:if>-->
-<!--      <c:if test="${sessionScope.account == null}">-->
-<!--        <a href="/login" class="btn btn-outline-success mt-5" type="button">Login</a>-->
-<!--      </c:if>-->
+      <div th:if="${employeeSession.employeeName != null}" class="row float-right mr-2">
+        <h3 class="text-success mr-3">
+          Hi , <span th:text="${employeeSession.employeeName}"></span>
+        </h3>
+        <a class="btn btn-outline-secondary mt-5"  th:href="@{/logout}" type="button">Log out</a>
+      </div>
+      <div th:if="${employeeSession.employeeName == null}" class="row float-right mr-2">
+        <a class="btn btn-outline-secondary mt-5"  th:href="@{/login}" type="button">Log In</a>
+      </div>
+      </div>
     </div>
   </div>
 </div>
+<!--<span th:text="${employeeSessionOne.employeeName}"></span>-->
 <div class="header-link" th:fragment="headerLink">
   <div class="link-left">
     <ul class="nav__link">
       <li><a href="" class="link-control">Home</a></li>
-        <li><a href="/employee" class="link-control">Employee</a></li>
-      <li><a href="/customer" class="link-control">Customer</a></li>
-      <li><a href="/services" class="link-control">Services</a></li>
-      <li><a href="/contract?action=list" class="link-control">Contact</a></li>
+        <li><a th:href="@{/employee/}" class="link-control">Employee</a></li>
+      <li><a th:href="@{/customer/}" class="link-control">Customer</a></li>
+      <li><a th:href="@{/service/}" class="link-control">Services</a></li>
+      <li><a th:href="@{/contract/}" class="link-control">Contact</a></li>
     </ul>
 
   </div>
@@ -126,7 +131,7 @@
       <div class="row-2">
         <div class="col-in-row">
           <div class="picture-service">
-            <img th:src="@{/static/img/300px-Một_biệt_thự_xây_1937.jpg}" >
+            <img src="/img/300px-Một_biệt_thự_xây_1937.jpg" >
           </div>
           <div class="content-picture">
             <h3>Residencial Sausalito</h3>

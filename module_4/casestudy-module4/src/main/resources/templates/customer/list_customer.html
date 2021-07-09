@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:insert="~{homePage :: homeHeader}">
 
   <style>
@@ -36,7 +36,7 @@
       <th>Birthday</th>
       <th>Gender</th>
       <th>ID Card</th>
-      <td class="text-center"><a th:href="@{/customer/create-customer}" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
+      <td sec:authorize="hasAuthority('ROLE_ADMIN')" class="text-center"><a th:href="@{/customer/create-customer}" style="font-size: 20px; text-decoration: none"><i class="fas fa-plus-circle"></i>Add</a></td>
     </tr>
     </thead>
     <tbody style="font-size: 15px;text-align: center">
@@ -52,7 +52,7 @@
           <span th:if="${!customerObj.customerGender}" th:text="Famale"></span></th>
         <th th:text="${customerObj.customerIdCard}"></th>
 
-        <td>
+        <td sec:authorize="hasAuthority('ROLE_ADMIN')">
           <a th:href="@{/customer/edit(id=${customerObj.customerId})}"
              class="btn btn-outline-info">Edit</a>
           <button th:onclick="|setIdDelete(${customerObj.customerId})|" type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">

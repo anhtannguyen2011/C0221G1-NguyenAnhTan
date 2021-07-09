@@ -15,4 +15,6 @@ public interface IContractService {
     Contract findById(int id);
     void edit(Contract contract);
     void deleleContract(int id);
+
+    Page<Contract> searchEmployeeName(String name,Pageable pageable);
 }

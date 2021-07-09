@@ -25,6 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Optional;
 
 @Controller
+@SessionAttributes("employeeSession")
 @RequestMapping("/contract")
 public class ContractController {
     @Autowired
@@ -64,13 +65,21 @@ public class ContractController {
     }
 
     @GetMapping(value = "/")
-    public ModelAndView showListContract(@PageableDefault(value = 3)Pageable pageable) {
+    public String showListContract(@PageableDefault(value = 3)Pageable pageable,@RequestParam(name = "nameSearch") Optional<String> nameSearch,Model model) {
         Page<Contract> contractList;
-        ModelAndView modelAndView = new ModelAndView("contract/list");
-        contractList = this.contractService.findAllContract(pageable);
-//        modelAndView.addObject("keywordValue", keywordValue);
-        modelAndView.addObject("contractList", contractList);
-        return modelAndView;
+        String keywordValue = "";
+        if(nameSearch.isPresent()){
+            keywordValue = nameSearch.get();
+            model.addAttribute("keywordValue",keywordValue);
+            model.addAttribute("contractList",this.contractService.searchEmployeeName(keywordValue,pageable));
+        }else {
+            contractList = this.contractService.findAllContract(pageable);
+            model.addAttribute("contractList", contractList);
+            model.addAttribute("keywordValue",keywordValue);
+        }
+
+
+        return "contract/list";
     }
 
     @GetMapping("/view")
@@ -113,4 +122,10 @@ public class ContractController {
         this.contractService.deleleContract(id);
         return "redirect:/contract/";
     }
+
+//    @GetMapping("/search")
+//    public String searchContract(@PageableDefault(value = 2) Pageable pageable,@RequestParam("nameSearch") String nameSearch,Model model){
+//        model.addAttribute("contractList",this.contractService.searchEmployeeName(nameSearch,pageable));
+//        return "/contract/list";
+//    }
 }

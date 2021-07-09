@@ -1,5 +1,6 @@
 package com.example.casestudymodule4.model.service.employee;
 
+import com.example.casestudymodule4.model.entity.employee.AppUser;
 import com.example.casestudymodule4.model.entity.employee.Employee;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,4 +14,5 @@ public interface IEmployeeService {
     Employee findById(int id);
     void edit(Employee employee);
     List<Employee> listEmployee();
+    Employee findByUser(AppUser user);
 }

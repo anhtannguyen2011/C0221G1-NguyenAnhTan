@@ -1,5 +1,6 @@
 package com.example.casestudymodule4.model.service.employee.Impl;
 
+import com.example.casestudymodule4.model.entity.employee.AppUser;
 import com.example.casestudymodule4.model.entity.employee.Employee;
 import com.example.casestudymodule4.model.repository.employee.IEmployeeRepository;
 import com.example.casestudymodule4.model.service.employee.IEmployeeService;
@@ -43,5 +44,10 @@ public class EmployeeServiceImpl implements IEmployeeService {
     @Override
     public List<Employee> listEmployee() {
         return employeeRepository.findAllList();
+    }
+
+    @Override
+    public Employee findByUser(AppUser user) {
+        return employeeRepository.findByUser(user);
     }
 }

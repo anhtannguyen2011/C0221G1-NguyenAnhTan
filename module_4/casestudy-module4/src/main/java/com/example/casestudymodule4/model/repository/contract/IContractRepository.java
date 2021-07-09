@@ -15,9 +15,10 @@ public interface IContractRepository extends JpaRepository<Contract,Integer> {
 //    Page<Contract> findAllContract(String name, Pageable pageable);
     @Query(value = "select * from contract where flag = 1",nativeQuery = true)
     Page<Contract> findAll(Pageable pageable);
-
     @Modifying
     @Transactional
     @Query(value = "update contract set flag = 2 where contract_id = ?1",nativeQuery = true)
     void deleleContract(int id);
+
+    Page<Contract> findByCustomerCustomerNameContaining(String name,Pageable pageable);
 }

@@ -22,6 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Optional;
 
 @Controller
+@SessionAttributes("employeeSession")
 @RequestMapping(value = "/employee")
 public class EmployeeController {
     @Autowired

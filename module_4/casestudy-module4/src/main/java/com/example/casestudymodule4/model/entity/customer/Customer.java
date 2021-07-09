@@ -20,7 +20,6 @@ public class Customer {
     @Column(name = "customer_id")
     private Integer customerId;
 
-
     @Column(name = "customer_code", columnDefinition = "VARCHAR(45) NOT NULL")
     private String customerCode;
 
@@ -59,7 +58,7 @@ public class Customer {
         this.flag = flag;
     }
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer",fetch = FetchType.LAZY)
     private List<Contract> contractList;
 
     public Customer() {

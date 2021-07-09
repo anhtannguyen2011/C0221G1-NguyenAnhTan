@@ -20,6 +20,7 @@ import javax.validation.Valid;
 import java.util.Optional;
 
 @Controller
+@SessionAttributes("employeeSession")
 @RequestMapping("/customer")
 public class CustomerController {
 

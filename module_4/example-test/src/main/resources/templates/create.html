@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <style>
+    .header {
+      text-align: center;
+      color: orange;
+      background-color: bisque;
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <h1>Customer Management</h1>
+  <h2>
+    <a href="/customer?action=customer">List All Customer</a>
+  </h2>
+</div>
+<div align="center" class="container">
+  <form method="post" action="/customer">
+    <table border="1" cellpadding="5" class="table table-striped table-bordered">
+      <caption>
+        <h2>Add New User</h2>
+      </caption>
+      <tr>
+        <th>User Name:</th>
+        <td>
+          <input class="form-control"  type="text" name="name" size="45"/>
+        </td>
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerBirthday')}" th:errors="*{customerBirthday}"></td>
+      </tr>
+      <tr>
+        <th>birthday:</th>
+        <td>
+          <input class="form-control"  type="date" name="birthday" size="45" />
+        </td>
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerBirthday')}" th:errors="*{customerBirthday}"></td>
+      </tr>
+      <tr>
+        <th>card:</th>
+        <td>
+          <input class="form-control"  type="text" name="card" />
+        </td>
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerBirthday')}" th:errors="*{customerBirthday}"></td>
+      </tr>
+      <tr>
+        <th>phone number:</th>
+        <td>
+          <input class="form-control"  type="text" name="phoneNumber" />
+        </td>
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerBirthday')}" th:errors="*{customerBirthday}"></td>
+      </tr>
+      <tr>
+        <th>Email:</th>
+        <td>
+          <input class="form-control"  type="text" name="email" />
+
+        </td>
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerBirthday')}" th:errors="*{customerBirthday}"></td>
+      </tr>
+      <tr>
+        <th>address:</th>
+        <td>
+          <input class="form-control" type="text" name="address" />
+        </td>
+        <td style="font-size: 20px" class="text-danger" th:if="${#fields.hasErrors('customerBirthday')}" th:errors="*{customerBirthday}"></td>
+      </tr>
+      <tr>
+        <th>id loại khach:</th>
+
+        <td><select th:field="*{customer}" style="font-size: 2rem;height: 40px;width: 300px">
+        <option th:each="customerObj : ${customerList}"
+                th:value="${customerObj.customerId}"
+                th:text="${customerObj.customerName}"
+                th:selected="${contract.customer.customerName}"></option>
+             </select>
+
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input class="btn btn-success" type="submit" name="action" value="create"/>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+</body>
+</html>

@@ -1,1 +1,5 @@
-<app-countdown-timer [seconds]="10"></app-countdown-timer>
+<h2>Countdown Time</h2>
+<input type="text" [(ngModel)]="input">
+<app-countdown-timer (changeCountDown)="changeTimer($event)" [seconds]="input" ></app-countdown-timer>
+This is
+<p>{{output}}</p>

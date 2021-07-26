@@ -1,4 +1,4 @@
-import {Component, Input, OnInit , OnDestroy} from '@angular/core';
+import {Component, Input, OnInit, OnDestroy, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-countdown-timer',
@@ -10,7 +10,8 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
   message = 'Ok';
   remainingTime: number;
   @Input()
-  seconds = 11;
+  seconds: number;
+  @Output() changeCountDown = new EventEmitter();
 
   constructor() {
   }
@@ -42,19 +43,19 @@ export class CountdownTimerComponent implements OnInit, OnDestroy {
 
   reset() {
     this.clearTimer();
-    this.remainingTime = this.seconds;
+    this.start();
     this.message = `Click start button to start the Countdown`;
   }
 
   private countDown() {
     this.clearTimer();
     this.intervalId = window.setInterval(() => {
-      this.remainingTime -= 1;
-      if (this.remainingTime === 0) {
-        this.message = 'Blast off!';
-        this.clearTimer();
+      if (this.seconds > 0) {
+        this.changeCountDown.emit(this.seconds);
+        this.seconds -= 1;
       } else {
-        this.message = `T-${this.remainingTime} seconds and counting`;
+        this.changeCountDown.emit('Happy New Year ! ! !');
+        this.stop();
       }
     }, 1000);
   }

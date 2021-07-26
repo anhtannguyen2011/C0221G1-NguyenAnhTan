@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-countdown-timer';
+  output: number;
+  input: number;
+
+  changeTimer(value) {
+    this.output = value;
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, ValidationErrors, Validators} from '@angular/forms';
 import { comparePassword } from './gte.validator';
 
 @Component({
@@ -13,8 +13,29 @@ export class RegisterFormComponent implements OnInit {
   // @ts-ignore
   countryList = ['Viet Nam', 'Nuoc Ngoai'];
   contractForm: FormGroup;
+  // tslint:disable-next-line:variable-name
+  validate_message = {
+    email : [
+      { type : 'required' , message : 'Email không được trống' },
+      { type : 'email' , message: 'Email không đúng định dạng'}
+      ],
+    age : [
+      { type : 'min' , message : 'Tuổi thấp nhất 18' }
+    ],
+    gender : [
+      { type : 'required' , message : 'Gender không được trống'}
+    ],
+    phone : [
+      { type : 'pattern' , message : 'Phone không đúng định dạnh'}
+    ]
+  };
+  // comparePassword(c: AbstractControl): ValidationErrors | null {
+  //   const v = c.value;
+  //   return (v.password === v.confirmpassword) ? null : {
+  //     passwordnotmatch: true
+  //   };
+  // }
   constructor() {
-
     this.contractForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       pw: new FormGroup({

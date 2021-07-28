@@ -4,20 +4,26 @@
       <div class="form-row">
         <label for="inputEmail">Email</label>
         <input type="email" class="form-control" id="inputEmail" placeholder="Email" formControlName="email">
-        <div class="col alert alert-danger" role="alert"
-          *ngIf="!contractForm.controls.email?.valid && (contractForm.controls.email?.dirty
-                ||contractForm.controls.email?.touched)" >
-          Password is not valid
+        <div class="text-danger" role="alert" *ngFor="let validate of validate_message.email">
+          <div *ngIf="contractForm.get('email')?.hasError(validate.type) && (contractForm.get('email')?.dirty || contractForm.get('email')?.touched)">
+          {{validate.message}}
+          </div>
         </div>
       </div>
       <div class="form-row" formGroupName="pw">
         <div class="form-row col-md-6">
           <label for="inputPassword">Password</label>
           <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="password">
+          <div *ngIf="contractForm.get('pw').get('password')?.hasError('email') && (contractForm.get('pw').get('email')?.dirty || contractForm.get('pw').get('email')?.touched)">
+            Khong dc de trong
+          </div>
         </div>
         <div class="form-row col-md-6">
           <label for="configPassword">Confirm Password</label>
           <input type="password" class="form-control" id="configPassword" placeholder="Password" formControlName="confirmpassword">
+          <div *ngIf="contractForm.get('pw').get('configpassword')?.hasError('email') && (contractForm.get('pw').get('configpassword')?.dirty || contractForm.get('pw').get('configpassword')?.touched)">
+            Khong dung dinh dang
+          </div>
         </div>
         <div class="col alert alert-danger" role="alert"
              *ngIf="contractForm.hasError('passwordnotmatch', ['pw']) &&
@@ -29,10 +35,10 @@
     <div class="form-group col-lg-6">
       <label for="inputAddress2">Age</label>
       <input type="text" class="form-control" id="inputAddress2" placeholder="AGE" formControlName="age">
-      <div class="col alert alert-danger" role="alert"
-           *ngIf="!contractForm.controls.age?.valid && (contractForm.controls.age?.dirty
-                ||contractForm.controls.age?.touched)" >
-        Age is not valid
+      <div class="text-danger" role="alert" *ngFor="let validate of validate_message.age">
+        <div *ngIf="contractForm.get('age')?.hasError(validate.type) && (contractForm.get('age')?.dirty || contractForm.get('age')?.touched)">
+          {{validate.message}}
+        </div>
       </div>
     </div>
     <div class="form-row">
@@ -46,10 +52,10 @@
       <div class="form-row ">
         <label for="inputZip">Phone</label>
         <input type="text" class="form-control" id="inputZip" formControlName="phone">
-        <div class="col alert alert-danger" role="alert"
-             *ngIf="!contractForm.controls.phone?.valid && (contractForm.controls.phone?.dirty
-                ||contractForm.controls.phone?.touched)" >
-          Phone is not valid
+        <div class="text-danger" role="alert" *ngFor="let validate of validate_message.phone">
+          <div *ngIf="contractForm.get('phone')?.hasError(validate.type) && (contractForm.get('phone')?.dirty || contractForm.get('phone')?.touched)">
+            {{validate.message}}
+          </div>
         </div>
       </div>
     </div>
@@ -58,10 +64,10 @@
         <label>Gender </label>
         <input type="radio" value="male"  name="gender" formControlName="gender"> Male
         <input type="radio" value="female"  name="gender" formControlName="gender"> Female
-        <div class="col alert alert-danger" role="alert"
-             *ngIf="!contractForm.controls.gender?.valid && (contractForm.controls.gender?.dirty
-                ||contractForm.controls.gender?.touched)" >
-          Gender is not valid
+        <div class="text-danger" role="alert" *ngFor="let validate of validate_message.email">
+          <div *ngIf="contractForm.get('gender')?.hasError(validate.type) && (contractForm.get('gender')?.dirty || contractForm.get('gender')?.touched)">
+            {{validate.message}}
+          </div>
         </div>
       </div>
     </div>

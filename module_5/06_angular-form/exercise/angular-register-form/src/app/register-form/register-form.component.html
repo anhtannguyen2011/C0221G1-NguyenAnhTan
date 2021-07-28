@@ -14,15 +14,15 @@
         <div class="form-row col-md-6">
           <label for="inputPassword">Password</label>
           <input type="password" class="form-control" id="inputPassword" placeholder="Password" formControlName="password">
-          <div *ngIf="contractForm.get('pw').get('password')?.hasError('email') && (contractForm.get('pw').get('email')?.dirty || contractForm.get('pw').get('email')?.touched)">
-            Khong dc de trong
+          <div *ngIf="contractForm.get('pw').get('password')?.hasError('minLength') && (contractForm.get('pw').get('minLength')?.dirty || contractForm.get('pw').get('minLength')?.touched)">
+            Khong dc ít hơn 6 kí tự
           </div>
         </div>
         <div class="form-row col-md-6">
           <label for="configPassword">Confirm Password</label>
           <input type="password" class="form-control" id="configPassword" placeholder="Password" formControlName="confirmpassword">
-          <div *ngIf="contractForm.get('pw').get('configpassword')?.hasError('email') && (contractForm.get('pw').get('configpassword')?.dirty || contractForm.get('pw').get('configpassword')?.touched)">
-            Khong dung dinh dang
+          <div *ngIf="contractForm.get('pw').get('configpassword')?.hasError('minLength') && (contractForm.get('pw').get('configpassword')?.dirty || contractForm.get('pw').get('configpassword')?.touched)">
+            Khong đc ít hơn 6 kí tự
           </div>
         </div>
         <div class="col alert alert-danger" role="alert"

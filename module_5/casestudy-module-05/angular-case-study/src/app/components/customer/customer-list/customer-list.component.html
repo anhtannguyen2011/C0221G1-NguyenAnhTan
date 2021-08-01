@@ -1,0 +1,45 @@
+<div class="row justify-content-between">
+  <h2>Employee List</h2>
+  <div class="d-flex">
+    <input type="text" class="form-control mr-4" [(ngModel)]="nameSearch" style="width: 400px;height: 50px" placeholder="Search" height="40px">
+    <button class="btn btn-outline-danger w-25" (click)="search()">Search</button>
+  </div>
+</div>
+<div class="row mt-4 mx-3">
+  <button class="btn btn-success" (click)="addCustomer()">ADD</button>
+  <table class="table mt-3 table-striped">
+    <thead>
+    <tr>
+      <td>No</td>
+      <td (click)="sort('id')">ID <i class="fa fa-sort"></i></td>
+      <td>Loại Khách<i class="fa fa-sort"></i></td>
+      <td>Họ Và Tên</td>
+      <td>Ngày Sinh</td>
+      <td>Số CMND</td>
+      <td>SDT</td>
+      <td>Email</td>
+      <td>Địa Chỉ</td>
+      <td>Action</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr scope="row" *ngFor="let cusObj of customer | orderBy : key : reverse | paginate:{itemsPerPage: 2,currentPage:p} ; index as i">
+      <td>{{i +1 }}</td>
+      <td>{{cusObj.id}}</td>
+      <td>{{cusObj.customerType.name}}</td>
+      <td>{{cusObj.name}}</td>
+      <td>{{cusObj.dateOfBirth | date:'dd/MM/yyyy'}}</td>
+      <td>{{cusObj.idCard}}</td>
+      <td>{{cusObj.phone}}</td>
+      <td>{{cusObj.email}}</td>
+      <td>{{cusObj.address}}</td>
+      <td>
+        <button class="btn btn-sm btn-dark mr-3" (click)="editCustomer(cusObj.id)">Edit</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteCustomer(cusObj.id)">Delete</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+

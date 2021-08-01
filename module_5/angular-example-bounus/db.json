@@ -1,0 +1,102 @@
+{
+  "product": [
+    {
+      "name": "Iphone1323255",
+      "manufacture": "Viet Nam",
+      "price": 30000,
+      "date": "2012/12/12",
+      "id": 1
+    },
+    {
+      "name": "Ipho",
+      "manufacture": "Viet Nam Net",
+      "price": "30000",
+      "date": "2012-12-12",
+      "id": 2
+    },
+    {
+      "name": "Iphon2",
+      "manufacture": "Hong Kong",
+      "price": "3333",
+      "date": "2012-11-11",
+      "id": 3
+    },
+    {
+      "name": "Iphone 6",
+      "manufacture": "Hàn Quốc",
+      "price": "4000",
+      "date": "2021-06-07",
+      "id": 4
+    },
+    {
+      "name": "Iphone122",
+      "manufacture": "Viet Nam",
+      "price": 30000,
+      "date": "2012/12/12",
+      "id": 9
+    },
+    {
+      "name": "Samsung",
+      "manufacture": "Korea",
+      "price": "3000",
+      "date": "2000-12-12",
+      "id": 10
+    },
+    {
+      "name": "Nguyễn Anh Tấn",
+      "manufacture": "Việt Nam",
+      "price": "4000",
+      "date": "2012-12-12",
+      "id": 11
+    },
+    {
+      "name": "Xiaomi",
+      "manufacture": "Han Quoc",
+      "price": "1000",
+      "date": "1222-12-12",
+      "id": 12
+    },
+    {
+      "name": "Nguyễn Anh Tấn",
+      "manufacture": "Han QUoc",
+      "price": "55555",
+      "date": "1212-12-12",
+      "id": 13
+    },
+    {
+      "name": "Nguyễn Anh Tấn",
+      "manufacture": "GGGG",
+      "price": "323232",
+      "date": "1212-12-12",
+      "id": 14
+    },
+    {
+      "name": "Nguyễn Anh Tấn",
+      "manufacture": "Hàn Quốc",
+      "price": "50000",
+      "date": "1212-12-12",
+      "id": 15
+    },
+    {
+      "name": "Máy Bay",
+      "manufacture": "Indian",
+      "price": "4000",
+      "date": "4000-12-12",
+      "id": 16
+    },
+    {
+      "name": "Nguyễn Anh Tấn",
+      "manufacture": "Hàn Q",
+      "price": "3444",
+      "date": "2000-12-12",
+      "id": 17
+    },
+    {
+      "name": "dsdsd",
+      "manufacture": "Hquo",
+      "price": "4000",
+      "date": "2000-12-12",
+      "id": 18
+    }
+  ]
+}

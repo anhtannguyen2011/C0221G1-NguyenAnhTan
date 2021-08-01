@@ -1,0 +1,66 @@
+<mat-card-header>
+  <mat-toolbar class="toolbar">
+    <mat-card-title>Product</mat-card-title>
+    <span class="toolbar-spacer"></span>
+    <mat-icon (click)="onNoClick()">cancel</mat-icon>
+  </mat-toolbar>
+</mat-card-header>
+<mat-card-content>
+  <div class="container">
+    <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <p>Name:</p>
+            <input  type="text" formControlName="name" class="form-group">
+<!--            <div class="form-control" *ngIf="employeeForm.get('name')?.hasError('required') && (employeeForm.get('name').dirty || employeeForm.get('name').touched)">-->
+<!--              <span class="text-danger">Khoong hop le</span>-->
+<!--            </div>-->
+          </div>
+          <div class="col-md-6">
+            <p>Type Customer</p>
+            <select formControlName="customerType" [compareWith]="compareFn">
+              <option *ngFor="let cusType of customerType" [ngValue]="cusType">{{cusType.name}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p>Date Of Birth:</p>
+            <input  type="date" formControlName="dateOfBirth" class="form-group">
+<!--            <p *ngIf="employeeForm.controls.dateOfBirth.touched" class="msgError">-->
+<!--              <span class="text-danger" *ngIf="employeeForm.controls.dateOfBirth.errors?.required">Please pick a Date</span>-->
+<!--              <span class="text-danger" *ngIf="employeeForm.controls.dateOfBirth.errors?.dateValid">You pick a Future day</span>-->
+<!--            </p>-->
+          </div>
+          <div class="col-md-6">
+            <p>ID Card:</p>
+            <input  type="text" formControlName="idCard" class="form-group">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p>Email:</p>
+            <input  type="text" formControlName="email" class="form-group">
+          </div>
+          <div class="col-md-6">
+            <p>Phone Number</p>
+            <input  type="text" formControlName="phone" class="form-group">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <p>Address</p>
+            <input  type="text" formControlName="address" class="form-group">
+          </div>
+        </div>
+        <div class="row">
+          <button type="submit" class="btn btn-success">
+            <mat-icon>save</mat-icon>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</mat-card-content>
+

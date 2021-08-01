@@ -1,0 +1,50 @@
+<mat-card>
+  <mat-card-header>
+    <mat-toolbar class="toolbar">
+      <mat-card-title>Product List</mat-card-title>
+      <span class="toolbar-spacer"></span>
+      <mat-icon (click)="addProduct()">add</mat-icon>
+    </mat-toolbar>
+  </mat-card-header>
+</mat-card>
+<nav class="navbar">
+  <input type="text" class="form-control" name="name" [(ngModel)]="name" (ngModelChange)="search()" placeholder="Enter Name Of Product">
+</nav>
+<div class="container">
+  <input type="text" class="form-control" name="nameSearch" [(ngModel)]="nameSearch"  placeholder="Enter Name Of Product">
+  <button (click)="searchProduct()">Search Name:</button>
+</div>
+<div class="container">
+  <input type="date" class="form-control" name="nameSearch" [(ngModel)]="dateOne"   placeholder="Enter Date Of Product">
+  <input type="date" class="form-control" name="nameSearch" [(ngModel)]="dateTwo"   placeholder="Enter Date Of Product">
+  <button (click)="searchDate()">Search Name:</button>
+</div>
+<mat-card-content>
+  <div class="container">
+    <table class="table">
+      <thead>
+      <td>NO</td>
+      <td (click)="sort('id')">ID&nbsp;<i class="fa fa-sort"></i></td>
+      <td (click)="sort('name')">Name&nbsp;<i class="fa fa-sort"></i></td>
+      <td>Price</td>
+      <td>Manufacture</td>
+      <td>Date</td>
+      <td>Edit</td>
+      <td>Delete</td>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of productList | orderBy: key: reverse | paginate :{itemsPerPage :5,currentPage:p}; index as i">
+        <td>{{(i+ 1) }}</td>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.manufacture}}</td>
+        <td>{{product.date | date:'dd/MM/yyy'}}</td>
+        <td><i style="color: lightseagreen" class="fas fa-edit" (click)="editProduct(product.id)"></i></td>
+        <td><i style="color: red" class="fas fa-trash-alt" (click)="deleteProduct(product.id)"></i></td>
+      </tr>
+      </tbody>
+    </table>
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</mat-card-content>

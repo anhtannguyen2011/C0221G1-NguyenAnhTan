@@ -1,0 +1,50 @@
+<div class="row justify-content-between">
+  <h2>Employee List</h2>
+  <div class="d-flex">
+    <input type="text" class="form-control mr-4" [(ngModel)]="nameSearch" style="width: 400px;height: 50px" placeholder="Search" height="40px">
+    <button class="btn btn-outline-danger w-25" (click)="search()">Search</button>
+  </div>
+</div>
+<div class="row mt-4 mx-3">
+  <button class="btn btn-success" (click)="addEmployee()">ADD</button>
+  <table class="table mt-3 table-striped">
+    <thead>
+        <tr>
+          <td>No</td>
+          <td (click)="sort('id')">ID <i class="fa fa-sort"></i></td>
+          <td (click)="sort('name')">Họ Và Tên <i class="fa fa-sort"></i></td>
+          <td>Vị Trí</td>
+          <td>Trình Độ</td>
+          <td>Bộ Phận</td>
+          <td>Ngày Sinh</td>
+          <td>Số CMND</td>
+          <td>Lương</td>
+          <td>Email</td>
+          <td>SĐT</td>
+          <td>Địa Chỉ</td>
+          <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr scope="row" *ngFor="let employeeObj of employees | orderBy : key : reverse | paginate:{itemsPerPage: 2,currentPage:p} ; index as i">
+          <td>{{i +1 }}</td>
+          <td>{{employeeObj.id}}</td>
+          <td>{{employeeObj.name}}</td>
+          <td>{{employeeObj.position.name}}</td>
+          <td>{{employeeObj.education.name}}</td>
+          <td>{{employeeObj.division.name}}</td>
+          <td>{{employeeObj.dateOfBirth | date:'dd/MM/yyyy'}}</td>
+          <td>{{employeeObj.idCard}}</td>
+          <td>{{employeeObj.salary}}</td>
+          <td>{{employeeObj.email}}</td>
+          <td>{{employeeObj.phone}}</td>
+          <td>{{employeeObj.address}}</td>
+          <td>
+            <button class="btn btn-sm btn-dark mr-3" (click)="editEmployee(employeeObj.id)">Edit</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteProduct(employeeObj.id)">Delete</button>
+          </td>
+        </tr>
+    </tbody>
+  </table>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>

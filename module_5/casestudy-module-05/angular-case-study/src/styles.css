@@ -1,20 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-.toolbar{
-  background-color: cornflowerblue;
-  border-radius: 5px;
-  color: white;
-}
 
-.toolbar-spacer{
-  flex: 1 1 auto;
-}
-
-div.mat-card-header-text {
-  margin: 0;
-}
 
 snack-bar-container.success {
   background-color: #5cb85c;

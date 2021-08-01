@@ -1,0 +1,171 @@
+{
+  "employees": [
+    {
+      "name": "Nguyễn Anh Tấn",
+      "position": {
+        "id": 3,
+        "name": "Director"
+      },
+      "education": {
+        "id": 2,
+        "name": "Cao Đẳng"
+      },
+      "division": {
+        "id": 3,
+        "name": "Master Cheap"
+      },
+      "dateOfBirth": "2012-12-12",
+      "idCard": "201202120",
+      "salary": 6000,
+      "phone": "0935454545",
+      "email": "anhtannguyen2011@gmail.com",
+      "address": "Đà Nẵng",
+      "id": 1
+    },
+    {
+      "name": "Văn Cao Hoàng",
+      "position": {
+        "id": 3,
+        "name": "Director"
+      },
+      "education": {
+        "id": 2,
+        "name": "Cao Đẳng"
+      },
+      "division": {
+        "id": 1,
+        "name": "Maketting"
+      },
+      "dateOfBirth": "2021-07-21",
+      "idCard": "20000",
+      "salary": "2000",
+      "phone": "0901231231",
+      "email": "anhtannguyen2011@gmail.com",
+      "address": "Hà Nội",
+      "id": 2
+    },
+    {
+      "name": "Văn Chánh",
+      "position": {
+        "id": 3,
+        "name": "Director"
+      },
+      "education": {
+        "id": 2,
+        "name": "Cao Đẳng"
+      },
+      "division": {
+        "id": 2,
+        "name": "Seller"
+      },
+      "dateOfBirth": "2021-07-20",
+      "idCard": "122222",
+      "salary": "122222",
+      "phone": "0901231231",
+      "email": "anhtannguyen2011@gmail.com",
+      "address": "Đà Nẵng",
+      "id": 3
+    }
+  ],
+  "position": [
+    {
+      "id": 1,
+      "name": "Manager"
+    },
+    {
+      "id": 2,
+      "name": "Bell"
+    },
+    {
+      "id": 3,
+      "name": "Director"
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "name": "Đại Học"
+    },
+    {
+      "id": 2,
+      "name": "Cao Đẳng"
+    },
+    {
+      "id": 3,
+      "name": "Trung Cấp"
+    }
+  ],
+  "division": [
+    {
+      "id": 1,
+      "name": "Maketting"
+    },
+    {
+      "id": 2,
+      "name": "Seller"
+    },
+    {
+      "id": 3,
+      "name": "Master Cheap"
+    }
+  ],
+  "customer": [
+    {
+      "id": 1,
+      "customerType": {
+        "id": 1,
+        "name": "VIP"
+      },
+      "name": "Nguyễn Anh Tấn",
+      "dateOfBirth": "2012-12-12",
+      "idCard": "201201201",
+      "phone": "0935478767",
+      "email": "anhtannguyen2021@gmail.com",
+      "address": "Đà Nẵng"
+    },
+    {
+      "id": 3,
+      "customerType": {
+        "id": 4,
+        "name": "MEMBER"
+      },
+      "name": "Vân Quang Thắng",
+      "dateOfBirth": "2021-08-18",
+      "idCard": "20121021",
+      "phone": "0901231231",
+      "email": "anhtanguyen@gmail.com",
+      "address": "Da Nang"
+    },
+    {
+      "id": 4,
+      "customerType": {
+        "id": 4,
+        "name": "MEMBER"
+      },
+      "name": "Nguyễn Anh Tấn",
+      "dateOfBirth": "2021-08-04",
+      "idCard": "20202020",
+      "phone": "0901231231",
+      "email": "anhtannguyen2011@gmail.com",
+      "address": "Đà Nẵng"
+    }
+  ],
+  "customerType": [
+    {
+      "id": 1,
+      "name": "VIP"
+    },
+    {
+      "id": 2,
+      "name": "GOLD"
+    },
+    {
+      "id": 3,
+      "name": "SILVER"
+    },
+    {
+      "id": 4,
+      "name": "MEMBER"
+    }
+  ]
+}

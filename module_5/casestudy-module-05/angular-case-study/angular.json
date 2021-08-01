@@ -1,15 +1,11 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
+  "version": 1, 
   "newProjectRoot": "projects",
   "projects": {
-    "angular-example-bounus": {
+    "angular-case-study": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-example-bounus",
+            "outputPath": "dist/angular-case-study",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -29,7 +25,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -67,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-example-bounus:build"
+            "browserTarget": "angular-case-study:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-example-bounus:build:production"
+              "browserTarget": "angular-case-study:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-example-bounus:build"
+            "browserTarget": "angular-case-study:build"
           }
         },
         "test": {
@@ -94,7 +90,7 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -116,16 +112,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angular-example-bounus:serve"
+            "devServerTarget": "angular-case-study:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-example-bounus:serve:production"
+              "devServerTarget": "angular-case-study:serve:production"
             }
           }
         }
       }
-    }
-  },
-  "defaultProject": "angular-example-bounus"
+    }},
+  "defaultProject": "angular-case-study"
 }
